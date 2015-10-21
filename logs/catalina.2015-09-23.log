@@ -1,0 +1,88 @@
+Sep 23, 2015 2:00:35 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Sep 23, 2015 2:00:35 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 2:00:35 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 727 ms
+Sep 23, 2015 2:00:35 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Sep 23, 2015 2:00:35 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Sep 23, 2015 2:00:35 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Sep 23, 2015 2:00:36 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Sep 23, 2015 2:00:36 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 2:00:36 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Sep 23, 2015 2:00:36 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/28  config=null
+Sep 23, 2015 2:00:36 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 926 ms
+Sep 23, 2015 3:53:35 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:53:36 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Sep 23, 2015 3:53:36 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:53:40 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Sep 23, 2015 3:53:40 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:53:40 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 699 ms
+Sep 23, 2015 3:53:40 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Sep 23, 2015 3:53:40 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Sep 23, 2015 3:53:40 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Sep 23, 2015 3:53:41 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Sep 23, 2015 3:53:41 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:53:41 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Sep 23, 2015 3:53:41 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/29  config=null
+Sep 23, 2015 3:53:41 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 740 ms
+Sep 23, 2015 3:55:55 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:55:56 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Sep 23, 2015 3:55:56 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:55:59 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Sep 23, 2015 3:55:59 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:55:59 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 604 ms
+Sep 23, 2015 3:55:59 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Sep 23, 2015 3:55:59 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Sep 23, 2015 3:55:59 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Sep 23, 2015 3:56:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Sep 23, 2015 3:56:00 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 3:56:00 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Sep 23, 2015 3:56:00 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/16  config=null
+Sep 23, 2015 3:56:00 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 732 ms
+Sep 23, 2015 4:10:03 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Sep 23, 2015 4:10:04 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Sep 23, 2015 4:10:04 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/proj1] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Sep 23, 2015 4:10:04 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/proj1] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Sep 23, 2015 4:10:04 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
