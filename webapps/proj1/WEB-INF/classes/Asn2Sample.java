@@ -62,20 +62,25 @@ public class Asn2Sample extends HttpServlet {
            ResultSetMetaData rsetMetaData=rset.getMetaData();
            int ccount=rsetMetaData.getColumnCount();
 
+	   ans+="<TABLE BORDER=2>\n";
            while(rset.next()) {
+	     ans+="<TR>";
              for(int i=1;i<=ccount;i++) {
                o=rset.getObject(i);
+	       ans+="<TD>";
                if(o!=null) {
                  ans+=o.toString();
                }
                else {
                  ans+="null";
                }
-               ans+=" ";
+   	       ans+="</TD>";
+               //ans+=" ";
              }
-             ans+="<br>\n";
+	     ans+="</TR>";
+             //ans+="<br>\n";
            }
-             
+           ans+="</TABLE>"; 
            stmt.close();
            m_con.close();
 
