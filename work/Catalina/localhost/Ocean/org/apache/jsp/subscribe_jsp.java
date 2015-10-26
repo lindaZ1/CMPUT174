@@ -119,6 +119,12 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</TABLE>\n");
       out.write("\n");
+      out.write("<h4>Legend<h4>\n");
+      out.write("a=audio;\n");
+      out.write("i=image;\n");
+      out.write("t=text;\n");
+      out.write("o=other;\n");
+      out.write("\n");
       out.write("<h3>Subscribed Sensors:</h3>\n");
       out.write("<TABLE BORDER=2>\n");
       out.write("<TR><TH>SENSOR_ID</TH></TR>\n");
@@ -143,10 +149,20 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
 	ans+="</TR>";
     }
     out.println(ans);
-    
 
       out.write("\n");
       out.write("</TABLE>  \n");
+      out.write("<br></br>\n");
+      out.write("<form action=\"add_subscribe.jsp\" method=\"post\">\n");
+      out.write("    <input type=\"submit\" value=\"add sensor\">\n");
+      out.write("</form>\n");
+      out.write("\n");
+      out.write("<form action=\"remove_subscribe.jsp\" method=\"post\">\n");
+      out.write("    <input type=\"submit\" value=\"remove sensor\">\n");
+      out.write("</form>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("</body>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
