@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.*;
 
 public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -50,6 +51,9 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -67,12 +71,82 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t    <TH>SENSOR TYPE</TH>\n");
       out.write("\t    <TH>DESCRIPTION</TH>\n");
       out.write("        </TR>\n");
-      out.write("    \n");
+
+    Connection conn=null;
+    Statement stmt;
+    String driverName="oracle.jdbc.driver.OracleDriver";
+    String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+    try{        
+        //load and register driver
+        Class drvClass=Class.forName(driverName);
+        DriverManager.registerDriver((Driver)drvClass.newInstance());
+
+        //establish connection here
+        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+	String query="select * from sensors";
+	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	ResultSet rset=stmt.executeQuery(query);
+
+	Object o;
+	ResultSetMetaData rsetMetaData=rset.getMetaData();
+	int ccount=rsetMetaData.getColumnCount();
+
+	String ans="";
+	
+	while(rset.next()) {
+	    ans+="<TR>";
+	    for(int i=1;i<=ccount;i++) {
+		o=rset.getObject(i);
+		ans+="<TD>";
+		if(o!=null){
+		    ans+=o.toString();
+		}
+		else{
+		    ans+="null";
+		}
+		ans+="</TD>";
+	    }
+	    ans+="</TR>";
+	}
+	out.println(ans);
+	//stmt.close();
+	//conn.close();
+    }catch(Exception e) {
+	out.println(e.toString());
+    }
+
       out.write("\n");
+      out.write("</TABLE>\n");
       out.write("\n");
-      out.write("    \n");
-      out.write("    \n");
-      out.write("    </TABLE>\n");
+      out.write("<h3>Subscribed Sensors:</h3>\n");
+      out.write("<TABLE BORDER=2>\n");
+      out.write("<TR><TH>SENSOR_ID</TH></TR>\n");
+
+    String person_id="222";
+    String query="select sensor_id from subscriptions where person_id="+person_id;
+    stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    ResultSet rset=stmt.executeQuery(query);
+    String ans="";
+    Object o;
+    ResultSetMetaData rsetMetaData=rset.getMetaData();
+    int ccount=rsetMetaData.getColumnCount();
+
+    while(rset.next()) {
+	ans+="<TR>";
+	for(int i=1;i<=ccount;i++) {
+	    o=rset.getObject(i);
+	    ans+="<TD>";
+	    ans+=o.toString();
+	    ans+="</TD>";
+	}
+	ans+="</TR>";
+    }
+    out.println(ans);
+    
+
+      out.write("\n");
+      out.write("</TABLE>  \n");
       out.write("</body>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
