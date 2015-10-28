@@ -65,6 +65,12 @@
 %>
 </TABLE>
 
+<h4>Legend<h4>
+a=audio;
+i=image;
+t=text;
+o=other;
+
 <h3>Subscribed Sensors:</h3>
 <TABLE BORDER=2>
 <TR><TH>SENSOR_ID</TH></TR>
@@ -91,6 +97,15 @@
     out.println(ans);
 %>
 </TABLE>  
+<br></br>
+<form action="add_subscribe.jsp" method="post">
+    <input type="submit" value="add sensor">
+</form>
+
+<form action="remove_subscribe.jsp" method="post">
+    <input type="submit" value="remove sensor">
+</form>
+
 
 
 </body>

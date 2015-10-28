@@ -1,0 +1,2075 @@
+Oct 26, 2015 3:00:22 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn=null;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+
+
+An error occurred at line: 25 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+
+
+An error occurred at line: 25 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+
+
+An error occurred at line: 27 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+29: 
+30: 	String query="select * from sensors";
+
+
+An error occurred at line: 31 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+28: 	conn.setAutoCommit(false);
+29: 
+30: 	String query="select * from sensors";
+31: 	Statement stmt=conn.createStatement();
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+29: 
+30: 	String query="select * from sensors";
+31: 	Statement stmt=conn.createStatement();
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ReulstSetMetaData cannot be resolved to a type
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+36: 	int ccount=rsetMetaData.getColumnCount();
+37: 
+38: 	String out="";
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+Duplicate local variable out
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+36: 	int ccount=rsetMetaData.getColumnCount();
+37: 
+38: 	String out="";
+39: 	
+40: 	while(rset.next()) {
+41: 	    out+="<TR>";
+
+
+An error occurred at line: 57 in the jsp file: /subscribe.jsp
+SQLException cannot be resolved to a type
+54: 	}
+55: 	stmt.close();
+56: 	conn.close();
+57:     }catch(SQLException ex) {
+58: 	System.err.println("SQLException: "+ex.getMessage());
+59:     }
+60: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:03:14 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn=null;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+
+
+An error occurred at line: 25 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+
+
+An error occurred at line: 25 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+
+
+An error occurred at line: 27 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+29: 
+30: 	String query="select * from sensors";
+
+
+An error occurred at line: 31 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+28: 	conn.setAutoCommit(false);
+29: 
+30: 	String query="select * from sensors";
+31: 	Statement stmt=conn.createStatement();
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+29: 
+30: 	String query="select * from sensors";
+31: 	Statement stmt=conn.createStatement();
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ReulstSetMetaData cannot be resolved to a type
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+36: 	int ccount=rsetMetaData.getColumnCount();
+37: 
+38: 	String out="";
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+Duplicate local variable out
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+36: 	int ccount=rsetMetaData.getColumnCount();
+37: 
+38: 	String out="";
+39: 	
+40: 	while(rset.next()) {
+41: 	    out+="<TR>";
+
+
+An error occurred at line: 58 in the jsp file: /subscribe.jsp
+e cannot be resolved
+55: 	stmt.close();
+56: 	conn.close();
+57:     }catch(Exception ex) {
+58: 	out.println(e.toString());
+59:     }
+60: 	
+61: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:05:58 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn=null;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+
+
+An error occurred at line: 25 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+
+
+An error occurred at line: 25 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23:         //load and register driver
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+
+
+An error occurred at line: 27 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+24:         Class drvClass=Class.forName(driverName);
+25:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+26:         //establish connection here
+27:         conn=DriverManager.getConnection(dbstring,"****","****");
+28: 	conn.setAutoCommit(false);
+29: 
+30: 	String query="select * from sensors";
+
+
+An error occurred at line: 31 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+28: 	conn.setAutoCommit(false);
+29: 
+30: 	String query="select * from sensors";
+31: 	Statement stmt=conn.createStatement();
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+29: 
+30: 	String query="select * from sensors";
+31: 	Statement stmt=conn.createStatement();
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ReulstSetMetaData cannot be resolved to a type
+32: 	ResultSet rset=stmt.executeQuery(query);
+33: 
+34: 	Object o;
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+36: 	int ccount=rsetMetaData.getColumnCount();
+37: 
+38: 	String out="";
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+Duplicate local variable out
+35: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+36: 	int ccount=rsetMetaData.getColumnCount();
+37: 
+38: 	String out="";
+39: 	
+40: 	while(rset.next()) {
+41: 	    out+="<TR>";
+
+
+An error occurred at line: 58 in the jsp file: /subscribe.jsp
+e cannot be resolved
+55: 	stmt.close();
+56: 	conn.close();
+57:     }catch(Exception ex) {
+58: 	out.println(e.toString());
+59:     }
+60: 	
+61: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:15:54 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23: 
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 33 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ReulstSetMetaData cannot be resolved to a type
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String out="";
+
+
+An error occurred at line: 39 in the jsp file: /subscribe.jsp
+Duplicate local variable out
+36: 	ReulstSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String out="";
+40: 	
+41: 	while(rset.next()) {
+42: 	    out+="<TR>";
+
+
+An error occurred at line: 59 in the jsp file: /subscribe.jsp
+e cannot be resolved
+56: 	stmt.close();
+57: 	conn.close();
+58:     }catch(Exception ex) {
+59: 	out.println(e.toString());
+60:     }
+61: 	
+62: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:18:05 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23: 
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 33 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String out="";
+
+
+An error occurred at line: 39 in the jsp file: /subscribe.jsp
+Duplicate local variable out
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String out="";
+40: 	
+41: 	while(rset.next()) {
+42: 	    out+="<TR>";
+
+
+An error occurred at line: 59 in the jsp file: /subscribe.jsp
+e cannot be resolved
+56: 	stmt.close();
+57: 	conn.close();
+58:     }catch(Exception ex) {
+59: 	out.println(e.toString());
+60:     }
+61: 	
+62: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:18:53 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23: 
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 33 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String ans="";
+
+
+An error occurred at line: 59 in the jsp file: /subscribe.jsp
+e cannot be resolved
+56: 	stmt.close();
+57: 	conn.close();
+58:     }catch(Exception ex) {
+59: 	out.println(e.toString());
+60:     }
+61: 	
+62: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:22:36 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23: 
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 33 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String ans="";
+
+
+An error occurred at line: 59 in the jsp file: /subscribe.jsp
+e cannot be resolved
+56: 	stmt.close();
+57: 	conn.close();
+58:     }catch(Exception ex) {
+59: 	out.println(e.toString());
+60:     }
+61: 	
+62: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:22:51 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23: 
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 33 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:23:15 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+17:         </TR>
+18: <%
+19:     try{
+20:         Connection conn;
+21: 	String driverName="oracle.jdbc.driver.OracleDriver";
+22: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+23: 
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 26 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+23: 
+24:         //load and register driver
+25:         Class drvClass=Class.forName(driverName);
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+DriverManager cannot be resolved
+26:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+27: 
+28:         //establish connection here
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 32 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+29:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+
+
+An error occurred at line: 33 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+30: 
+31: 	String query="select * from sensors";
+32: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+33: 	ResultSet rset=stmt.executeQuery(query);
+34: 
+35: 	Object o;
+36: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+37: 	int ccount=rsetMetaData.getColumnCount();
+38: 
+39: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:24:58 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 22 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+19:         </TR>
+20: <%
+21:     try{
+22:         Connection conn;
+23: 	String driverName="oracle.jdbc.driver.OracleDriver";
+24: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+25: 
+
+
+An error occurred at line: 28 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+25: 
+26:         //load and register driver
+27:         Class drvClass=Class.forName(driverName);
+28:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+29: 
+30:         //establish connection here
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+39: 	int ccount=rsetMetaData.getColumnCount();
+40: 
+41: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:25:49 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 21 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+18: 	    <TH>DESCRIPTION</TH>
+19:         </TR>
+20: <%
+21: 	Connection conn;
+22:     try{        
+23: 	String driverName="oracle.jdbc.driver.OracleDriver";
+24: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+
+
+An error occurred at line: 28 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+25: 
+26:         //load and register driver
+27:         Class drvClass=Class.forName(driverName);
+28:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+29: 
+30:         //establish connection here
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+39: 	int ccount=rsetMetaData.getColumnCount();
+40: 
+41: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:25:52 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.subscribe_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:26:45 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 21 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+18: 	    <TH>DESCRIPTION</TH>
+19:         </TR>
+20: <%
+21: 	Connection conn=null;
+22:     try{        
+23: 	String driverName="oracle.jdbc.driver.OracleDriver";
+24: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+
+
+An error occurred at line: 28 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+25: 
+26:         //load and register driver
+27:         Class drvClass=Class.forName(driverName);
+28:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+29: 
+30:         //establish connection here
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+39: 	int ccount=rsetMetaData.getColumnCount();
+40: 
+41: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:27:59 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 21 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+18: 	    <TH>DESCRIPTION</TH>
+19:         </TR>
+20: <%
+21: 	Connection conn;
+22:     try{        
+23: 	String driverName="oracle.jdbc.driver.OracleDriver";
+24: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+
+
+An error occurred at line: 28 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+25: 
+26:         //load and register driver
+27:         Class drvClass=Class.forName(driverName);
+28:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+29: 
+30:         //establish connection here
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+39: 	int ccount=rsetMetaData.getColumnCount();
+40: 
+41: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:28:03 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 21 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+18: 	    <TH>DESCRIPTION</TH>
+19:         </TR>
+20: <%
+21: 	Connection conn;
+22:     try{        
+23: 	String driverName="oracle.jdbc.driver.OracleDriver";
+24: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+
+
+An error occurred at line: 28 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+25: 
+26:         //load and register driver
+27:         Class drvClass=Class.forName(driverName);
+28:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+29: 
+30:         //establish connection here
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 34 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+31:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+32: 
+33: 	String query="select * from sensors";
+34: 	Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 38 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+35: 	ResultSet rset=stmt.executeQuery(query);
+36: 
+37: 	Object o;
+38: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+39: 	int ccount=rsetMetaData.getColumnCount();
+40: 
+41: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:29:10 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 21 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+18: 	    <TH>DESCRIPTION</TH>
+19:         </TR>
+20: <%
+21:     Connection conn;
+22:     Statement stmt;
+23:     try{        
+24: 	String driverName="oracle.jdbc.driver.OracleDriver";
+
+
+An error occurred at line: 22 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+19:         </TR>
+20: <%
+21:     Connection conn;
+22:     Statement stmt;
+23:     try{        
+24: 	String driverName="oracle.jdbc.driver.OracleDriver";
+25: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+
+
+An error occurred at line: 29 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+26: 
+27:         //load and register driver
+28:         Class drvClass=Class.forName(driverName);
+29:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+30: 
+31:         //establish connection here
+32:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet.TYPE_SCROLL_SENSITIVE cannot be resolved to a type
+32:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+33: 
+34: 	String query="select * from sensors";
+35: 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+36: 	ResultSet rset=stmt.executeQuery(query);
+37: 
+38: 	Object o;
+
+
+An error occurred at line: 35 in the jsp file: /subscribe.jsp
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+32:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+33: 
+34: 	String query="select * from sensors";
+35: 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+36: 	ResultSet rset=stmt.executeQuery(query);
+37: 
+38: 	Object o;
+
+
+An error occurred at line: 36 in the jsp file: /subscribe.jsp
+ResultSet cannot be resolved to a type
+33: 
+34: 	String query="select * from sensors";
+35: 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+36: 	ResultSet rset=stmt.executeQuery(query);
+37: 
+38: 	Object o;
+39: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 39 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+36: 	ResultSet rset=stmt.executeQuery(query);
+37: 
+38: 	Object o;
+39: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+40: 	int ccount=rsetMetaData.getColumnCount();
+41: 
+42: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:30:36 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 22 in the jsp file: /subscribe.jsp
+Connection cannot be resolved to a type
+19: 	    <TH>DESCRIPTION</TH>
+20:         </TR>
+21: <%
+22:     Connection conn;
+23:     Statement stmt;
+24:     try{        
+25: 	String driverName="oracle.jdbc.driver.OracleDriver";
+
+
+An error occurred at line: 23 in the jsp file: /subscribe.jsp
+Statement cannot be resolved to a type
+20:         </TR>
+21: <%
+22:     Connection conn;
+23:     Statement stmt;
+24:     try{        
+25: 	String driverName="oracle.jdbc.driver.OracleDriver";
+26: 	String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+
+
+An error occurred at line: 30 in the jsp file: /subscribe.jsp
+Driver cannot be resolved to a type
+27: 
+28:         //load and register driver
+29:         Class drvClass=Class.forName(driverName);
+30:         DriverManager.registerDriver((Driver)drvClass.newInstance());
+31: 
+32:         //establish connection here
+33:         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
+
+An error occurred at line: 40 in the jsp file: /subscribe.jsp
+ResultSetMetaData cannot be resolved to a type
+37: 	ResultSet rset=stmt.executeQuery(query);
+38: 
+39: 	Object o;
+40: 	ResultSetMetaData rsetMetaData=rset.getMetaData();
+41: 	int ccount=rsetMetaData.getColumnCount();
+42: 
+43: 	String ans="";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 3:32:23 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 65 in the jsp file: /subscribe.jsp
+ans cannot be resolved to a variable
+62:     }catch(Exception e) {
+63: 	out.println(e.toString());
+64:     }
+65:     out.println(ans);
+66: 	
+67: %>
+68:     
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 4:03:17 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 72 in the jsp file: /subscribe.jsp
+The local variable conn may not have been initialized
+69: <%
+70:     String person_id="222";
+71:     String query="select sensor_id from subscriptions where person_id="+person_id;
+72:     stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+73:     ResultSet rset=stmt.executeQuery(query);
+74: %>
+75:     
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Oct 26, 2015 4:03:59 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 72 in the jsp file: /subscribe.jsp
+The local variable conn may not have been initialized
+69: <%
+70:     String person_id="222";
+71:     String query="select sensor_id from subscriptions where person_id="+person_id;
+72:     stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+73:     ResultSet rset=stmt.executeQuery(query);
+74: %>
+75:     
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
