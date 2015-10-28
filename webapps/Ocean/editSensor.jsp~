@@ -1,23 +1,24 @@
+
 <%@ page import="java.sql.*" %>
 
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
     <head>
-        <title>Users</title>
+        <title>Sensors</title>
     </head>
 </html>
 <body>
-    <h1>User Table</h1>
+    <h1>Edit Sensors</h1>
 
-    <h3>All users:</h3>
+    <h3>All Sensors:</h3>
     <TABLE BORDER=2>
         <TR>
-            <TH>USER NAME</TH>
-	    <TH>PASSWARD</TH>
-	    <TH>ROLE</TH>
-	    <TH>PERSON ID</TH>
-	    <TH>DATE REGISTERED</TH>
+            <TH>SENSOR_ID</TH>
+	    <TH>LOCATION</TH>
+	    <TH>SENSOR TYPE</TH>
+	    <TH>DESCRIPTION</TH>
         </TR>
+
 <%
     Connection conn=null;
     Statement stmt;
@@ -31,7 +32,7 @@
         //establish connection here
         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 
-	String query="select * from users";
+	String query="select * from sensors";
 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 	ResultSet rset=stmt.executeQuery(query);
 
@@ -64,4 +65,29 @@
     }
 %> 
 </Table>
+
+    <h3>Remove a Sensor:</h3>
+    <form action= "removeSensor.jsp" method="post">
+    Sensor Id:
+    <input type="text" name= "sensor_id"><br>
+    <input type="submit" name="submit" value= "remove">
+  </form>
+
+    <h3>Create a Sensor:</h3>
+    <form action= "createSensor.jsp" method="post">
+    Sensor Id:
+    <input type="text" name= "sensor id"><br>
+    Location:
+    <input type="text" name="location"><br>
+    Sensor Type:
+    <input type = "text" name="sensor type"><br>
+    Description:
+    <input type = "text" name="description"><br>
+    <input type="submit" name="submit" value= "create">
+  </form>
+   
+    <form action= "administratorPage.html" method="post">
+    <input type="submit" name="submit" value= "Main Menu">
+  
+    
 </body>

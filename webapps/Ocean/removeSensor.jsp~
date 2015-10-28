@@ -1,0 +1,11 @@
+<html>
+<head></head>
+<body>
+	<h3>Following sensor has been removed</h3>
+	
+	<%
+		String rSensor = request.getParameter("removeSensorId");
+		out.print(rSensor);
+	%>
+</body>
+</html>
