@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.*;
 
-public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class editSensor_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,7 +53,6 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -80,18 +79,14 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
         //load and register driver
         Class drvClass=Class.forName(driverName);
         DriverManager.registerDriver((Driver)drvClass.newInstance());
-
         //establish connection here
         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
-
 	String query="select * from sensors";
 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 	ResultSet rset=stmt.executeQuery(query);
-
 	Object o;
 	ResultSetMetaData rsetMetaData=rset.getMetaData();
 	int ccount=rsetMetaData.getColumnCount();
-
 	String ans="";
 	
 	while(rset.next()) {
@@ -119,12 +114,6 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</TABLE>\n");
       out.write("\n");
-      out.write("<h4>Legend<h4>\n");
-      out.write("a=audio;\n");
-      out.write("i=image;\n");
-      out.write("t=text;\n");
-      out.write("o=other;\n");
-      out.write("\n");
       out.write("<h3>Subscribed Sensors:</h3>\n");
       out.write("<TABLE BORDER=2>\n");
       out.write("<TR><TH>SENSOR_ID</TH></TR>\n");
@@ -137,7 +126,6 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
     Object o;
     ResultSetMetaData rsetMetaData=rset.getMetaData();
     int ccount=rsetMetaData.getColumnCount();
-
     while(rset.next()) {
 	ans+="<TR>";
 	for(int i=1;i<=ccount;i++) {
@@ -150,21 +138,8 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
     out.println(ans);
 
-
       out.write("\n");
       out.write("</TABLE>  \n");
-      out.write("<br></br>\n");
-      out.write("<form action=\"alter_subscribe.jsp\" method=\"post\">\n");
-      out.write("    <input type=\"text\" value=\"sensor_id\" name=\"sensor_id\">\n");
-      out.write("    <br></br><input type=\"radio\" value=\"add\" name=\"action\">Add Sensor\n");
-      out.write("    <input type=\"radio\" value=\"remove\" name=\"action\">Remove Sensor\n");
-  out.println("<input type='hidden' value="+person_id+" name='person'>");     
-      out.write("\n");
-      out.write("    <br></br><input type=\"submit\" value=\"submit\">\n");
-      out.write("</form>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("</body>\n");

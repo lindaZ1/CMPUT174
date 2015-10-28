@@ -95,16 +95,19 @@ o=other;
 	ans+="</TR>";
     }
     out.println(ans);
+
 %>
 </TABLE>  
 <br></br>
-<form action="add_subscribe.jsp" method="post">
-    <input type="submit" value="add sensor">
+<form action="alter_subscribe.jsp" method="post">
+    <input type="text" value="sensor_id" name="sensor_id">
+    <br></br><input type="radio" value="add" name="action">Add Sensor
+    <input type="radio" value="remove" name="action">Remove Sensor
+<%  out.println("<input type='hidden' value="+person_id+" name='person'>");     %>
+    <br></br><input type="submit" value="submit">
 </form>
 
-<form action="remove_subscribe.jsp" method="post">
-    <input type="submit" value="remove sensor">
-</form>
+
 
 
 
