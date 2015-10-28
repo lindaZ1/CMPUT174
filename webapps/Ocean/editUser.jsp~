@@ -29,7 +29,7 @@
         DriverManager.registerDriver((Driver)drvClass.newInstance());
 
         //establish connection here
-        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+        conn=DriverManager.getConnection(dbstring,"hong8","wxwh0505");
 
 	String query="select * from users";
 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
