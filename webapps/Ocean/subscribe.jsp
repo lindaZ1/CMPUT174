@@ -32,7 +32,8 @@
         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 
 	String query="select * from sensors";
-	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	//stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	stmt=conn.createStatement();
 	ResultSet rset=stmt.executeQuery(query);
 
 	Object o;
@@ -77,7 +78,8 @@ o=other;
 <%
     String person_id="222";
     String query="select sensor_id from subscriptions where person_id="+person_id;
-    stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    stmt=conn.createStatement();
     ResultSet rset=stmt.executeQuery(query);
     String ans="";
     Object o;
@@ -95,6 +97,8 @@ o=other;
 	ans+="</TR>";
     }
     out.println(ans);
+    stmt.close();
+    conn.close();
 
 %>
 </TABLE>  

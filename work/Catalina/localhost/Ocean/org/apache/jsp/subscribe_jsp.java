@@ -85,7 +85,8 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 
 	String query="select * from sensors";
-	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	//stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	stmt=conn.createStatement();
 	ResultSet rset=stmt.executeQuery(query);
 
 	Object o;
@@ -131,7 +132,8 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
 
     String person_id="222";
     String query="select sensor_id from subscriptions where person_id="+person_id;
-    stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    stmt=conn.createStatement();
     ResultSet rset=stmt.executeQuery(query);
     String ans="";
     Object o;
@@ -149,6 +151,8 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
 	ans+="</TR>";
     }
     out.println(ans);
+    stmt.close();
+    conn.close();
 
 
       out.write("\n");
