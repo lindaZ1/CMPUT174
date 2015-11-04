@@ -3,9 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.sql.*;
 
-public final class editUser_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class removeSensor_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,74 +50,26 @@ public final class editUser_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n");
       out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <title>Users</title>\n");
-      out.write("    </head>\n");
-      out.write("</html>\n");
+      out.write("<head></head>\n");
       out.write("<body>\n");
-      out.write("    <h1>User Table</h1>\n");
-      out.write("\n");
-      out.write("    <h3>All users:</h3>\n");
-      out.write("    <TABLE BORDER=2>\n");
+      out.write("\t<h3>Following sensor has been removed</h3>\n");
+      out.write("\t<TABLE BORDER=2>\n");
       out.write("        <TR>\n");
-      out.write("            <TH>USER NAME</TH>\n");
-      out.write("\t    <TH>PASSWARD</TH>\n");
-      out.write("\t    <TH>ROLE</TH>\n");
-      out.write("\t    <TH>PERSON ID</TH>\n");
-      out.write("\t    <TH>DATE REGISTERED</TH>\n");
-      out.write("        </TR>\n");
+      out.write("            <TH>SENSOR_ID</TH>\n");
+      out.write("\t    <TH>LOCATION</TH>\n");
+      out.write("\t    <TH>SENSOR TYPE</TH>\n");
+      out.write("\t    <TH>DESCRIPTION</TH>\n");
+      out.write("        </TR>\t\n");
+      out.write("\n");
+      out.write("\t");
 
-    Connection conn=null;
-    Statement stmt;
-    String driverName="oracle.jdbc.driver.OracleDriver";
-    String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
-    try{        
-        //load and register driver
-        Class drvClass=Class.forName(driverName);
-        DriverManager.registerDriver((Driver)drvClass.newInstance());
-
-        //establish connection here
-        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
-
-	String query="select * from users";
-	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-	ResultSet rset=stmt.executeQuery(query);
-
-	Object o;
-	ResultSetMetaData rsetMetaData=rset.getMetaData();
-	int ccount=rsetMetaData.getColumnCount();
-
-	String ans="";
+		String rSensor = request.getParameter("removeSensorId");
+		out.print(rSensor);
 	
-	while(rset.next()) {
-	    ans+="<TR>";
-	    for(int i=1;i<=ccount;i++) {
-		o=rset.getObject(i);
-		ans+="<TD>";
-		if(o!=null){
-		    ans+=o.toString();
-		}
-		else{
-		    ans+="null";
-		}
-		ans+="</TD>";
-	    }
-	    ans+="</TR>";
-	}
-	out.println(ans);
-	stmt.close();
-	conn.close();
-    }catch(Exception e) {
-	out.println(e.toString());
-    }
-
-      out.write(" \n");
-      out.write("</Table>\n");
+      out.write("\n");
       out.write("</body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

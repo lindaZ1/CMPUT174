@@ -52,21 +52,23 @@
 			out.println("sensor_id: "+sensor_id +" does not exist");
 		    }
 
-		    query="select sensor_id from subscriptions where person_id='"+person_id+"'";
-		    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		    stmt=conn.createStatement();
-		    rset=stmt.executeQuery(query);
+		    if(sensorExist==true) {
+			    query="select sensor_id from subscriptions where person_id='"+person_id+"'";
+			    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			    stmt=conn.createStatement();
+			    rset=stmt.executeQuery(query);
 
-		    while(rset.next()) {
-			if(sensorSubscribed==false) {
-			    o=(rset.getObject(1)).toString();
+			    while(rset.next()) {
+				if(sensorSubscribed==false) {
+				    o=(rset.getObject(1)).toString();
 
-			    //check if entered sensor is already subscribed by user
-			    if(o.equals(sensor_id.trim())) {
-				sensorSubscribed=true;
-				out.println("already subscribed");
+				    //check if entered sensor is already subscribed by user
+				    if(o.equals(sensor_id.trim())) {
+					sensorSubscribed=true;
+					out.println("already subscribed");
+				    }
+				}
 			    }
-			}
 		    }
 		    
 		    if(action.equals("add") && sensorExist && sensorSubscribed==false) {
@@ -85,6 +87,10 @@
 			stmt=conn.createStatement();
 		        rset=stmt.executeQuery(query);
 			out.println("sensor removed");
+		    }
+
+		    else if(action.equals("remove") && sensorSubscribed==false) {
+			out.println("sensor not subscribed");
 		    }
 		    stmt.close();
 		    conn.close();
