@@ -53,14 +53,15 @@ public final class editSensor_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>subscribe</title>\n");
+      out.write("        <title>Sensors</title>\n");
       out.write("    </head>\n");
       out.write("</html>\n");
       out.write("<body>\n");
-      out.write("    <h1>Subscriptions</h1>\n");
+      out.write("    <h1>Edit Sensors</h1>\n");
       out.write("\n");
       out.write("    <h3>All Sensors:</h3>\n");
       out.write("    <TABLE BORDER=2>\n");
@@ -70,6 +71,7 @@ public final class editSensor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t    <TH>SENSOR TYPE</TH>\n");
       out.write("\t    <TH>DESCRIPTION</TH>\n");
       out.write("        </TR>\n");
+      out.write("\n");
 
     Connection conn=null;
     Statement stmt;
@@ -79,14 +81,18 @@ public final class editSensor_jsp extends org.apache.jasper.runtime.HttpJspBase
         //load and register driver
         Class drvClass=Class.forName(driverName);
         DriverManager.registerDriver((Driver)drvClass.newInstance());
+
         //establish connection here
         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+
 	String query="select * from sensors";
 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 	ResultSet rset=stmt.executeQuery(query);
+
 	Object o;
 	ResultSetMetaData rsetMetaData=rset.getMetaData();
 	int ccount=rsetMetaData.getColumnCount();
+
 	String ans="";
 	
 	while(rset.next()) {
@@ -105,43 +111,39 @@ public final class editSensor_jsp extends org.apache.jasper.runtime.HttpJspBase
 	    ans+="</TR>";
 	}
 	out.println(ans);
-	//stmt.close();
-	//conn.close();
+	stmt.close();
+	conn.close();
     }catch(Exception e) {
 	out.println(e.toString());
     }
 
+      out.write(" \n");
+      out.write("</Table>\n");
       out.write("\n");
-      out.write("</TABLE>\n");
+      out.write("    <h3>Remove a Sensor:</h3>\n");
+      out.write("    <form action= \"removeSensor.jsp\" method=\"post\">\n");
+      out.write("    Sensor Id:\n");
+      out.write("    <input type=\"text\" name= \"removeSensorId\"><br>\n");
+      out.write("    <input type=\"submit\" name=\"submit\" value= \"remove\">\n");
+      out.write("  </form>\n");
       out.write("\n");
-      out.write("<h3>Subscribed Sensors:</h3>\n");
-      out.write("<TABLE BORDER=2>\n");
-      out.write("<TR><TH>SENSOR_ID</TH></TR>\n");
-
-    String person_id="222";
-    String query="select sensor_id from subscriptions where person_id="+person_id;
-    stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-    ResultSet rset=stmt.executeQuery(query);
-    String ans="";
-    Object o;
-    ResultSetMetaData rsetMetaData=rset.getMetaData();
-    int ccount=rsetMetaData.getColumnCount();
-    while(rset.next()) {
-	ans+="<TR>";
-	for(int i=1;i<=ccount;i++) {
-	    o=rset.getObject(i);
-	    ans+="<TD>";
-	    ans+=o.toString();
-	    ans+="</TD>";
-	}
-	ans+="</TR>";
-    }
-    out.println(ans);
-
-      out.write("\n");
-      out.write("</TABLE>  \n");
-      out.write("\n");
-      out.write("\n");
+      out.write("    <h3>Create a Sensor:</h3>\n");
+      out.write("    <form action= \"createSensor.jsp\" method=\"post\">\n");
+      out.write("    Sensor Id:\n");
+      out.write("    <input type=\"text\" name= \"createSensorId\"><br>\n");
+      out.write("    Location:\n");
+      out.write("    <input type=\"text\" name=\"location\"><br>\n");
+      out.write("    Sensor Type:\n");
+      out.write("    <input type = \"text\" name=\"sensorType\"><br>\n");
+      out.write("    Description:\n");
+      out.write("    <input type = \"text\" name=\"description\"><br>\n");
+      out.write("    <input type=\"submit\" name=\"submit\" value= \"create\">\n");
+      out.write("  </form>\n");
+      out.write("   \n");
+      out.write("    <form action= \"administratorPage.html\" method=\"post\">\n");
+      out.write("    <input type=\"submit\" name=\"submit\" value= \"Main Menu\">\n");
+      out.write("  \n");
+      out.write("    \n");
       out.write("</body>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

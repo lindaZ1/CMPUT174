@@ -1,0 +1,58 @@
+Nov 04, 2015 2:14:24 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 04, 2015 2:14:24 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 04, 2015 2:14:24 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 869 ms
+Nov 04, 2015 2:14:25 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 04, 2015 2:14:25 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 04, 2015 2:14:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 04, 2015 2:14:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 04, 2015 2:14:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 04, 2015 2:14:26 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 04, 2015 2:14:26 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 04, 2015 2:14:26 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/34  config=null
+Nov 04, 2015 2:14:26 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1381 ms
+Nov 04, 2015 2:26:47 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 04, 2015 2:26:48 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 04, 2015 2:26:48 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 04, 2015 2:26:48 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 04, 2015 2:26:48 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 04, 2015 2:39:50 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 04, 2015 2:39:50 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 04, 2015 2:39:50 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 970 ms
+Nov 04, 2015 2:39:50 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 04, 2015 2:39:50 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 04, 2015 2:39:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 04, 2015 2:39:51 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 04, 2015 2:39:51 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 04, 2015 2:39:52 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 04, 2015 2:39:52 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 04, 2015 2:39:52 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/25  config=null
+Nov 04, 2015 2:39:52 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1362 ms

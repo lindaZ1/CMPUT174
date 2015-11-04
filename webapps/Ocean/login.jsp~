@@ -68,11 +68,7 @@ out.print("</script>");
       out.println("</script>");}
 
     else if (UserRole.equals("d")) {
-      out.print("<H2>Now you can upload data.</H2>");
-      out.print("<script language=javascript type=text/javascript>");
-      out.print("setTimeout("+"\"javascript:location.href='dataCurator.jsp'\""+", 2500);");
-      out.println("</script>");}
-
+      out.print("<H2>Now you can upload data.</H2>");}
 
     else if (UserRole.equals("s")) {
       out.print("<H2>Now you can view, query and download data.</H2>");
