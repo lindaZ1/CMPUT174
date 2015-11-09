@@ -89,7 +89,7 @@
 			out.println("sensor removed");
 		    }
 
-		    else if(action.equals("remove") && sensorSubscribed==false) {
+		    else if(action.equals("remove") && sensorSubscribed==false && sensorExist) {
 			out.println("sensor not subscribed");
 		    }
 		    stmt.close();

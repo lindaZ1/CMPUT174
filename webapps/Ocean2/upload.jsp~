@@ -29,9 +29,11 @@
 
 <h3>Choose data type to upload: </h3>
 <form action="uploadData.jsp" method="post">
-<input type="radio" value="addScalar" name="action" checked="checked">Add Data
+<input type="radio" value="addScalar" name="action">Add Data
 <input type="radio" value="addImage" name="action">Add Image
 <input type="radio" value="addAudio" name="action">Add Audio
 <br></br> <input type="submit" value="Add">
 </form>
 
+
+</body>

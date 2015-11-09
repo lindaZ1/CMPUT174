@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.*;
 
-public final class editUser_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -52,73 +52,62 @@ public final class editUser_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\n");
-      out.write("\n");
-      out.write("<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n");
       out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <title>Users</title>\n");
-      out.write("    </head>\n");
-      out.write("</html>\n");
-      out.write("<body>\n");
-      out.write("    <h1>User Table</h1>\n");
-      out.write("\n");
-      out.write("    <h3>All users:</h3>\n");
-      out.write("    <TABLE BORDER=2>\n");
-      out.write("        <TR>\n");
-      out.write("            <TH>USER NAME</TH>\n");
-      out.write("\t    <TH>PASSWARD</TH>\n");
-      out.write("\t    <TH>ROLE</TH>\n");
-      out.write("\t    <TH>PERSON ID</TH>\n");
-      out.write("\t    <TH>DATE REGISTERED</TH>\n");
-      out.write("        </TR>\n");
 
-    Connection conn=null;
-    Statement stmt;
-    String driverName="oracle.jdbc.driver.OracleDriver";
-    String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
-    try{        
-        //load and register driver
-        Class drvClass=Class.forName(driverName);
-        DriverManager.registerDriver((Driver)drvClass.newInstance());
+	String image_id=request.getParameter("image_id");
 
-        //establish connection here
-        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+	String sensor_id=request.getParameter("sensor_id");
 
-	String query="select * from users";
-	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-	ResultSet rset=stmt.executeQuery(query);
+	String date=request.getParameter("date");
+	out.println(date);
 
-	Object o;
-	ResultSetMetaData rsetMetaData=rset.getMetaData();
-	int ccount=rsetMetaData.getColumnCount();
+	Boolean sensorExist=false;
+	Boolean dateValid=true;
 
-	String ans="";
-	
-	while(rset.next()) {
-	    ans+="<TR>";
-	    for(int i=1;i<=ccount;i++) {
-		o=rset.getObject(i);
-		ans+="<TD>";
-		if(o!=null){
-		    ans+=o.toString();
-		}
-		else{
-		    ans+="null";
-		}
-		ans+="</TD>";
-	    }
-	    ans+="</TR>";
+	if(date.equals("")) {
+		out.println("Please choose a date<br></br>");
+		dateValid=false;
 	}
-	out.println(ans);
-	stmt.close();
-	conn.close();
-    }catch(Exception e) {
-	out.println(e.toString());
-    }
 
-      out.write(" \n");
-      out.write("</Table>\n");
-      out.write("</body>\n");
+	Connection conn=null;
+        Statement stmt;
+        String driverName="oracle.jdbc.driver.OracleDriver";
+        String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+        try{        
+	    //load and register driver
+	    Class drvClass=Class.forName(driverName);
+	    DriverManager.registerDriver((Driver)drvClass.newInstance());
+
+	    //establish connection here
+	    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+	    String query="select sensor_id from sensors";
+	    
+	    stmt=conn.createStatement();
+	    ResultSet rset=stmt.executeQuery(query);
+
+	    Object o;
+	    ResultSetMetaData rsetMetaData=rset.getMetaData();
+	    int ccount=rsetMetaData.getColumnCount();
+	    while(rset.next()) {
+	        if(sensorExist==false) {
+		    o=(rset.getObject(1)).toString();
+
+		    //check if entered sensor exists
+		    if(o.equals(sensor_id.trim())) {
+		        sensorExist=true;
+		        out.println("exist");
+		    }
+	        }
+	    }
+
+	    if(sensorExist==false) {
+		out.println("sensor_id: "+sensor_id +" does not exist");
+	    }
+	}catch(Exception e) {out.println(e.toString());}
+
+      out.write("\n");
+      out.write("<P><a href=\"dataCurator.jsp\"> Return </a></P>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

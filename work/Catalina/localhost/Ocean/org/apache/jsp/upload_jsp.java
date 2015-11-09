@@ -83,14 +83,12 @@ public final class upload_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<h3>Choose data type to upload: </h3>\n");
       out.write("<form action=\"uploadData.jsp\" method=\"post\">\n");
-      out.write("<input type=\"radio\" value=\"addScalar\" name=\"action\">Add Data\n");
+      out.write("<input type=\"radio\" value=\"addScalar\" name=\"action\" checked=\"checked\">Add Data\n");
       out.write("<input type=\"radio\" value=\"addImage\" name=\"action\">Add Image\n");
       out.write("<input type=\"radio\" value=\"addAudio\" name=\"action\">Add Audio\n");
       out.write("<br></br> <input type=\"submit\" value=\"Add\">\n");
       out.write("</form>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("</body>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
