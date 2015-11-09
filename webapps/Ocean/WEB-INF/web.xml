@@ -5,41 +5,11 @@
  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
  version="2.4">
 
-    <servlet>
-        <servlet-name>SessionInfo</servlet-name>
-        <servlet-class>SessionInfo</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SessionInfo</servlet-name>
-        <url-pattern>/SessionInfo</url-pattern>
-    </servlet-mapping>
-
-   <servlet>
-        <servlet-name>URLSession</servlet-name>
-        <servlet-class>URLSession</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>URLSession</servlet-name>
-        <url-pattern>/URLSession</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>FirstServlet</servlet-name>
-        <servlet-class>FirstServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FirstServlet</servlet-name>
-        <url-pattern>/firstServlet</url-pattern>
-    </servlet-mapping>
+<servlet>
+      
 
 
-    <servlet>
-        <servlet-name>Asn2Sample</servlet-name>
-        <servlet-class>Asn2Sample</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Asn2Sample</servlet-name>
-        <url-pattern>/Asn2Sample</url-pattern>
-    </servlet-mapping>
+
+    
 
 </web-app>

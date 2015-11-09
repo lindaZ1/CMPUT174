@@ -29,7 +29,7 @@
 		    //establish connection here
 		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 		    String query="select sensor_id from sensors";
-		    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		    
 		    stmt=conn.createStatement();
 		    ResultSet rset=stmt.executeQuery(query);
 
@@ -89,7 +89,7 @@
 			out.println("sensor removed");
 		    }
 
-		    else if(action.equals("remove") && sensorSubscribed==false) {
+		    else if(action.equals("remove") && sensorSubscribed==false && sensorExist) {
 			out.println("sensor not subscribed");
 		    }
 		    stmt.close();

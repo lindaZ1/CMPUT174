@@ -32,7 +32,6 @@
         conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 
 	String query="select * from sensors";
-	//stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 	stmt=conn.createStatement();
 	ResultSet rset=stmt.executeQuery(query);
 

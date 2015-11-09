@@ -88,6 +88,10 @@
 		        rset=stmt.executeQuery(query);
 			out.println("sensor removed");
 		    }
+
+		    else if(action.equals("remove") && sensorSubscribed==false) {
+			out.println("sensor not subscribed");
+		    }
 		    stmt.close();
 		    conn.close();
 		}catch(Exception e) {out.println(e.toString());}
