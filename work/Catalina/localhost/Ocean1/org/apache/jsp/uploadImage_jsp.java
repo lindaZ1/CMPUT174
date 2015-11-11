@@ -104,10 +104,10 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
 	}catch(Exception e) {out.println(e.toString());}
 
 	if(sensorExist && dateValid) {
-	//upload after form is filled out correctly
+	
 
       out.write("\n");
-      out.write("\t\n");
+      out.write("\t//upload after form is filled out correctly\n");
       out.write("\tUpload Image (.jpg).\n");
       out.write("\tPlease input or select the path of the image!\n");
       out.write("\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"UploadImage\">\n");

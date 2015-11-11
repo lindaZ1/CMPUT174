@@ -94,37 +94,9 @@
 		<br></br>
 		Upload Image
 		<form action="uploadImage.jsp" method="post" >
-		Image ID(integer only): <input type="text" value="image_id" name="image_id"> <br></br>
 		Sensor_ID: <input type="text" value="sensor_id" name="sensor_id"><br></br>
 		Date Created: <input type="date" value="date" name="date"><br></br>
 		Description: <input type="text" value="description"><br></br>
-		Upload Thumbnail: 
-		<table border="0" width="30%" cellpadding="5">
-		<tr>
-		<td><B>File path: </B></td>
-		<td>
-		<input name="file-path"" type="file" class="upload" multiple="">
-		</td>
-		</tr>
-		<tr>
-		<td><input name=".reset" value="Reset" type="reset"></td>
-		</tr>
-		</table>
-
-		Upload Image (.jpg).
-		Please input or select the path of the image!
-		<!--<form name="upload-file" method="POST" enctype="multipart/form-data" action="uploadFinish.jsp">-->
-		<table border="0" width="30%" cellpadding="5">
-		<tr>
-		<td><B>File path: </B></td>
-		<td>
-		<input name="file-path"" type="file" class="upload" multiple="">
-		</td>
-		</tr>
-		<tr>
-		<td><input name=".reset" value="Reset" type="reset"></td>
-		</tr>
-		</table><br></br>
 		<input name=".submit" value="Upload" type="submit">
 		</form>
 		<P><a href="dataCurator.jsp"> Return </a></P>
@@ -175,7 +147,7 @@
 		Recording ID(integer only): <input type="text" value="recording_id" name="recording_id"> <br></br>
 		Sensor_ID: <input type="text" value="sensor_id" name="sensor_id"><br></br>
 		Date Created: <input type="date" value="date" name="date"><br></br>
-		Length(integer only): <input type="text" value="length" name="length"><br></br>
+		Length(integer only): <input type="text" value="1" name="length"><br></br>
 		Description: <input type="text" value="description"><br></br>
 		<p>
 		<font size="8" face="Verdana" color="#0080ff">

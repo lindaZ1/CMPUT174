@@ -1,8 +1,6 @@
 <%@ page import="java.sql.*" %>
 <html>
 <%
-	String image_id=request.getParameter("image_id");
-
 	String sensor_id=request.getParameter("sensor_id");
 
 	String date=request.getParameter("date");
@@ -51,6 +49,28 @@
 		out.println("sensor_id: "+sensor_id +" does not exist");
 	    }
 	}catch(Exception e) {out.println(e.toString());}
+
+	if(sensorExist && dateValid) {
+	//upload after form is filled out correctly
+%>
+	
+	Upload Image (.jpg).
+	Please input or select the path of the image!
+	<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">
+	<table border="0" width="30%" cellpadding="5">
+	<tr>
+	<td><B>File path: </B></td>
+	<td>
+	<input name="file-path"" type="file" class="upload" multiple="">
+	</td>
+	</tr>
+	<tr>
+	<td><input name=".submit" value="Upload" type="submit"></td>
+	<td><input name=".reset" value="Reset" type="reset"></td>
+	</tr>
+	</table><br></br>
+	</form>
+<% }
 %>
 <P><a href="dataCurator.jsp"> Return </a></P>
 </html>

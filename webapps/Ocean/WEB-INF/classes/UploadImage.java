@@ -52,32 +52,18 @@ import javax.imageio.ImageIO;
  *  One shall also modify the CLASSPATH to include this jar file.
  */
 
-/*import org.apache.commons.fileupload.DiskFileUpload;
-import org.apache.commons.fileupload.FileItem;*/
+import org.apache.commons.fileupload.DiskFileUpload;
+import org.apache.commons.fileupload.FileItem;
 
 public class UploadImage extends HttpServlet {
-/*
-
-<servlet>
-        <servlet-name>UploadImage</servlet-name>
-        <servlet-class>UploadImage</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>UploadImage</servlet-name>
-        <url-pattern>uploadImage</url-pattern>
-    </servlet-mapping>
-
-
-
-
 
 
     public String response_message;
     public void doPost(HttpServletRequest request,HttpServletResponse response)
 	throws ServletException, IOException {
 	//  change the following parameters to connect to the oracle database
-	String username = "****";
-	String password = "****";
+	String username = "dzhang4";
+	String password = "Horsey26";
 	String drivername = "oracle.jdbc.driver.OracleDriver";
 	String dbstring ="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
 	int pic_id;
@@ -99,8 +85,8 @@ public class UploadImage extends HttpServlet {
 	    }
 
 	    	
-        // Connect to the database and create a statement
-        Connection conn = getConnected(drivername,dbstring, username,password);
+	    // Connect to the database and create a statement
+	    Connection conn = getConnected(drivername,dbstring, username,password);
 	    Statement stmt = conn.createStatement();
 	    response_message = "";
 	    
@@ -108,22 +94,25 @@ public class UploadImage extends HttpServlet {
 	    	InputStream instream = items[n].getInputStream();
 	    	BufferedImage img = ImageIO.read(instream);
 	    	BufferedImage thumbNail = shrink(img, 10);
-*/
+}
+		
+
 	    	/*
 		     *  First, to generate a unique pic_id using an SQL sequence
 		     */
-/*		    ResultSet rset1 = stmt.executeQuery("SELECT image_id_sequence.nextval from dual");
+	/*	    ResultSet rset1 = stmt.executeQuery("SELECT image_id.nextval from images");
 		    rset1.next();
-		    pic_id = rset1.getInt(1);
+		    image_id = rset1.getInt(1);
 		    HttpSession session = request.getSession();
-		    session.setAttribute("currentid",pic_id);
-		    String counterquery = "INSERT INTO imagescount VALUES("+pic_id+",0)";
+		    session.setAttribute("currentid",image_id);
+		    //String counterquery = "INSERT INTO imagescount VALUES("+pic_id+",0)";
 		    stmt.execute("INSERT INTO images VALUES("+image_id+",'admin',1,'testsub','testplace',SYSDATE,'testdesc',empty_blob(),empty_blob())");
 		    stmt.execute("commit");
-		    stmt.execute(counterquery);
-		    stmt.execute("commit");
-		    stmt.execute("INSERT INTO imagesviewer VALUES("+pic_id+",'admin')");
-		    stmt.execute("commit");
+		    //stmt.execute(counterquery);
+		    //stmt.execute("commit");
+		    //stmt.execute("INSERT INTO imagesviewer VALUES("+pic_id+",'admin')");
+		    //stmt.execute("commit");
+
 		    // to retrieve the lob_locator 
 		    // Note that you must use "FOR UPDATE" in the select statement
 		    //String cmd = "SELECT * FROM pictures WHERE pic_id = "+pic_id+" FOR UPDATE";
@@ -148,6 +137,7 @@ public class UploadImage extends HttpServlet {
 	    }
         	conn.close();
         	response.sendRedirect("uploaddata.jsp");
+*/
 	} catch( Exception ex ) {
 	    //System.out.println( ex.getMessage());
 	    response_message = ex.getMessage();
@@ -156,11 +146,11 @@ public class UploadImage extends HttpServlet {
 
 	//Output response to the client
     }
-*/
+
     /*
       /*   To connect to the specified database
     */
- /*   private static Connection getConnected( String drivername,
+    private static Connection getConnected( String drivername,
 					    String dbstring,
 					    String username, 
 					    String password  ) 
@@ -184,5 +174,5 @@ public class UploadImage extends HttpServlet {
                 shrunkImage.setRGB(x, y, image.getRGB(x*n, y*n));
 
         return shrunkImage;
-    }*/
+    }
 }

@@ -1,0 +1,318 @@
+Nov 11, 2015 12:45:52 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.login_jsp._jspService(login_jsp.java:65)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 11, 2015 12:49:47 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadData_jsp._jspService(uploadData_jsp.java:76)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 11, 2015 12:55:55 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadData_jsp._jspService(uploadData_jsp.java:76)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 11, 2015 1:05:30 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 59 in the jsp file: /uploadImage.jsp
+Syntax error on token "upload", delete this token
+56: 
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+
+
+An error occurred at line: 59 in the jsp file: /uploadImage.jsp
+file cannot be resolved to a variable
+56: 
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+
+
+An error occurred at line: 59 in the jsp file: /uploadImage.jsp
+Syntax error on tokens, delete these tokens
+56: 
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+
+
+An error occurred at line: 59 in the jsp file: /uploadImage.jsp
+form cannot be resolved to a variable
+56: 
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+
+
+An error occurred at line: 59 in the jsp file: /uploadImage.jsp
+data cannot be resolved to a variable
+56: 
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+
+
+An error occurred at line: 59 in the jsp file: /uploadImage.jsp
+Syntax error on tokens, delete these tokens
+56: 
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+
+
+An error occurred at line: 60 in the jsp file: /uploadImage.jsp
+Syntax error on tokens, delete these tokens
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+
+
+An error occurred at line: 60 in the jsp file: /uploadImage.jsp
+The operator % is undefined for the argument type(s) int, String
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+
+
+An error occurred at line: 60 in the jsp file: /uploadImage.jsp
+Syntax error on token "5", * expected
+57: 	out.println("Upload Image (.jpg).");
+58: 	out.println("Please input or select the path of the image!");
+59: 	out.println("<form name="upload-file" method="POST" enctype="multipart/form-data" action="UploadImage">");
+60: 	out.println("<table border="0" width="30%" cellpadding="5">");
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+Syntax error on token "file", delete this token
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+Syntax error on token """", ( expected
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+type cannot be resolved to a variable
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+The left-hand side of an assignment must be a variable
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+Syntax error on token "class", delete this token
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+Syntax error, insert ")" to complete MethodInvocation
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+Syntax error, insert ")" to complete MethodInvocation
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+Syntax error, insert ";" to complete Statement
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 64 in the jsp file: /uploadImage.jsp
+String literal is not properly closed by a double-quote
+61: 	out.println("<tr>");
+62: 	out.println("<td><B>File path: </B></td>");
+63: 	out.println("<td>");
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+
+
+An error occurred at line: 67 in the jsp file: /uploadImage.jsp
+Syntax error on tokens, delete these tokens
+64: 	out.println("<input name="file-path"" type="file" class="upload" multiple="">");
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+68: 	out.println("<td><input name=".submit" value="Upload" type="submit"></td>");
+69: 	out.println("<td><input name=".reset" value="Reset" type="reset"></td>");
+70: 	out.println("</tr>");
+
+
+An error occurred at line: 68 in the jsp file: /uploadImage.jsp
+Syntax error on tokens, delete these tokens
+65: 	out.println("</td>");
+66: 	out.println("</tr>");
+67: 	out.println("<tr>");
+68: 	out.println("<td><input name=".submit" value="Upload" type="submit"></td>");
+69: 	out.println("<td><input name=".reset" value="Reset" type="reset"></td>");
+70: 	out.println("</tr>");
+71: 	out.println("</table><br></br>");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+

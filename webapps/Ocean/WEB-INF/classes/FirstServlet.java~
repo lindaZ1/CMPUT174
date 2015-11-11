@@ -19,4 +19,3 @@ public class FirstServlet extends GenericServlet {
         out.println("</html>");
     }
 }
-
