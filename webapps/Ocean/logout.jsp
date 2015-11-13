@@ -3,6 +3,11 @@
 <div id="image" style="background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
 
 <%@page import="java.sql.*" %>
+<%
+String checklogin = (String) session.getAttribute("logstatus");
+checklogin = "false";
+session.setAttribute("logstatus", checklogin);
+%>
 					
 <center>
 <br><br><br><br><br><br>

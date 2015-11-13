@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Login Page</title>
+<title>Edit Personal Info</title>
 </head>
 
 <body>
@@ -12,12 +12,21 @@
 
 <%@ page import = "java.sql.*"%>
 <%
+String checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
+
+<%
 String m_url = "jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
 String m_driverName = "oracle.jdbc.driver.OracleDriver";
 String m_userName = "tshen";
 String m_password = "ad50064051";
 
-String UserID = "111";
+String UserID = (String) session.getAttribute("userid");
 
 Connection m_con;
 String action = "select * from persons where persons.person_id = '" + UserID + "'";
@@ -65,57 +74,55 @@ e.printStackTrace();
 }
 stmt.close();
 rs.close();
-m_con.close();
+
 %>
 
+<FORM action= "editPersonProcess.jsp" method="post">
 <TABLE>
 
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>Person ID: </B></TD>
-<TD><INPUT TYPE="text" NAME="userid" VALUE="<%=person_id%>"><BR></TD>
+<TD><%=person_id%><BR></TD>
 </TR>
 
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>First Name: </B></TD>
-<TD><INPUT TYPE="text" NAME="userfn" VALUE="<%=first_name%>"></TD>
+<TD><INPUT TYPE="text" NAME="userfn" MAXLENGTH="24" VALUE="<%=first_name%>"></TD>
 </TR>
 
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>Last Name: </B></TD>
-<TD><INPUT TYPE="text" NAME="userln" VALUE="<%=last_name%>"></TD>
+<TD><INPUT TYPE="text" NAME="userln" MAXLENGTH="24" VALUE="<%=last_name%>"></TD>
 </TR>
 
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>Address: </B></TD>
-<TD><INPUT TYPE="text" NAME="useraddr" VALUE="<%=address%>"></TD>
+<TD><INPUT TYPE="text" NAME="useraddr" MAXLENGTH="128" VALUE="<%=address%>"></TD>
 </TR>
 
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>Email: </B></TD>
-<TD><INPUT TYPE="text" NAME="useremail" VALUE="<%=email%>"></TD>
+<TD><INPUT TYPE="email" NAME="useremail" MAXLENGTH="128" VALUE="<%=email%>"></TD>
 </TR>
 
 <TR VALIGN=TOP ALIGN=LEFT>
 <TD><B>Phone: </B></TD>
-<TD><INPUT TYPE="text" NAME="userphone" VALUE="<%=phone%>"></TD>
+<TD><INPUT TYPE="tel" NAME="userphone" MAXLENGTH="10" VALUE="<%=phone%>"></TD>
 </TR>
 
 </TABLE>
 
+<br>
+<INPUT TYPE="submit" NAME="Save" VALUE="Save">
+</FORM>
+<INPUT TYPE="button" NAME="Cancel" VALUE="Cancel" onclick="cancel()">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script language="JavaScript" type="text/javascript">
+function cancel()
+{
+javascript:location.href="account.jsp"
+}
+</script>
 
 </center>
 </div>
