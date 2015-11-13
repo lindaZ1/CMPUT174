@@ -151,7 +151,7 @@ System.out.println("commit");
 		    response_message = " Upload Ok! ";
 	    }
         	conn.close();
-        	response.sendRedirect("uploadFinish.jsp");
+        	response.sendRedirect("uploadImage.jsp");
 
 	} catch( Exception ex ) {
 	    //System.out.println( ex.getMessage());

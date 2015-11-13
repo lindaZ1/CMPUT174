@@ -1,0 +1,792 @@
+Nov 12, 2015 2:35:58 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 2:35:59 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 2:35:59 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1198 ms
+Nov 12, 2015 2:35:59 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 2:35:59 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 2:35:59 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 2:36:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 2:36:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 2:36:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 2:36:01 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 2:36:01 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 2:36:01 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/22  config=null
+Nov 12, 2015 2:36:01 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1658 ms
+Nov 12, 2015 2:59:11 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 2:59:12 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 2:59:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 2:59:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 2:59:13 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 2:59:15 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 2:59:16 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 2:59:16 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 318 ms
+Nov 12, 2015 2:59:16 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 2:59:16 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 2:59:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 2:59:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 2:59:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 2:59:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 2:59:16 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 2:59:16 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 2:59:16 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 2:59:16 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 444 ms
+Nov 12, 2015 3:04:37 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:04:38 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 3:04:38 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 3:04:38 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 3:04:38 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:04:40 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 3:04:40 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:04:40 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 316 ms
+Nov 12, 2015 3:04:40 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 3:04:40 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 3:04:40 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 3:04:40 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 3:04:40 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 3:04:40 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 3:04:40 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:04:40 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 3:04:40 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/11  config=null
+Nov 12, 2015 3:04:40 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 428 ms
+Nov 12, 2015 3:27:16 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:27:17 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 3:27:17 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 3:27:17 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 3:27:18 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:27:19 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 3:27:19 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:27:19 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 317 ms
+Nov 12, 2015 3:27:19 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 3:27:19 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 3:27:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 3:27:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 3:27:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 3:27:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 3:27:20 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:27:20 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 3:27:20 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 3:27:20 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 449 ms
+Nov 12, 2015 3:39:43 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:39:44 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 3:39:44 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 3:39:44 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 3:39:44 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:39:47 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 3:39:47 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:39:47 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 368 ms
+Nov 12, 2015 3:39:47 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 3:39:47 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 3:39:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 3:39:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 3:39:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 3:39:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 3:39:47 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:39:47 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 3:39:47 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 3:39:47 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 424 ms
+Nov 12, 2015 3:47:14 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:47:15 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 3:47:15 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 3:47:15 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 3:47:16 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:47:32 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 3:47:32 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:47:32 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 318 ms
+Nov 12, 2015 3:47:32 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 3:47:32 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 3:47:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 3:47:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 3:47:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 3:47:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 3:47:32 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 3:47:32 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 3:47:32 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 3:47:32 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 428 ms
+Nov 12, 2015 4:17:59 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:18:00 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 4:18:00 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 4:18:00 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 4:18:00 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:18:01 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 4:18:01 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:18:01 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 315 ms
+Nov 12, 2015 4:18:01 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 4:18:01 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 4:18:01 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 4:18:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 4:18:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 4:18:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 4:18:02 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:18:02 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 4:18:02 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/9  config=null
+Nov 12, 2015 4:18:02 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 424 ms
+Nov 12, 2015 4:39:31 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:39:32 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 4:39:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 4:39:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 4:39:32 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:39:37 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 4:39:37 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:39:37 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 319 ms
+Nov 12, 2015 4:39:37 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 4:39:37 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 4:39:37 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 4:39:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 4:39:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 4:39:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 4:39:38 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:39:38 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 4:39:38 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 4:39:38 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 495 ms
+Nov 12, 2015 4:41:02 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:41:03 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 4:41:03 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 4:41:03 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 4:41:04 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:41:06 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 4:41:06 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:41:06 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 395 ms
+Nov 12, 2015 4:41:06 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 4:41:06 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 4:41:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 4:41:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 4:41:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 4:41:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 4:41:06 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:41:06 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 4:41:06 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 4:41:06 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 440 ms
+Nov 12, 2015 4:43:10 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:43:11 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 4:43:11 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 4:43:11 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 4:43:11 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:43:13 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 4:43:13 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:43:13 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 318 ms
+Nov 12, 2015 4:43:14 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 4:43:14 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 4:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 4:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 4:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 4:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 4:43:14 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:43:14 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 4:43:14 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 4:43:14 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 445 ms
+Nov 12, 2015 4:51:32 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:51:33 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 4:51:33 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 4:51:33 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 4:51:33 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:51:34 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 4:51:34 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:51:34 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 315 ms
+Nov 12, 2015 4:51:34 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 4:51:34 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 4:51:34 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 4:51:35 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 4:51:35 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 4:51:35 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 4:51:35 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:51:35 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 4:51:35 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 4:51:35 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 428 ms
+Nov 12, 2015 4:52:45 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:52:46 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 4:52:46 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 4:52:46 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 4:52:46 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:52:47 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 4:52:47 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:52:47 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 319 ms
+Nov 12, 2015 4:52:47 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 4:52:47 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 4:52:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 4:52:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 4:52:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 4:52:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 4:52:48 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 4:52:48 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 4:52:48 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/11  config=null
+Nov 12, 2015 4:52:48 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 429 ms
+Nov 12, 2015 5:17:25 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:17:26 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:17:26 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:17:26 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:17:26 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:17:28 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:17:28 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:17:28 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 320 ms
+Nov 12, 2015 5:17:28 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:17:28 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:17:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:17:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:17:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:17:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:17:28 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:17:28 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:17:28 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:17:29 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 433 ms
+Nov 12, 2015 5:18:41 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:18:42 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:18:42 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:18:42 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:18:42 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:18:43 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:18:43 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:18:43 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 316 ms
+Nov 12, 2015 5:18:43 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:18:43 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:18:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:18:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:18:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:18:44 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:18:44 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:18:44 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:18:44 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:18:44 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 433 ms
+Nov 12, 2015 5:22:56 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:22:57 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:22:57 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:22:57 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:22:57 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:23:02 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:23:02 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:23:02 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 315 ms
+Nov 12, 2015 5:23:02 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:23:02 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:23:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:23:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:23:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:23:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:23:02 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:23:02 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:23:02 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:23:02 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 425 ms
+Nov 12, 2015 5:28:28 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:28:29 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:28:29 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:28:29 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:28:29 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:28:31 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:28:32 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:28:32 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 336 ms
+Nov 12, 2015 5:28:32 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:28:32 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:28:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:28:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:28:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:28:32 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:28:32 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:28:32 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:28:32 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/9  config=null
+Nov 12, 2015 5:28:32 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 427 ms
+Nov 12, 2015 5:32:17 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:32:18 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:32:18 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:32:18 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:32:18 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:32:19 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:32:19 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:32:19 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 313 ms
+Nov 12, 2015 5:32:19 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:32:19 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:32:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:32:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:32:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:32:19 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:32:20 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:32:20 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:32:20 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/9  config=null
+Nov 12, 2015 5:32:20 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 427 ms
+Nov 12, 2015 5:33:00 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:33:01 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:33:01 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:33:01 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:33:01 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:33:03 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:33:03 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:33:03 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 314 ms
+Nov 12, 2015 5:33:03 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:33:03 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:33:03 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:33:03 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:33:03 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:33:03 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:33:03 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:33:03 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:33:03 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/9  config=null
+Nov 12, 2015 5:33:03 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 427 ms
+Nov 12, 2015 5:33:57 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:33:58 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:33:59 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:33:59 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:33:59 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:34:00 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:34:00 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:34:00 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 315 ms
+Nov 12, 2015 5:34:00 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:34:00 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:34:00 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:34:01 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:34:01 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:34:01 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:34:01 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:34:01 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:34:01 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:34:01 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 427 ms
+Nov 12, 2015 5:36:49 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:36:50 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:36:50 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:36:50 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:36:50 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:36:53 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:36:53 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:36:53 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 311 ms
+Nov 12, 2015 5:36:53 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:36:53 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:36:53 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:36:53 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:36:53 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:36:53 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:36:53 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:36:53 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:36:53 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:36:53 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 439 ms
+Nov 12, 2015 5:37:34 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:37:35 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:37:35 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:37:35 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:37:35 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:37:45 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:37:45 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:37:45 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 310 ms
+Nov 12, 2015 5:37:45 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:37:45 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:37:45 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:37:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:37:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:37:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:37:46 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:37:46 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:37:46 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:37:46 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 425 ms
+Nov 12, 2015 5:38:46 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:38:47 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:38:47 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:38:47 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:38:47 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:38:49 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 12, 2015 5:38:49 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:38:49 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 315 ms
+Nov 12, 2015 5:38:49 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 12, 2015 5:38:49 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.44
+Nov 12, 2015 5:38:49 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean
+Nov 12, 2015 5:38:49 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 12, 2015 5:38:49 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 12, 2015 5:38:49 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Ocean1
+Nov 12, 2015 5:38:50 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:38:50 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 12, 2015 5:38:50 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/10  config=null
+Nov 12, 2015 5:38:50 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 430 ms
+Nov 12, 2015 5:40:13 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 12, 2015 5:40:14 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 12, 2015 5:40:14 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 12, 2015 5:40:14 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 12, 2015 5:40:15 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130

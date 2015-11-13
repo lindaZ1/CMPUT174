@@ -55,17 +55,14 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
 
 	String sensor_id=request.getParameter("sensor_id");
+	out.println(sensor_id);
 
 	String date=request.getParameter("date");
-	out.println(date);
+
+	String description=request.getParameter("description");
+	out.println(description);
 
 	Boolean sensorExist=false;
-	Boolean dateValid=true;
-
-	if(date.equals("")) {
-		out.println("Please choose a date<br></br>");
-		dateValid=false;
-	}
 
 	Connection conn=null;
         Statement stmt;
@@ -103,14 +100,14 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
 	    }
 	}catch(Exception e) {out.println(e.toString());}
 
-	if(sensorExist && dateValid) {
+	if(sensorExist) {
 	//upload after form is filled out correctly
 
       out.write("\n");
       out.write("\t\n");
       out.write("\tUpload Image (.jpg).\n");
       out.write("\tPlease input or select the path of the image!\n");
-      out.write("\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"UploadImage\">\n");
+      out.write("\t<form name=\"upload-file\" method=\"post\" enctype=\"multipart/form-data\" action=\"UploadImage\">\n");
       out.write("\t<table border=\"0\" width=\"30%\" cellpadding=\"5\">\n");
       out.write("\t<tr>\n");
       out.write("\t<td><B>File path: </B></td>\n");

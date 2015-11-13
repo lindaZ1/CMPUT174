@@ -151,7 +151,7 @@ public final class uploadData_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\tUpload Image\n");
       out.write("\t\t<form action=\"uploadImage.jsp\" method=\"post\" >\n");
       out.write("\t\tSensor_ID: <input type=\"text\" value=\"sensor_id\" name=\"sensor_id\"><br></br>\n");
-      out.write("\t\tDate Created: <input type=\"date\" value=\"date\" name=\"date\"><br></br>\n");
+      out.write("\t\tDate Created: <input type=\"datetime-local\" value=\"date\" name=\"date\"><br></br>\n");
       out.write("\t\tDescription: <input type=\"text\" value=\"description\"><br></br>\n");
       out.write("\t\t<input name=\".submit\" value=\"Upload\" type=\"submit\">\n");
       out.write("\t\t</form>\n");
