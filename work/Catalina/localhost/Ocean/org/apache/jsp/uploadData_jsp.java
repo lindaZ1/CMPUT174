@@ -86,7 +86,7 @@ public final class uploadData_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</p>\n");
       out.write("\n");
       out.write("\t\tPlease input or select the path of the image!\n");
-      out.write("\t\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"uploadData.jsp\">\n");
+      out.write("\t\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"uploadScalar.jsp\">\n");
       out.write("\t\t<table border=\"0\" width=\"30%\" cellpadding=\"5\">\n");
       out.write("\t\t<tr>\n");
       out.write("\t\t<td><B>File path: </B></td>\n");

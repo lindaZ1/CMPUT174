@@ -95,7 +95,7 @@
 		Upload Image
 		<form action="uploadImage.jsp" method="post" >
 		Sensor_ID: <input type="text" value="sensor_id" name="sensor_id"><br></br>
-		Date Created: <input type="datetime" value="date" name="date"><br></br>
+		Date Created: <input type="datetime-local" value="date" name="date"><br></br>
 		Description: <input type="text" value="description"><br></br>
 		<input name=".submit" value="Upload" type="submit">
 		</form>

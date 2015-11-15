@@ -32,7 +32,7 @@
 		</p>
 
 		Please input or select the path of the image!
-		<form name="upload-file" method="POST" enctype="multipart/form-data" action="uploadData.jsp">
+		<form name="upload-file" method="POST" enctype="multipart/form-data" action="uploadScalar.jsp">
 		<table border="0" width="30%" cellpadding="5">
 		<tr>
 		<td><B>File path: </B></td>
