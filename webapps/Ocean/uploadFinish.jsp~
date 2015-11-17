@@ -1,7 +1,8 @@
+<%@ page import="java.sql.*" %>
 <html>
 
 <%
-@ page import="java.sql.*"
+out.println((Integer)session.getAttribute("currentid"));
 if (request.getParameter(".submit") != null){
 	int pic_id;
 	int current_pic_id;

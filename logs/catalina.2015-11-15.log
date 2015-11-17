@@ -24,3 +24,27 @@ Nov 15, 2015 1:08:23 PM org.apache.jk.server.JkMain start
 INFO: Jk running ID=0 time=0/26  config=null
 Nov 15, 2015 1:08:23 PM org.apache.catalina.startup.Catalina start
 INFO: Server startup in 1737 ms
+Nov 15, 2015 4:42:10 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16130
+Nov 15, 2015 4:42:11 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 15, 2015 4:42:11 PM org.apache.catalina.core.StandardWrapper unload
+INFO: Waiting for 4 instance(s) to be deallocated
+Nov 15, 2015 4:42:12 PM org.apache.catalina.core.StandardWrapper unload
+INFO: Waiting for 4 instance(s) to be deallocated
+Nov 15, 2015 4:42:13 PM org.apache.catalina.core.StandardWrapper unload
+INFO: Waiting for 4 instance(s) to be deallocated
+Nov 15, 2015 4:42:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/Ocean] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 15, 2015 4:42:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+Nov 15, 2015 4:42:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+Nov 15, 2015 4:42:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak.
+Nov 15, 2015 4:42:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+Nov 15, 2015 4:42:13 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/Ocean] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+Nov 15, 2015 4:42:13 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16130

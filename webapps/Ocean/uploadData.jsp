@@ -52,53 +52,25 @@
 
 	else if(action.equals("addImage")) {
 %>
-	       <table>
-	       <h3>All Sensors:</h3>
-	       <TABLE BORDER=2>
-		<TR>
-		    <TH>SENSOR_ID</TH>
-		    <TH>LOCATION</TH>
-		    <TH>SENSOR TYPE</TH>
-		    <TH>DESCRIPTION</TH>
-		</TR>
-<%		String query="select * from sensors";
-		stmt=conn.createStatement();
-		ResultSet rset=stmt.executeQuery(query);
 
-		Object o;
-		ResultSetMetaData rsetMetaData=rset.getMetaData();
-		int ccount=rsetMetaData.getColumnCount();
-
-		String ans="";
+		Upload Image (.jpg).
+		Please input or select the path of the image!
+		<form name="upload-file" method="post" enctype="multipart/form-data" action="UploadImage">
+		<table border="0" width="30%" cellpadding="5">
+		<tr>
+		<td><B>File path: </B></td>
+		<td>
+		<input name="file-path"" type="file" class="upload" multiple="">
+		</td>
+		</tr>
 	
-		while(rset.next()) {
-		    ans+="<TR>";
-		    for(int i=1;i<=ccount;i++) {
-			o=rset.getObject(i);
-			ans+="<TD>";
-			if(o!=null){
-			    ans+=o.toString();
-			}
-			else{
-			    ans+="null";
-			}
-			ans+="</TD>";
-		    }
-		    ans+="</TR>";
-		}
-		out.println(ans);
-		stmt.close();
-		conn.close();
-%>
-</table>
-		<br></br>
-		Upload Image
-		<form action="uploadImage.jsp" method="post" >
-		Sensor_ID: <input type="text" value="sensor_id" name="sensor_id"><br></br>
-		Date Created: <input type="datetime-local" value="date" name="date"><br></br>
-		Description: <input type="text" value="description"><br></br>
-		<input name=".submit" value="Upload" type="submit">
+		<tr>
+		<td><input name=".submit" value="Upload" type="submit"></td>
+		<td><input name=".reset" value="Reset" type="reset"></td>
+		</tr>
+		</table><br></br>
 		</form>
+		<br></br>
 		<P><a href="dataCurator.jsp"> Return </a></P>
 	<%}
 	  else if(action.equals("addAudio")) {   %>

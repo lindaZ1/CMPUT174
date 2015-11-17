@@ -1,0 +1,1084 @@
+Nov 17, 2015 11:20:35 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 60 in the jsp file: /uploadData.jsp
+sensor_id cannot be resolved to a variable
+57: 		Please input or select the path of the image!
+58: 		<form name="upload-file" method="post" enctype="multipart/form-data" action="UploadImage">
+59: 		<table border="0" width="30%" cellpadding="5">
+60: 		<% out.println("<input name='sensor_id' value="+sensor_id+" type='hidden'>"); %>
+61: 		<%out.println("<input name='date' value="+date+" type='hidden'>"); %>
+62: 		<%out.println("<input name='desc' value="+description+" type='hidden'>");%>
+63: 	
+
+
+An error occurred at line: 61 in the jsp file: /uploadData.jsp
+date cannot be resolved to a variable
+58: 		<form name="upload-file" method="post" enctype="multipart/form-data" action="UploadImage">
+59: 		<table border="0" width="30%" cellpadding="5">
+60: 		<% out.println("<input name='sensor_id' value="+sensor_id+" type='hidden'>"); %>
+61: 		<%out.println("<input name='date' value="+date+" type='hidden'>"); %>
+62: 		<%out.println("<input name='desc' value="+description+" type='hidden'>");%>
+63: 	
+64: 		<tr>
+
+
+An error occurred at line: 62 in the jsp file: /uploadData.jsp
+description cannot be resolved to a variable
+59: 		<table border="0" width="30%" cellpadding="5">
+60: 		<% out.println("<input name='sensor_id' value="+sensor_id+" type='hidden'>"); %>
+61: 		<%out.println("<input name='date' value="+date+" type='hidden'>"); %>
+62: 		<%out.println("<input name='desc' value="+description+" type='hidden'>");%>
+63: 	
+64: 		<tr>
+65: 		<td><B>File path: </B></td>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:21:07 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 78 in the jsp file: /uploadImage.jsp
+stmt cannot be resolved to a variable
+75: 		    <TH>DESCRIPTION</TH>
+76: 		</TR>
+77: <%		String query="select * from sensors";
+78: 		stmt=conn.createStatement();
+79: 		ResultSet rset=stmt.executeQuery(query);
+80: 
+81: 		Object o;
+
+
+An error occurred at line: 78 in the jsp file: /uploadImage.jsp
+conn cannot be resolved
+75: 		    <TH>DESCRIPTION</TH>
+76: 		</TR>
+77: <%		String query="select * from sensors";
+78: 		stmt=conn.createStatement();
+79: 		ResultSet rset=stmt.executeQuery(query);
+80: 
+81: 		Object o;
+
+
+An error occurred at line: 79 in the jsp file: /uploadImage.jsp
+stmt cannot be resolved
+76: 		</TR>
+77: <%		String query="select * from sensors";
+78: 		stmt=conn.createStatement();
+79: 		ResultSet rset=stmt.executeQuery(query);
+80: 
+81: 		Object o;
+82: 		ResultSetMetaData rsetMetaData=rset.getMetaData();
+
+
+An error occurred at line: 103 in the jsp file: /uploadImage.jsp
+stmt cannot be resolved
+100: 		    ans+="</TR>";
+101: 		}
+102: 		out.println(ans);
+103: 		stmt.close();
+104: 		conn.close();
+105: %>
+106: </table>
+
+
+An error occurred at line: 104 in the jsp file: /uploadImage.jsp
+conn cannot be resolved
+101: 		}
+102: 		out.println(ans);
+103: 		stmt.close();
+104: 		conn.close();
+105: %>
+106: </table>
+107: 	Upload Image
+
+
+An error occurred at line: 114 in the jsp file: /uploadImage.jsp
+Syntax error, insert "Finally" to complete TryStatement
+111: 		Description: <input type="text" value="description"><br></br>
+112: 		<input name=".submit" value="Upload" type="submit">
+113: 		</form>
+114: <% }
+115: %>
+116: <P><a href="dataCurator.jsp"> Return </a></P>
+117: </html>
+
+
+An error occurred at line: 174 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 176 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 176 in the generated java file
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 178 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 182 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 183 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:22:10 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 78 in the jsp file: /uploadImage.jsp
+conn cannot be resolved
+75: 		    <TH>DESCRIPTION</TH>
+76: 		</TR>
+77: <%		String query="select * from sensors";
+78: 		Statement stmt=conn.createStatement();
+79: 		ResultSet rset=stmt.executeQuery(query);
+80: 
+81: 		Object o;
+
+
+An error occurred at line: 104 in the jsp file: /uploadImage.jsp
+conn cannot be resolved
+101: 		}
+102: 		out.println(ans);
+103: 		stmt.close();
+104: 		conn.close();
+105: %>
+106: </table>
+107: 	Upload Image
+
+
+An error occurred at line: 114 in the jsp file: /uploadImage.jsp
+Syntax error, insert "Finally" to complete TryStatement
+111: 		Description: <input type="text" value="description"><br></br>
+112: 		<input name=".submit" value="Upload" type="submit">
+113: 		</form>
+114: <% }
+115: %>
+116: <P><a href="dataCurator.jsp"> Return </a></P>
+117: </html>
+
+
+An error occurred at line: 174 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 176 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 176 in the generated java file
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 178 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 182 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 183 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:23:01 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 78 in the jsp file: /uploadImage.jsp
+conn cannot be resolved
+75: 		    <TH>DESCRIPTION</TH>
+76: 		</TR>
+77: <%		String query="select * from sensors";
+78: 		stmt=conn.createStatement();
+79: 		ResultSet rset=stmt.executeQuery(query);
+80: 
+81: 		Object o;
+
+
+An error occurred at line: 104 in the jsp file: /uploadImage.jsp
+conn cannot be resolved
+101: 		}
+102: 		out.println(ans);
+103: 		stmt.close();
+104: 		conn.close();
+105: %>
+106: </table>
+107: 	Upload Image
+
+
+An error occurred at line: 114 in the jsp file: /uploadImage.jsp
+Syntax error, insert "Finally" to complete TryStatement
+111: 		Description: <input type="text" value="description"><br></br>
+112: 		<input name=".submit" value="Upload" type="submit">
+113: 		</form>
+114: <% }
+115: %>
+116: <P><a href="dataCurator.jsp"> Return </a></P>
+117: </html>
+
+
+An error occurred at line: 174 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 176 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 176 in the generated java file
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 178 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 182 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 183 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:23:38 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 114 in the jsp file: /uploadImage.jsp
+Syntax error, insert "Finally" to complete TryStatement
+111: 		Description: <input type="text" value="description"><br></br>
+112: 		<input name=".submit" value="Upload" type="submit">
+113: 		</form>
+114: <% }
+115: %>
+116: <P><a href="dataCurator.jsp"> Return </a></P>
+117: </html>
+
+
+An error occurred at line: 174 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 176 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 176 in the generated java file
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved to a variable
+
+An error occurred at line: 177 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 178 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: 179 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 182 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 183 in the generated java file
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:24:12 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:132)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:26:04 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:129)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:27:07 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:130)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:36:07 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:64)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:36:25 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:64)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 11:36:47 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:64)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 12:06:57 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Syntax error, insert ")" to complete MethodInvocation
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Syntax error, insert ";" to complete Statement
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+update cannot be resolved to a type
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+set cannot be resolved to a type
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Syntax error on token ",", Expression expected after this token
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Invalid character constant
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Invalid character constant
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Syntax error on token ",", delete this token
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+An error occurred at line: 63 in the jsp file: /uploadImage.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+60: 
+61: out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy HH:mi:ss'),sensor_id='"+sensor_id+"',description='"+desc+"'where image_id='"+image_id+"'");
+62: 
+63: out.println("update images set date_created=TO_DATE("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+64: 			    stmt.execute("update images set date_created=convert(datetime,'"+datetime+"'),sensor_id='"+sensor_id+"',description='"+desc+"' where image_id='"+image_id+"'");
+65: 			    stmt.execute("commit");
+66: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:09:18 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 63 in the jsp file: /uploadScalar.jsp
+Invalid character constant
+60: 						String sensor_id=info[0];
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:09:53 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 63 in the jsp file: /uploadScalar.jsp
+String literal is not properly closed by a double-quote
+60: 						String sensor_id=info[0];
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:10:32 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 63 in the jsp file: /uploadScalar.jsp
+Syntax error on token "")"", delete this token
+60: 						String sensor_id=info[0];
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Invalid character constant
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Syntax error on token "','", [ expected
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Syntax error, insert "]" to complete ArrayAccess
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Syntax error, insert ")" to complete MethodInvocation
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Syntax error, insert ";" to complete Statement
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Invalid character constant
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+An error occurred at line: 64 in the jsp file: /uploadScalar.jsp
+Syntax error on token ",", ( expected
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+67: 		
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:11:23 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 63 in the jsp file: /uploadScalar.jsp
+Syntax error on token "")"", delete this token
+60: 						String sensor_id=info[0];
+61: 						String date=info[1];
+62: 						String value=info[2];
+63: out.println("insert into scalar_data values ('"+id+"','"+sensor_id+",to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value")");
+64: 						//stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+',to_date('"+date+"','mm/dd/yyyy hh24:mi:ss'),"+value)");
+65: 						
+66: 
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:16:36 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 50 in the jsp file: /uploadScalar.jsp
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+47: 					contents.append(line);
+48: 					String info[]=line.split(",");
+49: 					out.println("line "+line);
+50: System.out
+51: 					if(info[0]!="sensor_id" && info[0]!="") {
+52: 						//generate id
+53: 						ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
+
+
+An error occurred at line: 50 in the jsp file: /uploadScalar.jsp
+Syntax error, insert ";" to complete Statement
+47: 					contents.append(line);
+48: 					String info[]=line.split(",");
+49: 					out.println("line "+line);
+50: System.out
+51: 					if(info[0]!="sensor_id" && info[0]!="") {
+52: 						//generate id
+53: 						ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:16:53 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.sql.SQLException: ORA-02391: exceeded simultaneous SESSIONS_PER_USER limit
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:392)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:385)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:1018)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:497)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:433)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:950)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:639)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:662)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:560)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at org.apache.jsp.uploadScalar_jsp._jspService(uploadScalar_jsp.java:73)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 17, 2015 1:17:23 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.sql.SQLException: ORA-02391: exceeded simultaneous SESSIONS_PER_USER limit
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:392)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:385)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:1018)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:497)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:433)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:950)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:639)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:662)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:560)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at org.apache.jsp.uploadScalar_jsp._jspService(uploadScalar_jsp.java:73)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+

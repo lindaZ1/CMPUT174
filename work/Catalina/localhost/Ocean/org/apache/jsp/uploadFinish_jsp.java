@@ -55,6 +55,7 @@ public final class uploadFinish_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<html>\n");
       out.write("\n");
 
+out.println(session.getAttribute("currentid"));
 if (request.getParameter(".submit") != null){
 	int pic_id;
 	int current_pic_id;

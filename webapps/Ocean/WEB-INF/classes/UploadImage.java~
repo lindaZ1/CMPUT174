@@ -76,29 +76,34 @@ public class UploadImage extends HttpServlet {
 	    List FileItems=null;
 	    try {
 		FileItems = fu.parseRequest(request);
+		
 	    }
 	    catch (FileUploadException e) {
 		e.printStackTrace();
 	    }
-	        
+	   
 		
 	    // Process the uploaded items, assuming only 1 image file uploaded
 	    int nbFiles = FileItems.size();
 	    FileItem[] items = new FileItem[nbFiles];
 	    Iterator i = FileItems.iterator();
 	    int j = 0;
+	    ArrayList info=new ArrayList();
+	    String sensor_id="";
+	    String description="";
+	    String date="";
 	    items[j] = (FileItem)i.next();
-	    while (i.hasNext() && !items[j].isFormField()) {
+ 
+	    while (i.hasNext() && !items[j].isFormField() ) {
 	    	j++;
 	    	items[j] = (FileItem) i.next();
 	    }
+
 	    
 	    // Connect to the database and create a statement
 	    Connection conn = getConnected(drivername,dbstring, username,password);
 	    Statement stmt = conn.createStatement();
 	    response_message = "";
-	    String sensor_id = request.getParameter("sensor_id");
-            String description = request.getParameter("description");
 
 	    for (int n=0;n<j;n++) {
 	    	InputStream instream = items[n].getInputStream();
@@ -115,14 +120,14 @@ public class UploadImage extends HttpServlet {
 			rset1.close();
 		    }
 
-		    //HttpSession session = request.getSession();
-		    //session.setAttribute("currentid",image_id);
+		    HttpSession session = request.getSession();
+		    session.setAttribute("currentid",image_id);
 		    //String counterquery = "INSERT INTO imagescount VALUES("+pic_id+",0)";
-System.out.println("INSERT INTO images VALUES("+image_id+",3333,SYSDATE,'testdesc',empty_blob(),empty_blob())");
+
 		    stmt.execute("INSERT INTO images VALUES("+image_id+",3333,SYSDATE,'testdesc',empty_blob(),empty_blob())");
-System.out.println("execute");
+
 		    stmt.execute("commit");
-System.out.println("commit");
+
 		    //stmt.execute(counterquery);
 		    //stmt.execute("commit");
 		    //stmt.execute("INSERT INTO imagesviewer VALUES("+pic_id+",'admin')");

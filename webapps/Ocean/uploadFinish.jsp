@@ -2,6 +2,7 @@
 <html>
 
 <%
+out.println(session.getAttribute("currentid"));
 if (request.getParameter(".submit") != null){
 	int pic_id;
 	int current_pic_id;
