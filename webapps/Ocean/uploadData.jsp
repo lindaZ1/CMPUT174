@@ -1,6 +1,15 @@
 <%@ page import="java.sql.*" %>
 <html>
 <%
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
+<%
 	String action=request.getParameter("action");
 	out.print(action);
 
@@ -141,4 +150,7 @@
 		<P><a href="dataCurator.jsp"> Return </a></P>
 <%     } 
 	%>
+<form  action= "account.jsp" method="post">
+<input type="submit" name="account" value="My Account">
+</form>
 </html>

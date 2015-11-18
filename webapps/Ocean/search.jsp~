@@ -15,8 +15,8 @@
     Sensor Location:
     <input type = "text" name="location"> AND<br>
     Time Period:<br>
-    Date after (YYYY-MM-DD) <input type = "date" name="begin"><br>
-    Date before(YYYY-MM-DD) <input type = "date" name ="end"><br>
+    Date after (YYYY-MM-DD) <input type = "text" name="begin"><br>
+    Date before(YYYY-MM-DD) <input type = "text" name ="end"><br>
 
     <input type="submit" name="submit" value= "search">
   </form>

@@ -13,7 +13,8 @@
 <%@ page import = "java.sql.*"%>
 <%@ page import = "java.util.*"%>
 <%
-String checklogin = (String) session.getAttribute("logstatus");
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
 if (checklogin == "false"){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");

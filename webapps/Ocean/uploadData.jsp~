@@ -57,10 +57,6 @@
 		Please input or select the path of the image!
 		<form name="upload-file" method="post" enctype="multipart/form-data" action="UploadImage">
 		<table border="0" width="30%" cellpadding="5">
-		<% out.println("<input name='sensor_id' value="+sensor_id+" type='hidden'>"); %>
-		<%out.println("<input name='date' value="+date+" type='hidden'>"); %>
-		<%out.println("<input name='desc' value="+description+" type='hidden'>");%>
-	
 		<tr>
 		<td><B>File path: </B></td>
 		<td>
