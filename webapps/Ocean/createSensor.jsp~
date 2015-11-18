@@ -40,7 +40,7 @@
 		valid = false;
 	}
 	//avoid invalid sensor type
-	if(cType.equals("a") || cType.equals("t") || cType.equals("o") || cType.equals("i")){
+	if((cType.equals("a")) || ((cType.equals("t")) || ((cType.equals("o")) || ((cType.equals("i"))){
 		//do nothing
 	}else{
 		out.print("invalid sensor type"+"<br>");
