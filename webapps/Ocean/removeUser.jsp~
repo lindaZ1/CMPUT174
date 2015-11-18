@@ -47,7 +47,6 @@
 		}
 	}
 	statement.close();
-	conn.close();
 
 	if(! exist){
 		out.print("Person does not exist");

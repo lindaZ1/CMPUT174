@@ -58,9 +58,11 @@
 		     }
 		}
 	}
+	
+	statement = conn.createStatement() ;
+    	resultset = statement.executeQuery("SELECT * FROM persons") ;
 
 	if(valid){
-		Integer Id1 = Integer.valueOf(Id);
 		while(resultset.next()){
 		     if(resultset.getString("email").equals(email)){
 			  unique = false;

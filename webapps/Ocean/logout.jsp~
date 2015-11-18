@@ -4,8 +4,7 @@
 
 <%@page import="java.sql.*" %>
 <%
-String checklogin = "false";
-checklogin = (String) session.getAttribute("logstatus");
+String checklogin = (String) session.getAttribute("logstatus");
 checklogin = "false";
 session.setAttribute("logstatus", checklogin);
 %>

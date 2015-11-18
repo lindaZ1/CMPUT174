@@ -8,6 +8,15 @@
     </head>
 </html>
 <body>
+<%
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
     <h1>Edit Sensors</h1>
 
     <h3>All Sensors:</h3>
@@ -30,7 +39,7 @@
         DriverManager.registerDriver((Driver)drvClass.newInstance());
 
         //establish connection here
-        conn=DriverManager.getConnection(dbstring,"hong8","wxwh0505");
+        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 
 	String query="select * from sensors";
 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -86,8 +95,8 @@
     <input type="submit" name="submit" value= "create">
   </form>
    
-    <form action= "administratorPage.html" method="post">
+    <form action= "administratorPage.jsp" method="post">
     <input type="submit" name="submit" value= "Main Menu">
-  
+  </form>
     
 </body>

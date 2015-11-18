@@ -2,7 +2,13 @@
 <html>
 <head></head>
 <body>
-
+ <TABLE BORDER=2>
+        <TR>
+            <TH>SENSOR_ID</TH>
+	    <TH>LOCATION</TH>
+	    <TH>SENSOR TYPE</TH>
+	    <TH>DESCRIPTION</TH>
+        </TR>
 <%
     String keywords = request.getParameter("keywords");
     String type = request.getParameter("type");
@@ -89,6 +95,7 @@
 	out.println(e.toString());
     }
 %> 
+</Table>
     <br>
     <form action= "editSensor.jsp" method="post">
     <input type="submit" name="submit" value= "Back to edit sensor">

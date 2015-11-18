@@ -7,6 +7,14 @@
 <div id="image" style="background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
 <H2>Loading...</H2>
 <br><br>
+<%
+String checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
 
 <%
 String LogName = (request.getParameter("logname")).trim();
@@ -42,7 +50,7 @@ rs = stmt.executeQuery(action);
 String TruePW = "a";
 String UserRole = "b";
 String UserID = "c";
-String checklogin = "false";
+checklogin = "false";
 if (rs.next() == false) {
 out.print("<H1>Invalid Username. Please try again.</H1>");
 m_con.close();

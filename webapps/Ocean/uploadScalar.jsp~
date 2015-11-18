@@ -63,7 +63,7 @@
 						date="'"+date.substring(1,20)+"'";
 out.println(date);
 						out.println("insert into scalar_data values ("+id+",'"+sensor_id+"',to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),'"+value+"')");
-						stmt.execute("insert into scalar_data values ("+id+",'"+sensor_id+"',to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),'"+value+"')");
+						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),"+value+")");
 						stmt.execute("commit");
 
 		

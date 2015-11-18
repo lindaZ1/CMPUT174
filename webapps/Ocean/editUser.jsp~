@@ -94,7 +94,7 @@
     <h3>Update a User:</h3>
     <form action= "updateUser.jsp" method="post">
     Person Id:
-    <input type="text" name= "updatePersonId">can not be empty<br>
+    <input type="text" name= "updatePersonId"><br>
     First Name:
     <input type="text" name="firstName1"><br>
     Last Name:

@@ -5,7 +5,7 @@
 
 <%	
     String rId= request.getParameter("removeSensorId");
-    out.print(rId);
+    //out.print(rId);
     Connection conn=null;
     Statement stmt;
     String driverName="oracle.jdbc.driver.OracleDriver";

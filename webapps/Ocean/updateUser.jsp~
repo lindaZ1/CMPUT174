@@ -66,11 +66,11 @@
 	statement = conn.createStatement();
     	resultset = statement.executeQuery("SELECT * FROM persons WHERE person_id <>"+ Id);
 	
-	boolean exist = false ;
+	boolean unique = true;
 	if(valid){
 		while(resultset.next()){
 		     if(resultset.getString("email").equals(email)){
-			  exist = true;
+			  unique = false;
 			  out.print("email already exists, chose another email"+ "<br>");
 		     }
 		}
@@ -79,7 +79,7 @@
 	statement.close();
     
     	// If value to be added is unique,create sensor----------
-  	if(valid && exist){
+  	if(valid && exist && unique){
 	    out.print("Person has been created");
 	    String query="UPDATE persons SET first_name = ?,last_name=?,address = ?,email=?,phone = ? WHERE person_id ="+Id;
 	    PreparedStatement stmt =conn.prepareStatement(query);

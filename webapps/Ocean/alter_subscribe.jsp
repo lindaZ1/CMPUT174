@@ -2,6 +2,15 @@
 <html>
 <head></head>
 <body>
+<%
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
 	<br></br>
 	<%
 		String sensor_id = request.getParameter("sensor_id");
@@ -100,6 +109,9 @@
 
 <form action="subscribe.jsp" method="post">
     <br></br><input type="submit" value="Return to Subscriptions">
+</form>
+<form  action= "account.jsp" method="post">
+<input type="submit" name="account" value="My Account">
 </form>
 </body>
 </html>

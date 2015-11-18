@@ -4,6 +4,15 @@
 <%@ page import="org.apache.commons.io.*" %>
 <html>
 <%
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
+<%
 
 	//establish the connection to the underlying database
 	Connection conn = null;
@@ -76,5 +85,8 @@ out.println(date);
 	}
 	//response.sendRedirect("uploadFinish.jsp");
 %>
+<form  action= "account.jsp" method="post">
+<input type="submit" name="account" value="My Account">
+</form>
 </html>
 
