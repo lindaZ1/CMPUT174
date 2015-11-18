@@ -49,7 +49,7 @@ CREATE TABLE sensors(
     location     varchar(64),
     sensor_type  char(1),
     description  varchar(128),
-    CHECK(sensor_type in ('a', 'i', 's')),
+    CHECK(sensor_type in ('a', 'i', 't', 'o')),
     PRIMARY KEY(sensor_id)
 ) tablespace c391ware;
 

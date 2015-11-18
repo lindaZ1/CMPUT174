@@ -1,39 +1,3 @@
-/*A sample program to demonstrate how to use servlet to 
- *  load an image file from the client disk via a web browser
- *  and insert the image into a table in Oracle DB.
- *  
- *  Copyright 2007 CMPUT 391 Team, CS, UofA                             
- *  Author:  Fan Deng
- *                                                                  
- *  Licensed under the Apache License, Version 2.0 (the "License");         
- *  you may not use this file except in compliance with the License.        
- *  You may obtain a copy of the License at                                 
- *      http://www.apache.org/licenses/LICENSE-2.0                          
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *  
- *  Shrink function from
- *  http://www.java-tips.org/java-se-tips/java.awt.image/shrinking-an-image-by-skipping-pixels.html
- *
- *
- *  the table shall be created using the following
-      CREATE TABLE pictures (
-            pic_id int,
-	        pic_desc  varchar(100),
-		    pic  BLOB,
-		        primary key(pic_id)
-      );
-      *
-      *  One may also need to create a sequence using the following 
-      *  SQL statement to automatically generate a unique pic_id:
-      *
-      *   CREATE SEQUENCE pic_id_sequence;
-      *
-      ***/
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -72,26 +36,22 @@ public class UploadImage extends HttpServlet {
 	try {
 	    //Parse the HTTP request to get the image stream
 	    DiskFileUpload fu = new DiskFileUpload();
-	    //List FileItems = fu.parseRequest(request);
+	    
 	    List FileItems=null;
 	    try {
 		FileItems = fu.parseRequest(request);
-		
 	    }
 	    catch (FileUploadException e) {
 		e.printStackTrace();
 	    }
 	   
 		
-	    // Process the uploaded items, assuming only 1 image file uploaded
+	    // Process the uploaded items, assuming only 1 audio file uploaded
 	    int nbFiles = FileItems.size();
 	    FileItem[] items = new FileItem[nbFiles];
 	    Iterator i = FileItems.iterator();
 	    int j = 0;
 	    ArrayList info=new ArrayList();
-	    String sensor_id="";
-	    String description="";
-	    String date="";
 	    items[j] = (FileItem)i.next();
  
 	    while (i.hasNext() && !items[j].isFormField() ) {
@@ -108,46 +68,37 @@ public class UploadImage extends HttpServlet {
 	    for (int n=0;n<j;n++) {
 	    	InputStream instream = items[n].getInputStream();
 	    	BufferedImage img = ImageIO.read(instream);
-	    	BufferedImage thumbNail = shrink(img, 10);	
+	    	
 
 	    	/*
-		     *  First, to generate a unique pic_id using an SQL sequence
+		     *  First, to generate a unique recording_id using an SQL sequence
 		     */
-		    ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
+		    ResultSet rset1 = stmt.executeQuery("SELECT recording_id.nextval from dual");
 		    if(rset1!=null && rset1.next()) {
 			image_id=rset1.getInt(1);
 			rset1.close();
 		    }
 
 		    HttpSession session = request.getSession();
-		    session.setAttribute("currentid",image_id);
-		    //String counterquery = "INSERT INTO imagescount VALUES("+pic_id+",0)";
+		    session.setAttribute("currentid",recording_id);
 
-		    stmt.execute("INSERT INTO images VALUES("+image_id+",3333,SYSDATE,'testdesc',empty_blob(),empty_blob())");
+		    stmt.execute("INSERT INTO audio_recordings VALUES("+recording_id+",3333,SYSDATE,0,'testdesc',empty_blob())");
 
 		    stmt.execute("commit");
 
-		    //stmt.execute(counterquery);
-		    //stmt.execute("commit");
-		    //stmt.execute("INSERT INTO imagesviewer VALUES("+pic_id+",'admin')");
-		    //stmt.execute("commit");
 	
 		    // to retrieve the lob_locator 
 		    // Note that you must use "FOR UPDATE" in the select statement
 		    //String cmd = "SELECT * FROM pictures WHERE image_id = "+image_id+" FOR UPDATE";
-		    String cmd = "SELECT * FROM images WHERE image_id = "+image_id+" FOR UPDATE";
+		    String cmd = "SELECT * FROM audio_recordings WHERE recording_id = "+recording_id+" FOR UPDATE";
 		    ResultSet rset = stmt.executeQuery(cmd);
 		    rset.next();
-		    //BLOB myblob = ((OracleResultSet)rset).getBLOB(3);
-		    BLOB myblob = ((OracleResultSet)rset).getBLOB(5); // 5 column index is thumbnail
-		    BLOB ablob = ((OracleResultSet)rset).getBLOB(6); // 6 column index is img
+		    
+		    BLOB myblob = ((OracleResultSet)rset).getBLOB(6); // 6 column index is audio file
 
 		    //Write the image to the blob object
 		    OutputStream outstream = myblob.setBinaryStream(1);
 		    ImageIO.write(thumbNail, "gif", outstream);
-		    
-		    OutputStream outstream2 = ablob.setBinaryStream(1);
-		    ImageIO.write(img, "gif", outstream2);
 		    
 		    instream.close();
 		    outstream.close();
@@ -155,7 +106,7 @@ public class UploadImage extends HttpServlet {
 		    response_message = " Upload Ok! ";
 	    }
         	conn.close();
-        	response.sendRedirect("uploadImage.jsp");
+        	response.sendRedirect("uploadAudio.jsp");
 
 	} catch( Exception ex ) {
 	    //System.out.println( ex.getMessage());
@@ -179,19 +130,4 @@ public class UploadImage extends HttpServlet {
 	return( DriverManager.getConnection(dbstring,username,password));
     } 
 
-    //shrink image by a factor of n, and return the shrinked image
-    public static BufferedImage shrink(BufferedImage image, int n) {
-
-        int w = image.getWidth() / n;
-        int h = image.getHeight() / n;
-
-        BufferedImage shrunkImage =
-            new BufferedImage(w, h, image.getType());
-
-        for (int y=0; y < h; ++y)
-            for (int x=0; x < w; ++x)
-                shrunkImage.setRGB(x, y, image.getRGB(x*n, y*n));
-
-        return shrunkImage;
-    }
 }

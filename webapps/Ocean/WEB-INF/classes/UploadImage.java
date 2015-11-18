@@ -144,10 +144,10 @@ public class UploadImage extends HttpServlet {
 
 		    //Write the image to the blob object
 		    OutputStream outstream = myblob.setBinaryStream(1);
-		    ImageIO.write(thumbNail, "gif", outstream);
+		    ImageIO.write(thumbNail, "jpg", outstream);
 		    
 		    OutputStream outstream2 = ablob.setBinaryStream(1);
-		    ImageIO.write(img, "gif", outstream2);
+		    ImageIO.write(img, "jpg", outstream2);
 		    
 		    instream.close();
 		    outstream.close();
