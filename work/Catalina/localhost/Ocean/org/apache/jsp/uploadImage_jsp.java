@@ -61,8 +61,10 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 		String date=request.getParameter("date");
 		String year=date.substring(0,4);
-		String monthday=date.substring(5);
-		date=monthday+"-"+year;
+		String month=date.substring(5,7);
+		String day=date.substring(8,10);
+		date=month+"/"+day+"/"+year;
+out.println(date);
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
 		String datetime=date+" "+time;
@@ -116,7 +118,7 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
 out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
 
 
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"' where image_id='"+image_id+"'");
 			    stmt.execute("commit");
 			
 		    }
@@ -185,9 +187,9 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
       out.write("\tUpload Image\n");
       out.write("\t<form action=\"uploadImage.jsp\" method=\"post\" >\n");
       out.write("\tSensor_ID: <input type=\"text\" value=\"sensor_id\" name=\"sensor_id\"><br></br>\n");
-      out.write("\tDate Created: <input type=\"date\" value=\"date\" name=\"date\"><br></br>\n");
+      out.write("\tDate Created: <input type=\"date\" value=\"\" name=\"date\"><br></br>\n");
       out.write("\tTime: <input type=\"time\" value=\"time\" name=\"time\" step=\"1\"><br></br>\n");
-      out.write("\tDescription: <input type=\"text\" value=\"description\" name=\"description\"><br></br>\n");
+      out.write("\tDescription: <input type=\"text\" value=\"\" name=\"description\"><br></br>\n");
       out.write("\t<input name=\".submit\" value=\"Upload\" type=\"submit\">\n");
       out.write("\t</form>\n");
       out.write("\n");

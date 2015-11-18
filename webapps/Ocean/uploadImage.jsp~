@@ -8,8 +8,10 @@
 
 		String date=request.getParameter("date");
 		String year=date.substring(0,4);
-		String monthday=date.substring(5);
-		date=monthday+"-"+year;
+		String month=date.substring(5,7);
+		String day=date.substring(8,8);
+		date=month+"/"+day+"/"+year;
+out.println(date);
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
 		String datetime=date+" "+time;
@@ -63,7 +65,7 @@
 out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
 
 
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"' where image_id='"+image_id+"'");
 			    stmt.execute("commit");
 			
 		    }
@@ -130,9 +132,9 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
 	Upload Image
 	<form action="uploadImage.jsp" method="post" >
 	Sensor_ID: <input type="text" value="sensor_id" name="sensor_id"><br></br>
-	Date Created: <input type="date" value="date" name="date"><br></br>
+	Date Created: <input type="date" value="" name="date"><br></br>
 	Time: <input type="time" value="time" name="time" step="1"><br></br>
-	Description: <input type="text" value="description" name="description"><br></br>
+	Description: <input type="text" value="" name="description"><br></br>
 	<input name=".submit" value="Upload" type="submit">
 	</form>
 

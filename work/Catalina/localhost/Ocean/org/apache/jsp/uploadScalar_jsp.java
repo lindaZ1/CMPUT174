@@ -106,8 +106,8 @@ public final class uploadScalar_jsp extends org.apache.jasper.runtime.HttpJspBas
 					contents.append(line);
 					String info[]=line.split(",");
 					out.println("line "+line);
-					out.println(info[0]);
-					if(info[0]!="sensor_id" && info[0]!="") {
+					
+					if(info[0]!="") {
 						//generate id
 						ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
 						if(rset1!=null && rset1.next()) {
@@ -119,9 +119,11 @@ public final class uploadScalar_jsp extends org.apache.jasper.runtime.HttpJspBas
 						String sensor_id=info[0];
 						String date=info[1];
 						String value=info[2];
-						out.println("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),'"+value+"')");
-						stmt.execute("insert into scalar_data values ('"+id+"','"+sensor_id+"',to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),'"+value+"')");
-						
+						date="'"+date.substring(1,20)+"'";
+out.println(date);
+						out.println("insert into scalar_data values ("+id+",'"+sensor_id+"',to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),'"+value+"')");
+						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),"+value+")");
+						stmt.execute("commit");
 
 		
 					}
