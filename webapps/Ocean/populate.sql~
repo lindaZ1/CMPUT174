@@ -24,3 +24,4 @@ CREATE SEQUENCE SEQ_IMAGE_ID START WITH 1 INCREMENT BY 1;
 INSERT INTO images(image_id) VALUES (SEQ_IMAGE_ID.nextval);
 
 CREATE SEQUENCE SCALAR_ID START WITH 1 INCREMENT BY 1;
+create sequence recording_id start with 1 increment by 1;
