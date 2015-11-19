@@ -34,6 +34,9 @@ if (checklogin == "false"){
 		if(description=="") {
 			out.println("please enter a description");
 			desc=false;
+			%>
+			<P><a href="uploadAudio.jsp"> Return to form </a></P>
+			<%
 		}
 
 		String driverName="oracle.jdbc.driver.OracleDriver";
@@ -46,7 +49,7 @@ if (checklogin == "false"){
 		    //establish connection here
 		    Connection conn=null;	
 		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
-		    String query="select sensor_id from sensors";
+		    String query="select sensor_id from sensors where sensor_type='a'";
 		    
 		    Statement stmt;
 		    stmt=conn.createStatement();
@@ -68,22 +71,28 @@ if (checklogin == "false"){
 
 		    if(sensorExist==false) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
+			%>
+			<P><a href="uploadAudio.jsp"> Return to form </a></P>
+			<%
 		    }
 
 		    if(sensorExist && desc) {
 			    int recording_id=(Integer)session.getAttribute("currentid");
 
-
-out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
-
-
 			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
 			    stmt.execute("commit");
-			
+			    session.removeAttribute("currentid");
+%>
+			<h3>file uploaded</h3>
+			<P><a href="dataCurator.jsp"> Return </a></P>
+
+<%
 		    }
 		}catch(Exception e) {out.println(e.toString());}
 
 	}
+
+	else {
 %>
 	
 	
@@ -110,7 +119,7 @@ out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm
 	        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 	    
 
-		String query="select * from sensors";
+		String query="select * from sensors where sensor_type='a'";
 		Statement stmt;
 		stmt=conn.createStatement();
 		ResultSet rset=stmt.executeQuery(query);
@@ -146,11 +155,12 @@ out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm
 	Date Created: <input type="date" value="" name="date"><br></br>
 	Time: <input type="time" value="time" name="time" step="1"><br></br>
 	Length(seconds): <input type="number" value="" name="length"><br></br>
-	Description: <input type="text" value=""><br></br>
+	Description: <input type="text" name="description"><br></br>
 	<input name=".submit" value="Upload" type="submit">
 	</form>
+<% } %>
 
-<P><a href="dataCurator.jsp"> Return </a></P>
+
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>

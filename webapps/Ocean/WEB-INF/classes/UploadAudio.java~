@@ -85,17 +85,19 @@ public class UploadAudio extends HttpServlet {
 
 		    String query="INSERT INTO audio_recordings VALUES(?,?,?,?,?,?)";
 		    PreparedStatement statement=conn.prepareStatement(query);
-		    
+ 
 		    if(instream!=null) {
 			int number=3333;
 			statement.setInt(1, recording_id);
 			statement.setInt(2, number);
-			statement.setDate(3, new java.sql.Date(endDate.getTime()));
+			statement.setDate(3, java.sql.Date.valueOf("2013-09-04"));
 			statement.setInt(4, number);
 			statement.setString(5, "testdesc");
 		        statement.setBlob(6, instream);
-    		    }		
+    		    }	
+System.out.println("id");	
 		    statement.executeUpdate();
+		    statement.close();
 System.out.println("here");
 		    
 		    //stmt.execute("INSERT INTO audio_recordings VALUES("+recording_id+",3333,SYSDATE,0,'testdesc',?)");

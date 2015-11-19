@@ -63,6 +63,16 @@ public final class uploadScalar_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("<html>\n");
 
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+
+      out.write('\n');
+
 
 	//establish the connection to the underlying database
 	Connection conn = null;
@@ -136,6 +146,9 @@ out.println(date);
 	//response.sendRedirect("uploadFinish.jsp");
 
       out.write("\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
+      out.write("</form>\n");
       out.write("</html>\n");
       out.write("\n");
     } catch (Throwable t) {

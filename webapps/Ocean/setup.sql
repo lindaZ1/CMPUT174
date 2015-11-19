@@ -5,9 +5,6 @@ DROP TABLE images;
 DROP TABLE scalar_data;
 DROP TABLE persons;
 DROP TABLE sensors;
-DROP SEQUENCE SEQ_IMAGE_ID;
-DROP SEQUENCE SCALAR_ID;
-DROP SEQUENCE recording_id;
 /*
  *  To store the personal information
  */

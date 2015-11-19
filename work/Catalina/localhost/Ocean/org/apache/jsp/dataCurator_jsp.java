@@ -52,13 +52,23 @@ public final class dataCurator_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("<html>\n");
       out.write("<body>\n");
+
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+
+      out.write("\n");
       out.write("<H1>Data Curator</H1>\n");
       out.write("<form action=\"upload.jsp\" method=\"post\">\n");
       out.write("   <input type=\"submit\" value=\"Upload Data\">\n");
       out.write("</form>\n");
       out.write("\n");
-      out.write("<form action=\"login.html\" method=\"post\">\n");
-      out.write("   <input type=\"submit\" value=\"Logout\">\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
       out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>\n");

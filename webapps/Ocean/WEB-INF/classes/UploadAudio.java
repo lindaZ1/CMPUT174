@@ -85,7 +85,7 @@ public class UploadAudio extends HttpServlet {
 
 		    String query="INSERT INTO audio_recordings VALUES(?,?,?,?,?,?)";
 		    PreparedStatement statement=conn.prepareStatement(query);
-		    
+ 
 		    if(instream!=null) {
 			int number=3333;
 			statement.setInt(1, recording_id);
@@ -94,8 +94,9 @@ public class UploadAudio extends HttpServlet {
 			statement.setInt(4, number);
 			statement.setString(5, "testdesc");
 		        statement.setBlob(6, instream);
-    		    }		
+    		    }	
 		    statement.executeUpdate();
+		    statement.close();
 System.out.println("here");
 		    
 		    //stmt.execute("INSERT INTO audio_recordings VALUES("+recording_id+",3333,SYSDATE,0,'testdesc',?)");

@@ -54,6 +54,16 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<html>\n");
 
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+
+      out.write('\n');
+
 
 	
 	if (request.getParameter(".submit") != null) {
@@ -64,7 +74,7 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
 		String month=date.substring(5,7);
 		String day=date.substring(8,10);
 		date=month+"/"+day+"/"+year;
-out.println(date);
+
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
 		String datetime=date+" "+time;
@@ -75,6 +85,11 @@ out.println(date);
 		if(description=="") {
 			out.println("please enter a description");
 			desc=false;
+			
+      out.write("\n");
+      out.write("\t\t\t<P><a href=\"uploadImage.jsp\"> Return to form </a></P>\n");
+      out.write("\t\t\t");
+
 		}
 
 		String driverName="oracle.jdbc.driver.OracleDriver";
@@ -87,7 +102,7 @@ out.println(date);
 		    //establish connection here
 		    Connection conn=null;	
 		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
-		    String query="select sensor_id from sensors";
+		    String query="select sensor_id from sensors where sensor_type='i'";
 		    
 		    Statement stmt;
 		    stmt=conn.createStatement();
@@ -109,22 +124,36 @@ out.println(date);
 
 		    if(sensorExist==false) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
+			
+      out.write("\n");
+      out.write("\t\t\t<P><a href=\"uploadImage.jsp\"> Return to form </a></P>\n");
+      out.write("\t\t\t");
+
 		    }
 
 		    if(sensorExist && desc) {
 			    int image_id=(Integer)session.getAttribute("currentid");
 
 
-out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
+out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"'where image_id="+image_id);
 
 
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"' where image_id='"+image_id+"'");
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
 			    stmt.execute("commit");
+		
+      out.write("\n");
+      out.write("\t\t\t<h3>File Uploaded</h3>\n");
+      out.write("\t\t\t<P><a href=\"dataCurator.jsp\"> Return </a></P>\n");
+      out.write("\t\t");
+
+
 			
 		    }
 		}catch(Exception e) {out.println(e.toString());}
 
 	}
+
+	else {
 
       out.write("\n");
       out.write("\t\n");
@@ -152,7 +181,7 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
 	        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 	    
 
-		String query="select * from sensors";
+		String query="select * from sensors where sensor_type='i'";
 		Statement stmt;
 		stmt=conn.createStatement();
 		ResultSet rset=stmt.executeQuery(query);
@@ -192,8 +221,12 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
       out.write("\tDescription: <input type=\"text\" value=\"\" name=\"description\"><br></br>\n");
       out.write("\t<input name=\".submit\" value=\"Upload\" type=\"submit\">\n");
       out.write("\t</form>\n");
+ } 
       out.write("\n");
-      out.write("<P><a href=\"dataCurator.jsp\"> Return </a></P>\n");
+      out.write("\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
+      out.write("</form>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -100,7 +100,7 @@ if (checklogin == "false"){
 		    //establish connection here
 		    Connection conn=null;	
 		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
-		    String query="select sensor_id from sensors";
+		    String query="select sensor_id from sensors where sensor_type='a'";
 		    
 		    Statement stmt;
 		    stmt=conn.createStatement();
@@ -133,11 +133,19 @@ out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm
 
 			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
 			    stmt.execute("commit");
-			
+			    session.removeAttribute("currentid");
+
+      out.write("\n");
+      out.write("\t\t\t<h3>file uploaded</h3>\n");
+      out.write("\t\t\t<P><a href=\"dataCurator.jsp\"> Return </a></P>\n");
+      out.write("\n");
+
 		    }
 		}catch(Exception e) {out.println(e.toString());}
 
 	}
+
+	else {
 
       out.write("\n");
       out.write("\t\n");
@@ -165,7 +173,7 @@ out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm
 	        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 	    
 
-		String query="select * from sensors";
+		String query="select * from sensors where sensor_type='a'";
 		Statement stmt;
 		stmt=conn.createStatement();
 		ResultSet rset=stmt.executeQuery(query);
@@ -205,8 +213,10 @@ out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm
       out.write("\tDescription: <input type=\"text\" value=\"\"><br></br>\n");
       out.write("\t<input name=\".submit\" value=\"Upload\" type=\"submit\">\n");
       out.write("\t</form>\n");
+ } 
       out.write("\n");
-      out.write("<P><a href=\"dataCurator.jsp\"> Return </a></P>\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<form  action= \"account.jsp\" method=\"post\">\n");
       out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
       out.write("</form>\n");

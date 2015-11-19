@@ -72,7 +72,7 @@ public class UploadImage extends HttpServlet {
 	try {
 	    //Parse the HTTP request to get the image stream
 	    DiskFileUpload fu = new DiskFileUpload();
-	    //List FileItems = fu.parseRequest(request);
+	    
 	    List FileItems=null;
 	    try {
 		FileItems = fu.parseRequest(request);
@@ -144,15 +144,16 @@ public class UploadImage extends HttpServlet {
 
 		    //Write the image to the blob object
 		    OutputStream outstream = myblob.setBinaryStream(1);
-		    ImageIO.write(thumbNail, "gif", outstream);
+		    ImageIO.write(thumbNail, "jpg", outstream);
 		    
 		    OutputStream outstream2 = ablob.setBinaryStream(1);
-		    ImageIO.write(img, "gif", outstream2);
-		    
+		    ImageIO.write(img, "jpg", outstream2);
+	System.out.println(outstream.toString());	    
 		    instream.close();
 		    outstream.close();
 	            stmt.executeUpdate("commit");
 		    response_message = " Upload Ok! ";
+System.out.println("finish");
 	    }
         	conn.close();
         	response.sendRedirect("uploadImage.jsp");

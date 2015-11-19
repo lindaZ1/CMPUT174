@@ -20,7 +20,7 @@ if (checklogin == "false"){
 		String month=date.substring(5,7);
 		String day=date.substring(8,10);
 		date=month+"/"+day+"/"+year;
-out.println(date);
+
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
 		String datetime=date+" "+time;
@@ -31,6 +31,9 @@ out.println(date);
 		if(description=="") {
 			out.println("please enter a description");
 			desc=false;
+			%>
+			<P><a href="uploadImage.jsp"> Return to form </a></P>
+			<%
 		}
 
 		String driverName="oracle.jdbc.driver.OracleDriver";
@@ -43,7 +46,7 @@ out.println(date);
 		    //establish connection here
 		    Connection conn=null;	
 		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
-		    String query="select sensor_id from sensors";
+		    String query="select sensor_id from sensors where sensor_type='i'";
 		    
 		    Statement stmt;
 		    stmt=conn.createStatement();
@@ -65,22 +68,32 @@ out.println(date);
 
 		    if(sensorExist==false) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
+			%>
+			<P><a href="uploadImage.jsp"> Return to form </a></P>
+			<%
 		    }
 
 		    if(sensorExist && desc) {
 			    int image_id=(Integer)session.getAttribute("currentid");
 
 
-out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
+out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"'where image_id="+image_id);
 
 
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"' where image_id='"+image_id+"'");
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
 			    stmt.execute("commit");
+		%>
+			<h3>File Uploaded</h3>
+			<P><a href="dataCurator.jsp"> Return </a></P>
+		<%
+
 			
 		    }
 		}catch(Exception e) {out.println(e.toString());}
 
 	}
+
+	else {
 %>
 	
 	
@@ -107,7 +120,7 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
 	        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 	    
 
-		String query="select * from sensors";
+		String query="select * from sensors where sensor_type='i'";
 		Statement stmt;
 		stmt=conn.createStatement();
 		ResultSet rset=stmt.executeQuery(query);
@@ -146,8 +159,8 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
 	Description: <input type="text" value="" name="description"><br></br>
 	<input name=".submit" value="Upload" type="submit">
 	</form>
+<% } %>
 
-<P><a href="dataCurator.jsp"> Return </a></P>
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
