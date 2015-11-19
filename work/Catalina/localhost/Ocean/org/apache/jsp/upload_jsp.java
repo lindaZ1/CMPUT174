@@ -60,6 +60,16 @@ public final class upload_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("</html>\n");
       out.write("<body>\n");
+
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+
+      out.write("\n");
       out.write("    <h1>Data Upload</h1>\n");
       out.write("\n");
 
@@ -88,7 +98,9 @@ public final class upload_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<input type=\"radio\" value=\"addAudio\" name=\"action\">Add Audio\n");
       out.write("<br></br> <input type=\"submit\" value=\"Add\">\n");
       out.write("</form>\n");
-      out.write("\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
+      out.write("</form>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

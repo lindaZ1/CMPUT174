@@ -51,4 +51,13 @@
         <url-pattern>/UploadImage</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UploadAudio</servlet-name>
+        <servlet-class>UploadAudio</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadAudio</servlet-name>
+        <url-pattern>/UploadAudio</url-pattern>
+    </servlet-mapping>
+
 </web-app>

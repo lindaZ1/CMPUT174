@@ -74,7 +74,7 @@ out.println(date);
 out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"'where image_id='"+image_id+"'");
 
 
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id='"+sensor_id+"',description='"+description+"' where image_id='"+image_id+"'");
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
 			    stmt.execute("commit");
 			
 		    }

@@ -20,7 +20,7 @@ import org.apache.commons.fileupload.DiskFileUpload;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 
-public class UploadImage extends HttpServlet {
+public class UploadAudio extends HttpServlet {
 
 
     public String response_message;
@@ -31,7 +31,7 @@ public class UploadImage extends HttpServlet {
 	String password = "Horsey26";
 	String drivername = "oracle.jdbc.driver.OracleDriver";
 	String dbstring ="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
-	int image_id=0;
+	int recording_id=0;
 
 	try {
 	    //Parse the HTTP request to get the image stream
@@ -67,41 +67,58 @@ public class UploadImage extends HttpServlet {
 
 	    for (int n=0;n<j;n++) {
 	    	InputStream instream = items[n].getInputStream();
-	    	BufferedImage img = ImageIO.read(instream);
+	    	//BufferedImage img = ImageIO.read(instream);
 	    	
 
 	    	/*
 		     *  First, to generate a unique recording_id using an SQL sequence
 		     */
+		    
 		    ResultSet rset1 = stmt.executeQuery("SELECT recording_id.nextval from dual");
 		    if(rset1!=null && rset1.next()) {
-			image_id=rset1.getInt(1);
+			recording_id=rset1.getInt(1);
 			rset1.close();
 		    }
 
 		    HttpSession session = request.getSession();
 		    session.setAttribute("currentid",recording_id);
 
-		    stmt.execute("INSERT INTO audio_recordings VALUES("+recording_id+",3333,SYSDATE,0,'testdesc',empty_blob())");
+		    String query="INSERT INTO audio_recordings VALUES(?,?,?,?,?,?)";
+		    PreparedStatement statement=conn.prepareStatement(query);
+		    
+		    if(instream!=null) {
+			int number=3333;
+			statement.setInt(1, recording_id);
+			statement.setInt(2, number);
+			statement.setDate(3, java.sql.Date.valueOf("2013-09-04"));
+			statement.setInt(4, number);
+			statement.setString(5, "testdesc");
+		        statement.setBlob(6, instream);
+    		    }		
+		    statement.executeUpdate();
+System.out.println("here");
+		    
+		    //stmt.execute("INSERT INTO audio_recordings VALUES("+recording_id+",3333,SYSDATE,0,'testdesc',?)");
 
-		    stmt.execute("commit");
+		    //stmt.execute("commit");
 
 	
 		    // to retrieve the lob_locator 
 		    // Note that you must use "FOR UPDATE" in the select statement
-		    //String cmd = "SELECT * FROM pictures WHERE image_id = "+image_id+" FOR UPDATE";
-		    String cmd = "SELECT * FROM audio_recordings WHERE recording_id = "+recording_id+" FOR UPDATE";
-		    ResultSet rset = stmt.executeQuery(cmd);
-		    rset.next();
+		    //String cmd = "SELECT * FROM audio_recordings WHERE recording_id = "+recording_id+" FOR UPDATE";
 		    
-		    BLOB myblob = ((OracleResultSet)rset).getBLOB(6); // 6 column index is audio file
+		    //ResultSet rset = stmt.executeQuery(cmd);
+		    //rset.next();
+		    
+		    
+		    //BLOB myblob = ((OracleResultSet)rset).getBLOB(6); // 6 column index is audio file
 
-		    //Write the image to the blob object
-		    OutputStream outstream = myblob.setBinaryStream(1);
-		    ImageIO.write(thumbNail, "gif", outstream);
+		    //Write audio file to the blob object
+		   // OutputStream outstream = myblob.setBinaryStream(1);
+		   // ImageIO.write(audio, "wav", outstream);
 		    
 		    instream.close();
-		    outstream.close();
+		   // outstream.close();
 	            stmt.executeUpdate("commit");
 		    response_message = " Upload Ok! ";
 	    }

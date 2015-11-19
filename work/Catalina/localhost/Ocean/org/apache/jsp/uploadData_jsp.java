@@ -54,6 +54,16 @@ public final class uploadData_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<html>\n");
 
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+
+      out.write('\n');
+
 	String action=request.getParameter("action");
 	out.print(action);
 
@@ -131,58 +141,12 @@ public final class uploadData_jsp extends org.apache.jasper.runtime.HttpJspBase
 }
 	  else if(action.equals("addAudio")) {   
       out.write("\n");
-      out.write("\t\t<table>\n");
-      out.write("\t       <h3>All Sensors:</h3>\n");
-      out.write("\t       <TABLE BORDER=2>\n");
-      out.write("\t\t<TR>\n");
-      out.write("\t\t    <TH>SENSOR_ID</TH>\n");
-      out.write("\t\t    <TH>LOCATION</TH>\n");
-      out.write("\t\t    <TH>SENSOR TYPE</TH>\n");
-      out.write("\t\t    <TH>DESCRIPTION</TH>\n");
-      out.write("\t\t</TR>\n");
-		String query="select * from sensors";
-		stmt=conn.createStatement();
-		ResultSet rset=stmt.executeQuery(query);
-
-		Object o;
-		ResultSetMetaData rsetMetaData=rset.getMetaData();
-		int ccount=rsetMetaData.getColumnCount();
-
-		String ans="";
-	
-		while(rset.next()) {
-		    ans+="<TR>";
-		    for(int i=1;i<=ccount;i++) {
-			o=rset.getObject(i);
-			ans+="<TD>";
-			if(o!=null){
-			    ans+=o.toString();
-			}
-			else{
-			    ans+="null";
-			}
-			ans+="</TD>";
-		    }
-		    ans+="</TR>";
-		}
-		out.println(ans);
-		stmt.close();
-		conn.close();
-
-      out.write("\n");
-      out.write("</table>\n");
-      out.write("\t\t<br></br>\n");
       out.write("\t\tUpload Audio File\n");
-      out.write("\t\t<form action=\"uploadAudio.jsp\" method=\"post\" >\n");
-      out.write("\t\tRecording ID(integer only): <input type=\"text\" value=\"recording_id\" name=\"recording_id\"> <br></br>\n");
-      out.write("\t\tSensor_ID: <input type=\"text\" value=\"sensor_id\" name=\"sensor_id\"><br></br>\n");
-      out.write("\t\tDate Created: <input type=\"date\" value=\"date\" name=\"date\"><br></br>\n");
-      out.write("\t\tLength(integer only): <input type=\"text\" value=\"1\" name=\"length\"><br></br>\n");
-      out.write("\t\tDescription: <input type=\"text\" value=\"description\"><br></br>\n");
+      out.write("\t\t\n");
       out.write("\t\t<p>\n");
       out.write("\t\t<font size=\"8\" face=\"Verdana\" color=\"#0080ff\">\n");
       out.write("\t\tUpload Audio (.wav).\n");
-      out.write("\t\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"uploadData.jsp\">\n");
+      out.write("\t\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"UploadAudio\">\n");
       out.write("\t\t<table border=\"0\" width=\"30%\" cellpadding=\"5\">\n");
       out.write("\t\t<tr>\n");
       out.write("\t\t<td><B>File path: </B></td>\n");
@@ -200,6 +164,9 @@ public final class uploadData_jsp extends org.apache.jasper.runtime.HttpJspBase
      } 
 	
       out.write("\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
+      out.write("</form>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
