@@ -51,10 +51,15 @@ public class UploadAudio extends HttpServlet {
 	    FileItem[] items = new FileItem[nbFiles];
 	    Iterator i = FileItems.iterator();
 	    int j = 0;
-	    ArrayList info=new ArrayList();
 	    items[j] = (FileItem)i.next();
  
 	    while (i.hasNext() && !items[j].isFormField() ) {
+		if("file-path".equals(items[j].getFieldName())){
+			if (items[j].getName()==null || items[j].getName().isEmpty()){
+				response.sendRedirect("uploadFinish.jsp");
+			}
+			
+		}
 	    	j++;
 	    	items[j] = (FileItem) i.next();
 	    }
@@ -67,8 +72,6 @@ public class UploadAudio extends HttpServlet {
 
 	    for (int n=0;n<j;n++) {
 	    	InputStream instream = items[n].getInputStream();
-	    	//BufferedImage img = ImageIO.read(instream);
-	    	
 
 	    	/*
 		     *  First, to generate a unique recording_id using an SQL sequence
@@ -95,31 +98,14 @@ public class UploadAudio extends HttpServlet {
 			statement.setString(5, "testdesc");
 		        statement.setBlob(6, instream);
     		    }	
+		    else {
+			System.out.print("a");
+		    }
 		    statement.executeUpdate();
 		    statement.close();
-System.out.println("here");
-		    
-		    //stmt.execute("INSERT INTO audio_recordings VALUES("+recording_id+",3333,SYSDATE,0,'testdesc',?)");
 
-		    //stmt.execute("commit");
-
-	
-		    // to retrieve the lob_locator 
-		    // Note that you must use "FOR UPDATE" in the select statement
-		    //String cmd = "SELECT * FROM audio_recordings WHERE recording_id = "+recording_id+" FOR UPDATE";
-		    
-		    //ResultSet rset = stmt.executeQuery(cmd);
-		    //rset.next();
-		    
-		    
-		    //BLOB myblob = ((OracleResultSet)rset).getBLOB(6); // 6 column index is audio file
-
-		    //Write audio file to the blob object
-		   // OutputStream outstream = myblob.setBinaryStream(1);
-		   // ImageIO.write(audio, "wav", outstream);
 		    
 		    instream.close();
-		   // outstream.close();
 	            stmt.executeUpdate("commit");
 		    response_message = " Upload Ok! ";
 	    }

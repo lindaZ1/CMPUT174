@@ -52,46 +52,24 @@ public final class uploadFinish_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
 
       out.write("\n");
+      out.write("<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n");
       out.write("<html>\n");
-      out.write("\n");
 
-out.println(session.getAttribute("currentid"));
-if (request.getParameter(".submit") != null){
-	int pic_id;
-	int current_pic_id;
-	//establish the connection to the underlying database
-	Connection conn = null;
-	//load and register the driver
-	Class drvClass = Class.forName("oracle.jdbc.driver.OracleDriver"); 
-	DriverManager.registerDriver((Driver) drvClass.newInstance());
-	//establish the connection 
-	conn = DriverManager.getConnection("jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS","***","****");
-	conn.setAutoCommit(false);
-	
-	Statement stmt = conn.createStatement();
-	
-	String name = request.getParameter("OWNER");
-	String subject = request.getParameter("SUBJ").trim();
-	String place = request.getParameter("PLACE").trim();
-	String permitted = request.getParameter("PERMITTED").trim();
-	String desc = request.getParameter("DESC").trim();
-	String date = request.getParameter("Date");
-	pic_id = (Integer)session.getAttribute("getid") + 1;
-	current_pic_id = (Integer)session.getAttribute("currentid");
-	while (pic_id <= current_pic_id){
-		//stmt.execute("INSERT INTO imagesviewer VALUES('"+pic_id+"','"+name+"')");
-		//stmt.execute("commit");
-		stmt.execute("update images set timing=TO_DATE('"+date+"','mm/dd/yyyy hh24:mi:ss'),owner_name='"+name+"',permitted='"+permitted+"',subject='"+subject+"',place='"+place+"',description='"+desc+"'where photo_id='"+pic_id+"'");
-		pic_id++;
-	}
-	session.removeAttribute("getid");
-	session.removeAttribute("currentid");
-    stmt.execute("commit");
-    conn.close();
-    
-    response.sendRedirect("profile.jsp");
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
 }
 
+
+      out.write("\n");
+      out.write("\n");
+      out.write("no file read, please upload a file\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
+      out.write("</form>\n");
       out.write("\n");
       out.write("</html>\n");
     } catch (Throwable t) {

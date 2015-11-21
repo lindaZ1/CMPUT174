@@ -1,0 +1,540 @@
+Nov 21, 2015 2:57:46 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.sql.SQLSyntaxErrorException: ORA-01722: invalid number
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1059)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:587)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:210)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:30)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:762)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:925)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1111)
+	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1309)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:422)
+	at org.apache.jsp.account_jsp._jspService(account_jsp.java:104)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:08:32 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.sql.SQLException: ORA-02391: exceeded simultaneous SESSIONS_PER_USER limit
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:392)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:385)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:1018)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:497)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:433)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:950)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:639)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:662)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:560)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:215)
+	at org.apache.jsp.uploadScalar_jsp._jspService(uploadScalar_jsp.java:83)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:33:32 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 38 in the jsp file: /uploadScalar.jsp
+The operator == is undefined for the argument type(s) boolean, null
+35: 	byte fileData[]=null;
+36: 
+37: 	Iterator itr=FileItems.iterator();
+38: 	if(itr.hasNext()==null) {
+39: 		out.println("a");
+40: 		//response.sendRedirect("uploadFinish.jsp");
+41: 	    }
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:41:44 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 37 in the jsp file: /uploadScalar.jsp
+ServletFileUpload cannot be resolved
+34:         }
+35: 	byte fileData[]=null;
+36: 
+37: boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+38: if(!isMultipart){
+39: out.println("a");
+40: }
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:55:10 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 55 in the jsp file: /uploadScalar.jsp
+Cannot invoke size() on the array type byte[]
+52: 				}
+53: 				InputStream stream=application.getResourceAsStream(filename);
+54: 				fileData=item.get();
+55: 				if(fileData.size()==0){out.println("a");
+56: }
+57: 
+58: 				int id=0;
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:57:31 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 29 in the jsp file: /uploadScalar.jsp
+The type of the expression must be an array type but it resolved to List
+26: 
+27: 	DiskFileUpload fu=new DiskFileUpload();
+28: 	List FileItems=null;
+29: 	out.println(FileItems[1]);
+30:         try {
+31: 	    FileItems = fu.parseRequest(request);
+32:         }
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:57:48 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadScalar_jsp._jspService(uploadScalar_jsp.java:88)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:58:57 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 29 in the jsp file: /uploadScalar.jsp
+list cannot be resolved
+26: 
+27: 	DiskFileUpload fu=new DiskFileUpload();
+28: 	List FileItems=null;
+29: 	out.println(FileItems.get(list.size()-1));
+30:         try {
+31: 	    FileItems = fu.parseRequest(request);
+32:         }
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 3:59:34 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NullPointerException
+	at org.apache.jsp.uploadScalar_jsp._jspService(uploadScalar_jsp.java:88)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 4:13:18 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 30 in the jsp file: /uploadScalar.jsp
+document cannot be resolved
+27: 	DiskFileUpload fu=new DiskFileUpload();
+28: 	List FileItems=null;
+29: 	
+30: 	boolean file=document.getElementById("file-pat").required=true;
+31:         try {
+32: 	    FileItems = fu.parseRequest(request);
+33:         }
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 4:14:19 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 30 in the jsp file: /uploadScalar.jsp
+The method getElementById(String) is undefined for the type DiskFileUpload
+27: 	DiskFileUpload fu=new DiskFileUpload();
+28: 	List FileItems=null;
+29: 	
+30: 	boolean file=fu.getElementById("file-path").required=true;
+31:         try {
+32: 	    FileItems = fu.parseRequest(request);
+33:         }
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 4:16:20 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 49 in the jsp file: /uploadScalar.jsp
+Cannot invoke isEmpty() on the array type byte[]
+46: 				InputStream stream=application.getResourceAsStream(filename);
+47: 				fileData=item.get();
+48: 				
+49: 				if(fileData.isEmpty()) {
+50: out.println("a");
+51: }
+52: 				int id=0;
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:460)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 4:41:25 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.sql.SQLSyntaxErrorException: ORA-01722: invalid number
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1059)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:587)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:210)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:30)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:762)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:925)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1111)
+	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1309)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:422)
+	at org.apache.jsp.account_jsp._jspService(account_jsp.java:104)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 4:47:52 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+	at java.lang.String.substring(String.java:1907)
+	at org.apache.jsp.uploadImage_jsp._jspService(uploadImage_jsp.java:73)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+
+Nov 21, 2015 4:49:17 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.sql.SQLSyntaxErrorException: ORA-01722: invalid number
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1059)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:587)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:210)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:30)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:762)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:925)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1111)
+	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1309)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:422)
+	at org.apache.jsp.account_jsp._jspService(account_jsp.java:104)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:620)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+

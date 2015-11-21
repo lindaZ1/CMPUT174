@@ -11,7 +11,6 @@ if (checklogin == "false"){
 %>
 <%
 	String action=request.getParameter("action");
-	out.print(action);
 
 	//establish the connection to the underlying database
 	Connection conn = null;
@@ -40,7 +39,7 @@ if (checklogin == "false"){
 		<p>
 		</p>
 
-		Please input or select the path of the image!
+		Please input or select the path of the file!
 		<form name="upload-file" method="POST" enctype="multipart/form-data" action="uploadScalar.jsp">
 		<table border="0" width="30%" cellpadding="5">
 		<tr>
