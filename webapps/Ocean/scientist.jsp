@@ -18,6 +18,10 @@ if (checklogin == "false"){
    <input type="submit" value="Search">
 </form>
 
+<form action="dataAnalysis.jsp" method="post">
+   <input type="submit" value="Data Analysis">
+</form>
+
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
