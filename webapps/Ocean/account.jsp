@@ -106,7 +106,7 @@ m_con.close();
 
 <%
 if (UserRole.equals("a")) {%>
-<form action= "administratorPage.html" method="post">
+<form action= "administratorPage.jsp" method="post">
 <INPUT TYPE="submit" NAME="Homepage" VALUE="Go to HomePage">
 </form>
 <% } %>

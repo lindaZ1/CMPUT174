@@ -8,6 +8,12 @@ if (checklogin == "false"){
     out.print("javascript:location.href='login.html'");
     out.print("</script>");
 }
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("a")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
+    out.print("</script>");
+}
 %>
 	<h1 style="font-size:160%">Role: Administrator</h1>
 	<p style="font-size:130%">
