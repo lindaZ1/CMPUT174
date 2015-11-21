@@ -24,8 +24,8 @@ if (checklogin == "false"){
     Sensor Location:
     <input type = "text" name="location"> AND<br>
     Time Period:<br>
-    Date after (YYYY-MM-DD) <input type = "text" name="begin"><br>
-    Date before(YYYY-MM-DD) <input type = "text" name ="end"><br>
+    Date after (DD/MM/YYYY) <input type = "text" name="begin"><br>
+    Date before(DD/MM/YYYY) <input type = "text" name ="end"><br>
 
     <input type="submit" name="submit" value= "search">
   </form>

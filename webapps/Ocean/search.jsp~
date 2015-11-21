@@ -4,6 +4,15 @@
     </head>
 </html>
 <body>
+<%
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+%>
     
     <h3> Enter search conditions </h3>
 	
@@ -23,6 +32,10 @@
    
     <form action= "scientist.jsp" method="post">
     <input type="submit" name="submit" value= "Main Menu">
-  
+  </form>
+
+<form  action= "account.jsp" method="post">
+<input type="submit" name="account" value="My Account">
+</form>
     
 </body>

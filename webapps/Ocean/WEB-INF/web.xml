@@ -60,4 +60,41 @@
         <url-pattern>/UploadAudio</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Thumbnail</servlet-name>
+        <servlet-class>Thumbnail</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Thumbnail</servlet-name>
+        <url-pattern>/Thumbnail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DownloadImage</servlet-name>
+        <servlet-class>DownloadImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadImage</servlet-name>
+        <url-pattern>/DownloadImage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DownloadAudio</servlet-name>
+        <servlet-class>DownloadAudio</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadAudio</servlet-name>
+        <url-pattern>/DownloadAudio</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DownloadScalar</servlet-name>
+        <servlet-class>DownloadScalar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadScalar</servlet-name>
+        <url-pattern>/DownloadScalar</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
