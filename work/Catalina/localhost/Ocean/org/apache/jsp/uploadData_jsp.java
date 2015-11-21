@@ -65,7 +65,6 @@ if (checklogin == "false"){
       out.write('\n');
 
 	String action=request.getParameter("action");
-	out.print(action);
 
 	//establish the connection to the underlying database
 	Connection conn = null;
@@ -95,7 +94,7 @@ if (checklogin == "false"){
       out.write("\t\t<p>\n");
       out.write("\t\t</p>\n");
       out.write("\n");
-      out.write("\t\tPlease input or select the path of the image!\n");
+      out.write("\t\tPlease input or select the path of the file!\n");
       out.write("\t\t<form name=\"upload-file\" method=\"POST\" enctype=\"multipart/form-data\" action=\"uploadScalar.jsp\">\n");
       out.write("\t\t<table border=\"0\" width=\"30%\" cellpadding=\"5\">\n");
       out.write("\t\t<tr>\n");

@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
-<%@ page import="org.apache.commons.fileupload.*, java.util.List, java.io.File, java.util.Iterator"%>
+<%@ page import="org.apache.commons.fileupload.*, java.util.List, java.util.Iterator"%>
 <%@ page import="org.apache.commons.io.*" %>
 <html>
 <%
@@ -26,6 +26,7 @@ if (checklogin == "false"){
 
 	DiskFileUpload fu=new DiskFileUpload();
 	List FileItems=null;
+	
         try {
 	    FileItems = fu.parseRequest(request);
         }
@@ -35,27 +36,28 @@ if (checklogin == "false"){
 	byte fileData[]=null;
 
 	Iterator itr=FileItems.iterator();
+	
 	while(itr.hasNext()) {
 		FileItem item=(FileItem) itr.next();
 		if(!item.isFormField()) {
-			//File file=new File(item.getName());
-			//File saveFile=new File(getServletContext().getRealPath("/"),file.getName());
-			//item.write(saveFile);
 
 			try{
 				String filename=item.getName();
 				InputStream stream=application.getResourceAsStream(filename);
 				fileData=item.get();
-
+				
+				if(fileData.length==0) {
+					response.sendRedirect("uploadFinish.jsp");
+				}
 				int id=0;
 				String line;
 				StringBuilder contents=new StringBuilder();
 				BufferedReader input=new BufferedReader(new InputStreamReader(stream));
+
 				while((line=input.readLine())!=null) {	
 					//line=input.readLine();
 					contents.append(line);
 					String info[]=line.split(",");
-					out.println("line "+line);
 					
 					if(info[0]!="") {
 						//generate id
@@ -69,22 +71,24 @@ if (checklogin == "false"){
 						String sensor_id=info[0];
 						String date=info[1];
 						String value=info[2];
-						date="'"+date.substring(1,20)+"'";
-out.println(date);
-						out.println("insert into scalar_data values ("+id+",'"+sensor_id+"',to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),'"+value+"')");
+						date="'"+date+"'";
+
 						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),"+value+")");
 						stmt.execute("commit");
-
+						
 		
 					}
 
 					
 				}
+				
 			}catch(Exception e) {}
+			
 		}
 	}
 	//response.sendRedirect("uploadFinish.jsp");
 %>
+data inserted
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>

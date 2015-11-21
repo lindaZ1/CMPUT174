@@ -85,7 +85,7 @@ o=other;
 <TABLE BORDER=2>
 <TR><TH>SENSOR_ID</TH></TR>
 <%
-    String person_id="222";
+    String person_id=session.getAttribute("userID");
     String query="select sensor_id from subscriptions where person_id="+person_id;
     //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
     stmt=conn.createStatement();

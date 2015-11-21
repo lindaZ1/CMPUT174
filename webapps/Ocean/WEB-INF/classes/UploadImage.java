@@ -88,13 +88,15 @@ public class UploadImage extends HttpServlet {
 	    FileItem[] items = new FileItem[nbFiles];
 	    Iterator i = FileItems.iterator();
 	    int j = 0;
-	    ArrayList info=new ArrayList();
-	    String sensor_id="";
-	    String description="";
-	    String date="";
 	    items[j] = (FileItem)i.next();
  
 	    while (i.hasNext() && !items[j].isFormField() ) {
+		if("file-path".equals(items[j].getFieldName())){
+			if (items[j].getName()==null || items[j].getName().isEmpty()){
+				response.sendRedirect("uploadFinish.jsp");
+			}
+			
+		}
 	    	j++;
 	    	items[j] = (FileItem) i.next();
 	    }
@@ -110,6 +112,9 @@ public class UploadImage extends HttpServlet {
 	    	BufferedImage img = ImageIO.read(instream);
 	    	BufferedImage thumbNail = shrink(img, 10);	
 
+if(img==null) {
+System.out.print("no file");
+}
 	    	/*
 		     *  First, to generate a unique pic_id using an SQL sequence
 		     */
@@ -127,10 +132,6 @@ public class UploadImage extends HttpServlet {
 
 		    stmt.execute("commit");
 
-		    //stmt.execute(counterquery);
-		    //stmt.execute("commit");
-		    //stmt.execute("INSERT INTO imagesviewer VALUES("+pic_id+",'admin')");
-		    //stmt.execute("commit");
 	
 		    // to retrieve the lob_locator 
 		    // Note that you must use "FOR UPDATE" in the select statement
@@ -138,7 +139,7 @@ public class UploadImage extends HttpServlet {
 		    String cmd = "SELECT * FROM images WHERE image_id = "+image_id+" FOR UPDATE";
 		    ResultSet rset = stmt.executeQuery(cmd);
 		    rset.next();
-		    //BLOB myblob = ((OracleResultSet)rset).getBLOB(3);
+		    
 		    BLOB myblob = ((OracleResultSet)rset).getBLOB(5); // 5 column index is thumbnail
 		    BLOB ablob = ((OracleResultSet)rset).getBLOB(6); // 6 column index is img
 
@@ -148,12 +149,12 @@ public class UploadImage extends HttpServlet {
 		    
 		    OutputStream outstream2 = ablob.setBinaryStream(1);
 		    ImageIO.write(img, "jpg", outstream2);
-	System.out.println(outstream.toString());	    
+		    
 		    instream.close();
 		    outstream.close();
 	            stmt.executeUpdate("commit");
 		    response_message = " Upload Ok! ";
-System.out.println("finish");
+
 	    }
         	conn.close();
         	response.sendRedirect("uploadImage.jsp");

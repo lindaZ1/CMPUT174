@@ -176,7 +176,7 @@ m_con.close();
 
 if (UserRole.equals("a")) {
       out.write("\n");
-      out.write("<form action= \"administratorPage.html\" method=\"post\">\n");
+      out.write("<form action= \"administratorPage.jsp\" method=\"post\">\n");
       out.write("<INPUT TYPE=\"submit\" NAME=\"Homepage\" VALUE=\"Go to HomePage\">\n");
       out.write("</form>\n");
  } 
