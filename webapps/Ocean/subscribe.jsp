@@ -78,16 +78,16 @@ if (checklogin == "false"){
 <h4>Legend<h4>
 a=audio;
 i=image;
-t=text;
-o=other;
+s=scalar;
+
 
 <h3>Subscribed Sensors:</h3>
 <TABLE BORDER=2>
 <TR><TH>SENSOR_ID</TH></TR>
 <%
-    String person_id=session.getAttribute("userID");
+    String person_id=(String)session.getAttribute("userid");
     String query="select sensor_id from subscriptions where person_id="+person_id;
-    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    
     stmt=conn.createStatement();
     ResultSet rset=stmt.executeQuery(query);
     String ans="";
@@ -114,7 +114,7 @@ o=other;
 <br></br>
 <form action="alter_subscribe.jsp" method="post">
     <input type="text" value="sensor_id" name="sensor_id">
-    <br></br><input type="radio" value="add" name="action">Add Sensor
+    <br></br><input type="radio" value="add" name="action" checked="checked">Add Sensor
     <input type="radio" value="remove" name="action">Remove Sensor
 <%  out.println("<input type='hidden' value="+person_id+" name='person'>");     %>
     <br></br><input type="submit" value="submit">

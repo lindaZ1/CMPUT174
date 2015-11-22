@@ -61,6 +61,16 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("</html>\n");
       out.write("<body>\n");
+
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
+if (checklogin == "false"){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+
+      out.write("\n");
       out.write("    <h1>Subscriptions</h1>\n");
       out.write("\n");
       out.write("    <h3>All Sensors:</h3>\n");
@@ -123,16 +133,16 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<h4>Legend<h4>\n");
       out.write("a=audio;\n");
       out.write("i=image;\n");
-      out.write("t=text;\n");
-      out.write("o=other;\n");
+      out.write("s=scalar;\n");
+      out.write("\n");
       out.write("\n");
       out.write("<h3>Subscribed Sensors:</h3>\n");
       out.write("<TABLE BORDER=2>\n");
       out.write("<TR><TH>SENSOR_ID</TH></TR>\n");
 
-    String person_id="222";
+    String person_id=(String)session.getAttribute("userid");
     String query="select sensor_id from subscriptions where person_id="+person_id;
-    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    
     stmt=conn.createStatement();
     ResultSet rset=stmt.executeQuery(query);
     String ans="";
@@ -160,14 +170,16 @@ public final class subscribe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<br></br>\n");
       out.write("<form action=\"alter_subscribe.jsp\" method=\"post\">\n");
       out.write("    <input type=\"text\" value=\"sensor_id\" name=\"sensor_id\">\n");
-      out.write("    <br></br><input type=\"radio\" value=\"add\" name=\"action\">Add Sensor\n");
+      out.write("    <br></br><input type=\"radio\" value=\"add\" name=\"action\" checked=\"checked\">Add Sensor\n");
       out.write("    <input type=\"radio\" value=\"remove\" name=\"action\">Remove Sensor\n");
   out.println("<input type='hidden' value="+person_id+" name='person'>");     
       out.write("\n");
       out.write("    <br></br><input type=\"submit\" value=\"submit\">\n");
       out.write("</form>\n");
       out.write("\n");
-      out.write("\n");
+      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
+      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
+      out.write("</form>\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");

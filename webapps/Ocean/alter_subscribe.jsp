@@ -14,13 +14,10 @@ if (checklogin == "false"){
 	<br></br>
 	<%
 		String sensor_id = request.getParameter("sensor_id");
-		out.println(sensor_id);
 		
 		String action=request.getParameter("action");
-		out.print(action);
 		
 		String person_id=request.getParameter("person");
-		out.print(person_id);
 
 		Boolean sensorExist=false;
 		Boolean sensorSubscribed=false;
@@ -52,7 +49,6 @@ if (checklogin == "false"){
 			    //check if entered sensor exists
 			    if(o.equals(sensor_id.trim())) {
 			        sensorExist=true;
-			        out.println("exist");
 			    }
 		        }
 		    }

@@ -72,25 +72,6 @@ if (checklogin == "false"){
       out.write("\n");
       out.write("    <h1>Data Upload</h1>\n");
       out.write("\n");
-
-	//establish the connection to the underlying database
-	Connection conn = null;
-	//load and register the driver
-	Class drvClass = Class.forName("oracle.jdbc.driver.OracleDriver"); 
-	DriverManager.registerDriver((Driver) drvClass.newInstance());
-	//establish the connection 
-	conn = DriverManager.getConnection("jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS","dzhang4","Horsey26");
-	conn.setAutoCommit(false);
-	Statement stmt = conn.createStatement();
-	//ResultSet rset = stmt.executeQuery("SELECT pic_id_sequence.nextval from dual");
-	//rset.next();
-	//int pic_id = rset.getInt(1);
-	//session.setAttribute("getid", pic_id);
-	//session.setAttribute("currentid", pic_id);
-	conn.close();
-
-      out.write("\n");
-      out.write("\n");
       out.write("<h3>Choose data type to upload: </h3>\n");
       out.write("<form action=\"uploadData.jsp\" method=\"post\">\n");
       out.write("<input type=\"radio\" value=\"addScalar\" name=\"action\" checked=\"checked\">Add Data\n");

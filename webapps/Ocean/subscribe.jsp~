@@ -78,16 +78,16 @@ if (checklogin == "false"){
 <h4>Legend<h4>
 a=audio;
 i=image;
-t=text;
-o=other;
+s=scalar;
+
 
 <h3>Subscribed Sensors:</h3>
 <TABLE BORDER=2>
 <TR><TH>SENSOR_ID</TH></TR>
 <%
-    String person_id="222";
+    String person_id=(String)session.getAttribute("userid");
     String query="select sensor_id from subscriptions where person_id="+person_id;
-    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    
     stmt=conn.createStatement();
     ResultSet rset=stmt.executeQuery(query);
     String ans="";

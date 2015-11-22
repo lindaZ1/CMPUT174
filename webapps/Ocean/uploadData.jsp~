@@ -45,7 +45,7 @@ if (checklogin == "false"){
 		<tr>
 		<td><B>File path: </B></td>
 		<td>
-		<input name="file-path"" type="file" class="upload" multiple="" required>
+		<input name="file-path"" type="file" class="upload" multiple="">
 		</td>
 		</tr>
 		<tr>
