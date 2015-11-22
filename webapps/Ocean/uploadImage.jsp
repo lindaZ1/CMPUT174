@@ -10,8 +10,6 @@ if (checklogin == "false"){
 }
 %>
 <%
-
-	
 	if (request.getParameter(".submit") != null) {
 		String sensor_id=request.getParameter("sensor_id");
 
@@ -19,7 +17,7 @@ if (checklogin == "false"){
 		String year=date.substring(0,4);
 		String month=date.substring(5,7);
 		String day=date.substring(8,10);
-		date=month+"/"+day+"/"+year;
+		date=day+"/"+month+"/"+year;
 
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
@@ -77,7 +75,7 @@ if (checklogin == "false"){
 			    int image_id=(Integer)session.getAttribute("currentid");
 
 
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','dd/mm/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
 			    stmt.execute("commit");
 		%>
 			<h3>File Uploaded</h3>
@@ -158,7 +156,4 @@ if (checklogin == "false"){
 	</form>
 <% } %>
 
-<form  action= "account.jsp" method="post">
-<input type="submit" name="account" value="My Account">
-</form>
 </html>

@@ -64,9 +64,9 @@ public class UploadAudio extends HttpServlet {
 	    	items[j] = (FileItem) i.next();
 	    }
 
-	    
 	    // Connect to the database and create a statement
 	    Connection conn = getConnected(drivername,dbstring, username,password);
+	    //conn.setAutoCommit(false);
 	    Statement stmt = conn.createStatement();
 	    response_message = "";
 
@@ -82,31 +82,33 @@ public class UploadAudio extends HttpServlet {
 			recording_id=rset1.getInt(1);
 			rset1.close();
 		    }
+		    stmt.executeUpdate("commit");
+		    stmt.close();
 
 		    HttpSession session = request.getSession();
 		    session.setAttribute("currentid",recording_id);
 
 		    String query="INSERT INTO audio_recordings VALUES(?,?,?,?,?,?)";
 		    PreparedStatement statement=conn.prepareStatement(query);
- 
-		    if(instream!=null) {
-			int number=3333;
-			statement.setInt(1, recording_id);
-			statement.setInt(2, number);
-			statement.setDate(3, java.sql.Date.valueOf("2013-09-04"));
-			statement.setInt(4, number);
-			statement.setString(5, "testdesc");
-		        statement.setBlob(6, instream);
-    		    }	
-		    else {
-			System.out.print("a");
-		    }
-		    statement.executeUpdate();
-		    statement.close();
 
 		    
+		    int number=3333;
+		    statement.setInt(1, recording_id);
+		    statement.setInt(2, number);
+		    statement.setDate(3, java.sql.Date.valueOf("2013-09-04"));
+		    statement.setInt(4, number);
+		    statement.setString(5, "testdesc");
+	            statement.setBlob(6, instream);
+   	    
+		   
+		    statement.executeUpdate();
+System.out.print("a");
+		    statement.executeUpdate("commit");
+		    //conn.commit();
+		    statement.close();	
+		    
 		    instream.close();
-	            stmt.executeUpdate("commit");
+	            
 		    response_message = " Upload Ok! ";
 	    }
         	conn.close();

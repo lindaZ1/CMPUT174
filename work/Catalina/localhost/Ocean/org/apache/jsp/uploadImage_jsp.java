@@ -64,8 +64,6 @@ if (checklogin == "false"){
 
       out.write('\n');
 
-
-	
 	if (request.getParameter(".submit") != null) {
 		String sensor_id=request.getParameter("sensor_id");
 
@@ -73,7 +71,7 @@ if (checklogin == "false"){
 		String year=date.substring(0,4);
 		String month=date.substring(5,7);
 		String day=date.substring(8,10);
-		date=month+"/"+day+"/"+year;
+		date=day+"/"+month+"/"+year;
 
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
@@ -135,10 +133,7 @@ if (checklogin == "false"){
 			    int image_id=(Integer)session.getAttribute("currentid");
 
 
-out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"'where image_id="+image_id);
-
-
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
+			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','dd/mm/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
 			    stmt.execute("commit");
 		
       out.write("\n");
@@ -224,9 +219,6 @@ out.println("update images set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy h
  } 
       out.write("\n");
       out.write("\n");
-      out.write("<form  action= \"account.jsp\" method=\"post\">\n");
-      out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
-      out.write("</form>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

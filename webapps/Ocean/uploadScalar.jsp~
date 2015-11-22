@@ -48,7 +48,7 @@ if (checklogin == "false"){
 				
 				if(fileData.length==0) {
 					response.sendRedirect("uploadFinish.jsp");
-}
+				}
 				int id=0;
 				String line;
 				StringBuilder contents=new StringBuilder();
@@ -81,13 +81,14 @@ if (checklogin == "false"){
 
 					
 				}
-				out.println("data inserted");
+				
 			}catch(Exception e) {}
 			
 		}
 	}
 	//response.sendRedirect("uploadFinish.jsp");
 %>
+data inserted
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>

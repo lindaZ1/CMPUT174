@@ -73,7 +73,7 @@ if (checklogin == "false"){
 						String value=info[2];
 						date="'"+date+"'";
 
-						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'mm/dd/yyyy hh24:mi:ss'),"+value+")");
+						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
 						stmt.execute("commit");
 						
 		

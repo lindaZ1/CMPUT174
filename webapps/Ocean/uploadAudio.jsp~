@@ -19,7 +19,7 @@ if (checklogin == "false"){
 		String year=date.substring(0,4);
 		String month=date.substring(5,7);
 		String day=date.substring(8,10);
-		date=month+"/"+day+"/"+year;
+		date=day+"/"+month+"/"+year;
 
 		String description=request.getParameter("description");
 
@@ -34,6 +34,9 @@ if (checklogin == "false"){
 		if(description=="") {
 			out.println("please enter a description");
 			desc=false;
+			%>
+			<P><a href="uploadAudio.jsp"> Return to form </a></P>
+			<%
 		}
 
 		String driverName="oracle.jdbc.driver.OracleDriver";
@@ -68,12 +71,15 @@ if (checklogin == "false"){
 
 		    if(sensorExist==false) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
+			%>
+			<P><a href="uploadAudio.jsp"> Return to form </a></P>
+			<%
 		    }
 
 		    if(sensorExist && desc) {
 			    int recording_id=(Integer)session.getAttribute("currentid");
 
-			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
+			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','dd/mm/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
 			    stmt.execute("commit");
 			    session.removeAttribute("currentid");
 %>

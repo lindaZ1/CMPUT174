@@ -73,7 +73,7 @@ if (checklogin == "false"){
 		String year=date.substring(0,4);
 		String month=date.substring(5,7);
 		String day=date.substring(8,10);
-		date=month+"/"+day+"/"+year;
+		date=day+"/"+month+"/"+year;
 
 		String description=request.getParameter("description");
 
@@ -88,6 +88,11 @@ if (checklogin == "false"){
 		if(description=="") {
 			out.println("please enter a description");
 			desc=false;
+			
+      out.write("\n");
+      out.write("\t\t\t<P><a href=\"uploadAudio.jsp\"> Return to form </a></P>\n");
+      out.write("\t\t\t");
+
 		}
 
 		String driverName="oracle.jdbc.driver.OracleDriver";
@@ -122,16 +127,17 @@ if (checklogin == "false"){
 
 		    if(sensorExist==false) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
+			
+      out.write("\n");
+      out.write("\t\t\t<P><a href=\"uploadAudio.jsp\"> Return to form </a></P>\n");
+      out.write("\t\t\t");
+
 		    }
 
 		    if(sensorExist && desc) {
 			    int recording_id=(Integer)session.getAttribute("currentid");
 
-
-out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
-
-
-			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm/dd/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
+			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','dd/mm/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
 			    stmt.execute("commit");
 			    session.removeAttribute("currentid");
 
@@ -210,7 +216,7 @@ out.println("update audio_recordings set date_created=TO_DATE('"+datetime+"','mm
       out.write("\tDate Created: <input type=\"date\" value=\"\" name=\"date\"><br></br>\n");
       out.write("\tTime: <input type=\"time\" value=\"time\" name=\"time\" step=\"1\"><br></br>\n");
       out.write("\tLength(seconds): <input type=\"number\" value=\"\" name=\"length\"><br></br>\n");
-      out.write("\tDescription: <input type=\"text\" value=\"\"><br></br>\n");
+      out.write("\tDescription: <input type=\"text\" name=\"description\"><br></br>\n");
       out.write("\t<input name=\".submit\" value=\"Upload\" type=\"submit\">\n");
       out.write("\t</form>\n");
  } 
