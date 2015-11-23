@@ -33,6 +33,7 @@ String Time = (request.getParameter("timeHierarchies")).trim();
 %>
 
 <%@ page import = "java.sql.*"%>
+<%@ page import="java.text.DecimalFormat" %>
 <%
 String m_url = "jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
 String m_driverName = "oracle.jdbc.driver.OracleDriver";
@@ -106,13 +107,13 @@ String action = "";
 if (Time.equals("year")) {
 action = "SELECT to_char(date_created, 'yyyy') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = '"+Sensor+"' GROUP BY to_char(date_created, 'yyyy') ORDER BY to_char(date_created, 'yyyy')";
 } else if (Time.equals("quarter")) {
-action = "SELECT to_char(date_created, 'yyyy-q') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = 1111 GROUP BY to_char(date_created, 'yyyy-q') ORDER BY to_char(date_created, 'yyyy-q')";
+action = "SELECT to_char(date_created, 'yyyy-q') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = '"+Sensor+"' GROUP BY to_char(date_created, 'yyyy-q') ORDER BY to_char(date_created, 'yyyy-q')";
 } else if (Time.equals("month")) {
-action = "SELECT to_char(date_created, 'yyyy-mm') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = 1111 GROUP BY to_char(date_created, 'yyyy-mm') ORDER BY to_char(date_created, 'yyyy-mm')";
+action = "SELECT to_char(date_created, 'yyyy-mm') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = '"+Sensor+"' GROUP BY to_char(date_created, 'yyyy-mm') ORDER BY to_char(date_created, 'yyyy-mm')";
 } else if (Time.equals("week")) {
-action = "SELECT to_char(date_created, 'yyyy-ww') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = 1111 GROUP BY to_char(date_created, 'yyyy-ww') ORDER BY to_char(date_created, 'yyyy-ww')";
+action = "SELECT to_char(date_created, 'yyyy-mm-w') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = '"+Sensor+"' GROUP BY to_char(date_created, 'yyyy-mm-w') ORDER BY to_char(date_created, 'yyyy-mm-w')";
 } else if (Time.equals("day")) {
-action = "SELECT to_char(date_created, 'yyyy-mm-dd') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = 1111 GROUP BY to_char(date_created, 'yyyy-mm-dd') ORDER BY to_char(date_created, 'yyyy-mm-dd')";
+action = "SELECT to_char(date_created, 'yyyy-mm-dd') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = '"+Sensor+"' GROUP BY to_char(date_created, 'yyyy-mm-dd') ORDER BY to_char(date_created, 'yyyy-mm-dd')";
 }
 
 ResultSet rs;
@@ -162,7 +163,7 @@ if (Time.equals("year")) {
 <H3>Scalar Value</H3>
 <table border = "1" style = "width:50%">
 <tr>
-<td>Time (Year-week)</td>
+<td>Time (Year-Month-Week)</td>
 <td>Average Value</td>
 <td>Maxmimun Value</td>
 <td>Minmimun Value</td>
@@ -183,12 +184,16 @@ if (Time.equals("year")) {
 
 while(rs.next())
 {
+double avg = Double.parseDouble(rs.getString("AVG(SD.VALUE)"));
+double max = Double.parseDouble(rs.getString("MAX(SD.VALUE)"));
+double min = Double.parseDouble(rs.getString("MIN(SD.VALUE)"));
+DecimalFormat df = new DecimalFormat("#0.00");
 %>
 <tr>
 <td><%=rs.getString("Time")%></td>
-<td><%=rs.getString("AVG(SD.VALUE)")%></td>
-<td><%=rs.getString("MAX(SD.VALUE)")%></td>
-<td><%=rs.getString("MIN(SD.VALUE)")%></td>
+<td><%=df.format(avg)%></td>
+<td><%=df.format(max)%></td>
+<td><%=df.format(min)%></td>
 </tr>
 <%
 }
