@@ -60,7 +60,7 @@ if (!UserRole.equals("a")){
 		valid = false;
 	}
 	//avoid invalid sensor type
-	if(cType.equals("a") || cType.equals("t") || cType.equals("o") || cType.equals("i")){
+	if(cType.equals("a") || cType.equals("i") || cType.equals("s")){
 		//do nothing
 	}else{
 		out.print("invalid sensor type"+"<br>");
