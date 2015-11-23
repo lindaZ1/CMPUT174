@@ -8,12 +8,23 @@
     </head>
 </html>
 <body>
+<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
+<center>
+<br>
+<H2>Ocean Observation System</H2>
+<br><br>
 <%
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("a")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 %>
@@ -38,7 +49,7 @@ if (checklogin == "false"){
         DriverManager.registerDriver((Driver)drvClass.newInstance());
 
         //establish connection here
-        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+        conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 
 	String query="select * from sensors";
 	//stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -78,7 +89,7 @@ if (checklogin == "false"){
 <h4>Legend<h4>
 a=audio;
 i=image;
-s=scalar;
+s=scalar value;
 
 
 <h3>Subscribed Sensors:</h3>
@@ -124,6 +135,11 @@ s=scalar;
 <input type="submit" name="account" value="My Account">
 </form>
 
-
-
+</center>
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
+</div>
 </body>
+</html>

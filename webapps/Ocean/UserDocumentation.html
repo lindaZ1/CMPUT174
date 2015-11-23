@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Lingbo Tang">
+	<meta name="created" content="20141124;33400000000000">
+	<meta name="changedby" content="SONY">
+	<meta name="changed" content="20151122;214700000000000">
+	<meta name="AppVersion" content="14.0000">
+	<meta name="DocSecurity" content="0">
+	<meta name="HyperlinksChanged" content="false">
+	<meta name="LinksUpToDate" content="false">
+	<meta name="ScaleCrop" content="false">
+	<meta name="ShareDoc" content="false">
+	<style type="text/css">
+	<!--
+		@page { margin: 1in }
+		p { margin-bottom: 0.08in; direction: ltr; line-height: 105%; text-align: left; widows: 2; orphans: 2 }
+		p.western { font-family: "Calibri", serif; font-size: 11pt }
+		p.cjk { font-family: "WenQuanYi Zen Hei"; font-size: 11pt }
+		a:link { color: #0000ff; so-language: en-US }
+		a:visited { so-language: en-US }
+	-->
+	</style>
+</head>
+<body lang="en-US" link="#0000ff" dir="ltr">
+<p class="western" align="center" style="margin-bottom: 0.11in; line-height: 106%">
+<font face="Calibri, serif"><font size="5" style="font-size: 20pt"><b>User
+Documentation</b></font></font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 150%"><br>
+</p>
+<p class="western" style="margin-bottom: 0in; line-height: 150%"><font face="Calibri, serif"><font size="4" style="font-size: 16pt"><b>General
+Information</b></font></font></p>
+<p class="western" style="text-indent: 0.33in; margin-bottom: 0in; line-height: 150%">
+<font face="Calibri, serif"><font size="3" style="font-size: 12pt">Welcome
+to </font></font><font color="#333333"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff">Ocean
+Observation System</span></font></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">,
+which is a </font></font><font color="#333333"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff">&nbsp;</span></font></font></font><font color="#333333"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff">web-based
+database application system</span></font></font></font><font color="#333333"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><b><span style="background: #ffffff">.</span></b></font></font></font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 150%"><font color="#333333"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><b><span style="background: #ffffff">	</span></b></font></font></font><font color="#000000"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff">Ocean
+Observation System (OOS) is a computer information system that stores
+and processes different types of data for an ocean observatory. Those
+data are produced by a wide range of different sensors, placed at
+different locations. In this system, users are able to upload, search
+, download and get access to  analysis of data provided by sensors.</span></font></font></font></p>
+<p class="western" style="text-indent: 0.33in; margin-bottom: 0in; line-height: 150%">
+<font face="Calibri, serif"><font size="3" style="font-size: 12pt">Sign
+up a new account and explore a new field now !</font></font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 150%"><br>
+</p>
+<p class="western" style="margin-bottom: 0in; line-height: 150%"><font face="Calibri, serif"><font size="4" style="font-size: 16pt"><b>Installation
+Guideline</b></font></font></p>
+<ol>
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">Download
+	package and extract  files to the path ~/catalina/webapps/Ocean</font></font></p>
+	<li><p style="margin-bottom: 0in; line-height: 150%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">Open
+	terminal and execute commands in order:</font></font></p>
+	<ol type="a">
+		<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">cd
+		~/catalina/webapps/Ocean</font></font></p>
+		<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">javac
+		WEB-INF/classes/*.java</font></font></p>
+		<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">sqlplus
+		 ( enter  &lt; username&gt;, &lt; password&gt;  to start your sql)</font></font></p>
+		<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">@setup.sql</font></font></p>
+		<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">starttomcat</font></font></p>
+	</ol>
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">Open
+	a brower, enter 
+	</font></font><a href="http://u***.cs.ualberta.ca:%3cyour-port-number%3e/Ocean/login.jsp"><font face="Calibri, serif">http://u***.cs.ualberta.ca:&lt;your-port-number&gt;/Ocean/login.jsp</font></a><font color="#800000"><span lang="en-US"><u><font face="Calibri, serif">
+	 </font></u></span></font>
+	</p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><br><br>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 16pt"><b>User
+Manual</b></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><b>
+</b></font></font>
+</p>
+<ol>
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>Login
+	Module</b></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Users:
+</font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Function:</font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">How
+to use: </font>
+</p>
+<ol start="2">
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>Sensor
+	management Module</b></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>Users:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+Only administrators</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>Function:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+ This module enables administrators to create and remove sensors.
+Open a brower, enter  </font></font><font face="Calibri, serif">
+</font><a href="http://u***.cs.ualberta.ca:%3cyour-port-number%3e/Ocean/login.jsp"><font face="Calibri, serif">http://u***.cs.ualberta.ca:&lt;your-port-number&gt;/Ocean/login.jsp</font></a><font color="#800000"><span lang="en-US"><u><font face="Calibri, serif">
+ </font></u></span></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>How
+to use:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+</font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">Go
+to administrator page and press &quot;edit sensor table&quot; button.
+System will list  sensor tables that stores all information about
+sensors and promts you to manage sensors.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">To
+create a new sensor, you should enter correct information about
+sensor id, location, type and description and then press “create”
+button. Particularly, the sensor id you entered should be un-used,
+and the type you entered should be “a” or “I” or “s”,
+otherwise, there will be an error message. </font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">To
+remove a sensor, you should enter sensor id of the sensor that you
+want to remove and press “remove” button.  Also,make sure that
+the sensor you want to remove is within the sensor table. To be
+noticed of , once you remove a sensor, all date of this sensor will
+be removed as well.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><br><br>
+</p>
+<ol start="3">
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>User
+	management Module</b></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>Users:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+Only administrators</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>Function:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+ This module enables administrators to create, remove and update
+users.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>How
+to use:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+</font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">Go
+to administrator page and press &quot;edit user table&quot; button.
+System will list  persons table that stores all information about
+users and promts you to manage users.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">To
+create a new user, you should enter correct information about person
+id, first name, last name ,address , email and phone number, and then
+press “create” button. Particularly, the person id and email you
+entered should be un-used, otherwise, there will be an error message.
+</font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">To
+remove a user, you should enter person id of the user that you want
+to remove and press “remove” button.  Also,make sure that the
+user you want to remove is within the person table. To be noticed of
+, once you remove a user, all date of this user will be removed as
+well.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><br><br>
+</p>
+<ol start="4">
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>Subscribe
+	Module</b></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Users:
+</font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Function:</font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">How
+to use: </font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><br><br>
+</p>
+<ol start="5">
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>Uploading
+	Module</b></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Users:
+</font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Function:</font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">How
+to use: </font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><br><br>
+</p>
+<ol start="6">
+	<li><p style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>Search
+	Module</b></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>Users
+:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+ Only scientists </font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>Function:
+</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+</font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">This
+module enables scientists to search and download data of sensors
+according to search conditions specified by users.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><u>How
+to use:</u></font></font><font face="Calibri, serif"><font size="3" style="font-size: 12pt">
+</font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">Go
+to scientist page and press &quot;search&quot; button. System will
+promt you to enter information about keywords of description ,
+location of sensors, type of sensors and time period of data. You
+could leave location and type empty, but make sure that you correctly
+enter information about keywords and time period.</font></font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font size="3" style="font-size: 12pt">After
+submiting your search conditions, system will list images, audio
+recordings and scalar data of sensors which qualifies search
+condition. Also , you can only see data of sensors that you have
+subscribed to . If you want to save data, you can download full size
+image , audio file and scalar data in csv file by pressing &quot;download&quot;
+button. </font></font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><br><br>
+</p>
+<ol start="7">
+	<li><p class="western"><a name="_GoBack"></a><font color="#000000"><font face="Calibri, serif"><font size="4" style="font-size: 14pt"><b>Data
+	Analysis Module</b></font></font></font></p>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Users:
+</font>
+</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">Function:</font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif">How
+to use:</font></p>
+</body>
+</html>

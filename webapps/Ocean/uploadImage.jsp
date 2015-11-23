@@ -1,11 +1,23 @@
 <%@ page import="java.sql.*" %>
 <html>
+<body>
+<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
+<center>
+<br>
+<H2>Ocean Observation System</H2>
+<br><br>
 <%
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("a")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 %>
@@ -43,7 +55,7 @@ if (checklogin == "false"){
 
 		    //establish connection here
 		    Connection conn=null;	
-		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+		    conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 		    String query="select sensor_id from sensors where sensor_type='i'";
 		    
 		    Statement stmt;
@@ -112,7 +124,7 @@ if (checklogin == "false"){
 
 	        //establish connection here
 	        Connection conn=null;	
-	        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+	        conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 	    
 
 		String query="select * from sensors where sensor_type='i'";
@@ -148,12 +160,36 @@ if (checklogin == "false"){
 </table>
 	Upload Image
 	<form action="uploadImage.jsp" method="post" >
-	Sensor_ID: <input type="text" value="sensor_id" name="sensor_id"><br></br>
-	Date Created: <input type="date" value="" name="date"><br></br>
-	Time: <input type="time" value="time" name="time" step="1"><br></br>
-	Description: <input type="text" value="" name="description"><br></br>
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+	<TD>Sensor_ID: </TD>
+<TD><input type="text" value="sensor_id" name="sensor_id"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+	<TD>Date Created: </TD>
+<TD><input type="date" value="" name="date"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+	<TD>Time: </TD>
+<TD><input type="time" value="time" name="time" step="1"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+	<TD>Description: </TD>
+<TD><input type="text" value="" name="description"></TD>
+</TR>
+</TABLE>
 	<input name=".submit" value="Upload" type="submit">
 	</form>
 <% } %>
 
+<form  action= "account.jsp" method="post">
+<input type="submit" name="account" value="My Account">
+</form>
+</center>
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
+</div>
+</body>
 </html>

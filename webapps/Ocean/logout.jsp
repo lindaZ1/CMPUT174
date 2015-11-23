@@ -19,7 +19,10 @@ session.setAttribute("logstatus", checklogin);
 <script language=javascript type=text/javascript>
 setTimeout("javascript:location.href='login.html'", 2500);
 </script>
-
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
 </div>
 </body>
 </html>

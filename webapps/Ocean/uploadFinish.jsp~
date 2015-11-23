@@ -14,7 +14,6 @@ if (checklogin == "false"){
 
 no file read, please upload a file
 <form  action= "account.jsp" method="post">
-<input type="text" value="file not read">
 <input type="submit" name="account" value="My Account">
 </form>
 

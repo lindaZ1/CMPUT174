@@ -7,12 +7,23 @@
     </head>
 </html>
 <body>
+<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
+<center>
+<br>
+<H2>Ocean Observation System</H2>
+<br><br>
 <%
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("a")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 %>
@@ -39,7 +50,7 @@ if (checklogin == "false"){
         DriverManager.registerDriver((Driver)drvClass.newInstance());
 
         //establish connection here
-        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+        conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 
 	String query="select * from persons";
 	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -84,37 +95,63 @@ if (checklogin == "false"){
 
     <h3>Create a User:</h3>
     <form action= "createUser.jsp" method="post">
-    Person Id:
-    <input type="text" name= "createPersonId"><br>
-    First Name:
-    <input type="text" name="firstName"><br>
-    Last Name:
-    <input type="text" name="lastName"><br>
-    Address:
-    <input type = "text" name="address"><br>
-    Email:
-    <input type = "text" name="email"><br>
-    Phone:
-    <input type = "text" name="phone"><br>
-
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Person Id:</TD>
+    <TD><input type="text" name= "createPersonId"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>First Name:</TD>
+    <TD><input type="text" name="firstName"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Last Name:</TD>
+    <TD><input type="text" name="lastName"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Address:</TD>
+    <TD><input type = "text" name="address"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Email:</TD>
+    <TD><input type = "text" name="email"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Phone:</TD>
+    <TD><input type = "text" name="phone"></TD>
+</TR>
+</TABLE>
     <input type="submit" name="submit" value= "create">
   </form>
    
     <h3>Update a User:</h3>
     <form action= "updateUser.jsp" method="post">
-    Person Id:
-    <input type="text" name= "updatePersonId"><br>
-    First Name:
-    <input type="text" name="firstName1"><br>
-    Last Name:
-    <input type="text" name="lastName1"><br>
-    Address:
-    <input type = "text" name="address1"><br>
-    Email:
-    <input type = "text" name="email1"><br>
-    Phone:
-    <input type = "text" name="phone1"><br>
-
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Person Id:</TD>
+    <TD><input type="text" name= "updatePersonId"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>First Name:</TD>
+    <TD><input type="text" name="firstName1"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Last Name:</TD>
+    <TD><input type="text" name="lastName1"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Address:</TD>
+    <TD><input type = "text" name="address1"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Email:</TD>
+    <TD><input type = "text" name="email1"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+    <TD>Phone:</TD>
+    <TD><input type = "text" name="phone1"></TD>
+</TR>
+</TABLE>
     <input type="submit" name="submit" value= "update">
   </form>
 
@@ -124,4 +161,12 @@ if (checklogin == "false"){
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
+</center>
+</H2>
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
+</div>
 </body>
+</html>

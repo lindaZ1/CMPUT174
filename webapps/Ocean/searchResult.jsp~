@@ -49,8 +49,8 @@
 	
     }catch(Exception e){
 	valid= false;
-	out.print("Invalid date");
-	//out.print
+	out.print("Invalid date"+"<br>");
+	
     }
 	
 	

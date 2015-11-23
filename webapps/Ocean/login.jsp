@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<div id="image" style="background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
+<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
 <H2>Loading...</H2>
 <br><br>
 
@@ -94,6 +94,10 @@ out.print("</script>");
 
 
 %>
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
 </div>
 </body>
 </html>

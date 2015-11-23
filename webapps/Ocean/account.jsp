@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<div id="image" style="background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
+<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
 <center>
 <br>
 <H2>Ocean Observation System</H2>
@@ -13,7 +13,7 @@
 <%
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
     out.print("</script>");
@@ -82,7 +82,7 @@ while(rs.next())
 <tr>
   <td>Phone</td>
   <td><%=rs.getString("phone")%></td>
-  </tr>
+</tr>
 <%
 }
 }
@@ -143,8 +143,13 @@ javascript:location.href="logout.jsp"
 }
 </script>
 
-
 </center>
+
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
+
 </div>
 </body>
 </html>

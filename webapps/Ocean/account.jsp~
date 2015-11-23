@@ -4,14 +4,15 @@
 </head>
 
 <body>
-<div id="image" style="background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
+<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
 <center>
 <br>
 <H2>Ocean Observation System</H2>
 <br><br>
 
 <%
-String checklogin = (String) session.getAttribute("logstatus");
+String checklogin = "false";
+checklogin = (String) session.getAttribute("logstatus");
 if (checklogin == "false"){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
@@ -81,7 +82,7 @@ while(rs.next())
 <tr>
   <td>Phone</td>
   <td><%=rs.getString("phone")%></td>
-  </tr>
+</tr>
 <%
 }
 }
@@ -105,7 +106,7 @@ m_con.close();
 
 <%
 if (UserRole.equals("a")) {%>
-<form action= "administratorPage.html" method="post">
+<form action= "administratorPage.jsp" method="post">
 <INPUT TYPE="submit" NAME="Homepage" VALUE="Go to HomePage">
 </form>
 <% } %>
@@ -142,8 +143,13 @@ javascript:location.href="logout.jsp"
 }
 </script>
 
-
 </center>
+
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
+
 </div>
 </body>
 </html>

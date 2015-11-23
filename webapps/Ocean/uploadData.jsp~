@@ -12,21 +12,6 @@ if (checklogin == "false"){
 <%
 	String action=request.getParameter("action");
 
-	//establish the connection to the underlying database
-	Connection conn = null;
-	//load and register the driver
-	Class drvClass = Class.forName("oracle.jdbc.driver.OracleDriver"); 
-	DriverManager.registerDriver((Driver) drvClass.newInstance());
-	//establish the connection 
-	conn = DriverManager.getConnection("jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS","dzhang4","Horsey26");
-	conn.setAutoCommit(false);
-	Statement stmt = conn.createStatement();
-	//ResultSet rset = stmt.executeQuery("SELECT pic_id_sequence.nextval from dual");
-	//rset.next();
-	//int pic_id = rset.getInt(1);
-	//session.setAttribute("getid", pic_id);
-	//session.setAttribute("currentid", pic_id);
-
 
 	if(action.equals("addScalar")) {  
 %>

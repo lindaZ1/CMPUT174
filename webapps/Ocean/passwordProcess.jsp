@@ -15,7 +15,7 @@
 <%
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
     out.print("</script>");
@@ -63,6 +63,10 @@ m_con.close();
 setTimeout("javascript:location.href='account.jsp'", 2000);
 </script>
 </center>
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
 </div>
 </body>
 </html>
