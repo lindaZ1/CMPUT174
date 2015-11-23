@@ -51,7 +51,7 @@ public class DownloadImage extends HttpServlet {
 			int ccount=rsetMetaData.getColumnCount();
 	
 			while(rset.next()){
-				Blob b = rset.getBlob("thumbnail");
+				Blob b = rset.getBlob("recorded_data");
 				long size = b.length();
 				byte[] bs = b.getBytes(1, (int)size);
 				response.setContentType("image/jpeg");
