@@ -23,6 +23,7 @@ if (checklogin.equals("false")){
 %>
 
 <%
+try {
 String UserFN = (request.getParameter("userfn")).trim();
 String UserLN = (request.getParameter("userln")).trim();
 String UserAddr = (request.getParameter("useraddr")).trim();
@@ -39,6 +40,7 @@ String m_password = "ad50064051";
 String UserID = (String) session.getAttribute("userid");
 
 Connection m_con;
+// update new personal information
 String action = "update persons set first_name = '" + UserFN + "', last_name = '" + UserLN + "', address = '" + UserAddr + "', email = '" + UserEmail + "', phone = '" + UserPhone + "' where persons.person_id = '" + UserID + "'";
 ResultSet rs;
 Statement stmt;
@@ -60,6 +62,12 @@ rs = stmt.executeQuery(action);
 rs.close();
 stmt.close();
 m_con.close();
+}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 %>
 
 <H2>Change Saved</H2>

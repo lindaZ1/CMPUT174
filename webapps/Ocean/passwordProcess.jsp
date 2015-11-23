@@ -23,6 +23,7 @@ if (checklogin.equals("false")){
 %>
 
 <%
+try{
 String newPW = (request.getParameter("newPW")).trim();
 %>
 
@@ -56,6 +57,12 @@ rs = stmt.executeQuery(action);
 rs.close();
 stmt.close();
 m_con.close();
+}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 %>
 
 <H2>New Password Saved</H2>

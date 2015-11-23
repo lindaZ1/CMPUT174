@@ -27,6 +27,7 @@ if (!UserRole.equals("s")){
 %>
 
 <%
+try {
 String Sensor = (request.getParameter("sensorSelect")).trim();
 String Time = (request.getParameter("timeHierarchies")).trim();
 %>
@@ -67,6 +68,7 @@ if (rs0 != null) {
 <table border = "1" style = "width:30%">
 
 <%
+// show the selected sensor information
 while(rs0.next())
 {
 %>
@@ -99,6 +101,7 @@ rs0.close();
 %>
 </table>
 <%
+// detect time hierarchies and use the correct SQL statement
 String action = "";
 if (Time.equals("year")) {
 action = "SELECT to_char(date_created, 'yyyy') as Time, avg(sd.value), max(sd.value), min(sd.value) FROM scalar_data sd WHERE sd.sensor_id = '"+Sensor+"' GROUP BY to_char(date_created, 'yyyy') ORDER BY to_char(date_created, 'yyyy')";
@@ -117,6 +120,7 @@ Statement stmt;
 stmt = m_con.createStatement();
 rs = stmt.executeQuery(action);
 
+// show the scalar values
 try
 {
 if (rs != null) {
@@ -197,6 +201,12 @@ e.printStackTrace();
 stmt.close();
 rs.close();
 m_con.close();
+}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 %>
 </table>
 <br>

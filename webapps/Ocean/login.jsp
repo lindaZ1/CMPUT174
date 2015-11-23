@@ -9,6 +9,7 @@
 <br><br>
 
 <%
+try{
 String LogName = (request.getParameter("logname")).trim();
 String LogPW = (request.getParameter("logpw")).trim();
 %>
@@ -44,6 +45,7 @@ String UserRole = "b";
 String UserID = "c";
 String checklogin = "false";
 if (rs.next() == false) {
+// detect wrong username
 out.print("<H1>Invalid Username. Please try again.</H1>");
 m_con.close();
 out.print("<script language=javascript type=text/javascript>");
@@ -54,6 +56,8 @@ out.print("</script>");
   TruePW = rs.getString(2);
   UserRole = rs.getString(3);
   UserID = rs.getString(4);
+
+  // detect wrong password
   if (!LogPW.equals(TruePW)) {
     out.print("<H1>Invalid Password. Please try again.</H1>");
     m_con.close();
@@ -62,6 +66,7 @@ out.print("</script>");
     out.print("</script>");
 
   } else {
+    // log in successfully
     out.print("<H2>Welcome back! </H2>");
     checklogin = "true";
     session.setAttribute("logstatus", checklogin);
@@ -71,6 +76,7 @@ out.print("</script>");
     session.setAttribute("userrole", UserRole);
     m_con.close();
 
+    // detect user role
     if (UserRole.equals("a")){
       out.print("<H2>Now you can edit users and sensors.</H2>");
       out.print("<script language=javascript type=text/javascript>");
@@ -91,7 +97,12 @@ out.print("</script>");
       out.println("</script>");} 
   }
 }
-
+}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 
 %>
 <center><h3>

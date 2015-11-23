@@ -55,6 +55,7 @@ String address = "d";
 String email = "e";
 String phone = "f";
 
+// get user's information
 try
 {
 if (rs != null) {

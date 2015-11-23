@@ -49,6 +49,7 @@ m_con = DriverManager.getConnection(m_url, m_userName, m_password);
 stmt = m_con.createStatement();
 rs = stmt.executeQuery(action);
 
+// show user's personal information
 try
 {
 if (rs != null) {

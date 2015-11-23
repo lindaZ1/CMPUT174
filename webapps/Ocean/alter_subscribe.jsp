@@ -110,7 +110,12 @@ if (!UserRole.equals("a")){
 		    }
 		    stmt.close();
 		    conn.close();
-		}catch(Exception e) {out.println(e.toString());}
+		}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 
 	%>
 

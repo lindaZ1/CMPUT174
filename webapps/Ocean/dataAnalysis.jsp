@@ -61,6 +61,7 @@ m_con = DriverManager.getConnection(m_url, m_userName, m_password);
 stmt1 = m_con.createStatement();
 rs1 = stmt1.executeQuery(action1);
 
+// show all sensors information
 Object o1;
 ResultSetMetaData rsetMetaData1=rs1.getMetaData();
 int ccount1=rsetMetaData1.getColumnCount();
@@ -99,6 +100,7 @@ Statement stmt2;
 stmt2 = m_con.createStatement();
 rs2 = stmt2.executeQuery(action2);
 
+// show user's subscribed sensors
 String ans2="";
 Object o2;
 ResultSetMetaData rsetMetaData2=rs2.getMetaData();
@@ -131,6 +133,7 @@ Statement stmt3;
 stmt3 = m_con.createStatement();
 rs3 = stmt3.executeQuery(action3);
 
+// let user select sensors and time hierarchies
 Object o3;
 ResultSetMetaData rsetMetaData3=rs3.getMetaData();
 int ccount3=rsetMetaData3.getColumnCount();
