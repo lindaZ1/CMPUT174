@@ -27,8 +27,8 @@ public class UploadAudio extends HttpServlet {
     public void doPost(HttpServletRequest request,HttpServletResponse response)
 	throws ServletException, IOException {
 	//  change the following parameters to connect to the oracle database
-	String username = "dzhang4";
-	String password = "Horsey26";
+	String username = "tshen";
+	String password = "ad50064051";
 	String drivername = "oracle.jdbc.driver.OracleDriver";
 	String dbstring ="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
 	int recording_id=0;
@@ -58,7 +58,6 @@ public class UploadAudio extends HttpServlet {
 			if (items[j].getName()==null || items[j].getName().isEmpty()){
 				response.sendRedirect("uploadFinish.jsp");
 			}
-			
 		}
 	    	j++;
 	    	items[j] = (FileItem) i.next();
@@ -84,14 +83,14 @@ public class UploadAudio extends HttpServlet {
 		    }
 		    stmt.executeUpdate("commit");
 		    stmt.close();
-
+System.out.print("a");	
 		    HttpSession session = request.getSession();
 		    session.setAttribute("currentid",recording_id);
 
 		    String query="INSERT INTO audio_recordings VALUES(?,?,?,?,?,?)";
 		    PreparedStatement statement=conn.prepareStatement(query);
 
-		    
+	System.out.print("a");	    
 		    int number=3333;
 		    statement.setInt(1, recording_id);
 		    statement.setInt(2, number);

@@ -16,14 +16,14 @@ if (checklogin.equals("false")){
     out.print("</script>");
 }
 String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("a")){
+if (!UserRole.equals("d")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 %>
 
-no file read, please upload a file
+no file read or invalid file type
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>

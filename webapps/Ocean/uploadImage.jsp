@@ -15,7 +15,7 @@ if (checklogin.equals("false")){
     out.print("</script>");
 }
 String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("a")){
+if (!UserRole.equals("d")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
@@ -26,10 +26,13 @@ if (!UserRole.equals("a")){
 		String sensor_id=request.getParameter("sensor_id");
 
 		String date=request.getParameter("date");
-		String year=date.substring(0,4);
-		String month=date.substring(5,7);
-		String day=date.substring(8,10);
-		date=day+"/"+month+"/"+year;
+
+		if(date!="") {
+			String year=date.substring(0,4);
+			String month=date.substring(5,7);
+			String day=date.substring(8,10);
+			date=day+"/"+month+"/"+year;
+		}
 
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
@@ -76,7 +79,7 @@ if (!UserRole.equals("a")){
 			}
 		    }
 
-		    if(sensorExist==false) {
+		    if(sensorExist==false && desc==true) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
 			%>
 			<P><a href="uploadImage.jsp"> Return to form </a></P>
@@ -163,28 +166,26 @@ if (!UserRole.equals("a")){
 <TABLE>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Sensor_ID: </TD>
-<TD><input type="text" value="sensor_id" name="sensor_id"></TD>
+<TD><input type="text" name="sensor_id" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Date Created: </TD>
-<TD><input type="date" value="" name="date"></TD>
+<TD><input type="date" value="" name="date" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Time: </TD>
-<TD><input type="time" value="time" name="time" step="1"></TD>
+<TD><input type="time" value="time" name="time" step="1" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Description: </TD>
-<TD><input type="text" value="" name="description"></TD>
+<TD><input type="text" value="" name="description" required="required"></TD>
 </TR>
 </TABLE>
 	<input name=".submit" value="Upload" type="submit">
 	</form>
 <% } %>
 
-<form  action= "account.jsp" method="post">
-<input type="submit" name="account" value="My Account">
-</form>
+
 </center>
 <center><h3>
 <br><br>

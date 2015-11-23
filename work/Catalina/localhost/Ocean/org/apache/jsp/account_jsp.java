@@ -57,7 +57,7 @@ public final class account_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\n");
       out.write("\n");
       out.write("<body>\n");
-      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;\">\n");
+      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;\">\n");
       out.write("<center>\n");
       out.write("<br>\n");
       out.write("<H2>Ocean Observation System</H2>\n");
@@ -66,7 +66,7 @@ public final class account_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
     out.print("</script>");
@@ -103,6 +103,7 @@ m_con = DriverManager.getConnection(m_url, m_userName, m_password);
 stmt = m_con.createStatement();
 rs = stmt.executeQuery(action);
 
+// show user's personal information
 try
 {
 if (rs != null) {
@@ -150,7 +151,7 @@ while(rs.next())
       out.write("  <td>");
       out.print(rs.getString("phone"));
       out.write("</td>\n");
-      out.write("  </tr>\n");
+      out.write("</tr>\n");
 
 }
 }
@@ -218,8 +219,13 @@ if (UserRole.equals("s")) {
       out.write("}\n");
       out.write("</script>\n");
       out.write("\n");
-      out.write("\n");
       out.write("</center>\n");
+      out.write("\n");
+      out.write("<center><h3>\n");
+      out.write("<br><br>\n");
+      out.write("<a href='UserDocumentation.html' target='_blank'>Help</a>\n");
+      out.write("</h3></center>\n");
+      out.write("\n");
       out.write("</div>\n");
       out.write("</body>\n");
       out.write("</html>\n");

@@ -15,7 +15,7 @@ if (checklogin.equals("false")){
     out.print("</script>");
 }
 String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("a")){
+if (!UserRole.equals("d")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
@@ -166,23 +166,23 @@ if (!UserRole.equals("a")){
 <TABLE>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Sensor_ID: </TD>
-<TD><input type="text" value="sensor_id" name="sensor_id"></TD>
+<TD><input type="text" value="sensor_id" name="sensor_id" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Date Created: </TD>
-<TD><input type="date" value="" name="date"></TD>
+<TD><input type="date" value="" name="date" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Time: </TD>
-<TD><input type="time" value="time" name="time" step="1"></TD>
+<TD><input type="time" value="time" name="time" step="1" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Length(seconds): </TD>
-<TD><input type="number" value="" name="length"></TD>
+<TD><input type="number" value="" name="length" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Description: </TD>
-<TD><input type="text" name="description"></TD>
+<TD><input type="text" name="description" required="required"></TD>
 </TR>
 </TABLE>
 <br></br>
@@ -191,9 +191,7 @@ if (!UserRole.equals("a")){
 <% } %>
 
 
-<form  action= "account.jsp" method="post">
-<input type="submit" name="account" value="My Account">
-</form>
+
 </center>
 <center><h3>
 <br><br>

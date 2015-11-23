@@ -29,7 +29,7 @@ CREATE SEQUENCE SEQ_IMAGE_ID START WITH 1 INCREMENT BY 1;
 INSERT INTO images(image_id) VALUES (SEQ_IMAGE_ID.nextval);
 
 CREATE SEQUENCE SCALAR_ID START WITH 1 INCREMENT BY 1;
-create sequence recording_id start with 1 increment by 1;
+CREATE sequence recording_id start with 1 increment by 1;
 
 INSERT INTO scalar_data VALUES ('1','1111',date'2002-02-02','1.1');
 INSERT INTO scalar_data VALUES ('2','1111',date'2003-02-02','2.2');

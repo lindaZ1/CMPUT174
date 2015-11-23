@@ -61,12 +61,24 @@ public final class uploadScalar_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("\n");
       out.write("<html>\n");
+      out.write("<body>\n");
+      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;\">\n");
+      out.write("<center>\n");
+      out.write("<br>\n");
+      out.write("<H2>Ocean Observation System</H2>\n");
+      out.write("<br><br>\n");
 
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("d")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 
@@ -79,7 +91,7 @@ if (checklogin == "false"){
 	Class drvClass = Class.forName("oracle.jdbc.driver.OracleDriver"); 
 	DriverManager.registerDriver((Driver) drvClass.newInstance());
 	//establish the connection 
-	conn = DriverManager.getConnection("jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS","dzhang4","Horsey26");
+	conn = DriverManager.getConnection("jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS","tshen","ad50064051");
 	conn.setAutoCommit(false);
 	Statement stmt = conn.createStatement();
 
@@ -102,56 +114,73 @@ if (checklogin == "false"){
 
 			try{
 				String filename=item.getName();
-				InputStream stream=application.getResourceAsStream(filename);
-				fileData=item.get();
-				
-				if(fileData.length==0) {
+				if(filename.length()<5 || (filename.substring(filename.length()-4))!=".csv") {
 					response.sendRedirect("uploadFinish.jsp");
 				}
-				int id=0;
-				String line;
-				StringBuilder contents=new StringBuilder();
-				BufferedReader input=new BufferedReader(new InputStreamReader(stream));
 
-				while((line=input.readLine())!=null) {	
-					//line=input.readLine();
-					contents.append(line);
-					String info[]=line.split(",");
-					
-					if(info[0]!="") {
-						//generate id
-						ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
-						if(rset1!=null && rset1.next()) {
-						    id=rset1.getInt(1);
-						    rset1.close();
-				    		}
-					
-						//extract info
-						String sensor_id=info[0];
-						String date=info[1];
-						String value=info[2];
-						date="'"+date+"'";
+				else{
+					InputStream stream=application.getResourceAsStream(filename);
+					fileData=item.get();
+				
+					if(fileData.length==0) {
+						response.sendRedirect("uploadFinish.jsp");
+					}
+					if(fileData.length<5 || fileData.substring(fileData.length-4))!=".csv") {
+						response.sendRedirect("uploadFinish.jsp");
+					}
+					int id=0;
+					String line;
+					StringBuilder contents=new StringBuilder();
+					BufferedReader input=new BufferedReader(new InputStreamReader(stream));
 
-						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
-						stmt.execute("commit");
+					while((line=input.readLine())!=null) {	
+						//line=input.readLine();
+						contents.append(line);
+						String info[]=line.split(",");
+					
+						if(info[0]!="") {
+							//generate id
+							ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
+							if(rset1!=null && rset1.next()) {
+							    id=rset1.getInt(1);
+							    rset1.close();
+					    		}
+					
+							//extract info
+							String sensor_id=info[0];
+							String date=info[1];
+							String value=info[2];
+							date="'"+date+"'";
+
+							stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
+							stmt.execute("commit");
 						
 		
-					}
+						}
 
 					
+					}
+					out.println("data inserted");
 				}
 				
-			}catch(Exception e) {}
+				}catch(Exception e) {}
 			
+			}
 		}
-	}
-	//response.sendRedirect("uploadFinish.jsp");
+	
 
       out.write("\n");
-      out.write("data inserted\n");
+      out.write("\n");
       out.write("<form  action= \"account.jsp\" method=\"post\">\n");
       out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
       out.write("</form>\n");
+      out.write("</center>\n");
+      out.write("<center><h3>\n");
+      out.write("<br><br>\n");
+      out.write("<a href='UserDocumentation.html' target='_blank'>Help</a>\n");
+      out.write("</h3></center>\n");
+      out.write("</div>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
       out.write("\n");
     } catch (Throwable t) {

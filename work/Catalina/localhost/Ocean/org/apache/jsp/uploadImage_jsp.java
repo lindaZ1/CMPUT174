@@ -53,12 +53,24 @@ public final class uploadImage_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("<html>\n");
+      out.write("<body>\n");
+      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;\">\n");
+      out.write("<center>\n");
+      out.write("<br>\n");
+      out.write("<H2>Ocean Observation System</H2>\n");
+      out.write("<br><br>\n");
 
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("d")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 
@@ -68,10 +80,13 @@ if (checklogin == "false"){
 		String sensor_id=request.getParameter("sensor_id");
 
 		String date=request.getParameter("date");
-		String year=date.substring(0,4);
-		String month=date.substring(5,7);
-		String day=date.substring(8,10);
-		date=day+"/"+month+"/"+year;
+
+		if(date!="") {
+			String year=date.substring(0,4);
+			String month=date.substring(5,7);
+			String day=date.substring(8,10);
+			date=day+"/"+month+"/"+year;
+		}
 
 		String description=request.getParameter("description");
 		String time=request.getParameter("time");
@@ -99,7 +114,7 @@ if (checklogin == "false"){
 
 		    //establish connection here
 		    Connection conn=null;	
-		    conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+		    conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 		    String query="select sensor_id from sensors where sensor_type='i'";
 		    
 		    Statement stmt;
@@ -120,7 +135,7 @@ if (checklogin == "false"){
 			}
 		    }
 
-		    if(sensorExist==false) {
+		    if(sensorExist==false && desc==true) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
 			
       out.write("\n");
@@ -173,7 +188,7 @@ if (checklogin == "false"){
 
 	        //establish connection here
 	        Connection conn=null;	
-	        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+	        conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 	    
 
 		String query="select * from sensors where sensor_type='i'";
@@ -210,15 +225,37 @@ if (checklogin == "false"){
       out.write("</table>\n");
       out.write("\tUpload Image\n");
       out.write("\t<form action=\"uploadImage.jsp\" method=\"post\" >\n");
-      out.write("\tSensor_ID: <input type=\"text\" value=\"sensor_id\" name=\"sensor_id\"><br></br>\n");
-      out.write("\tDate Created: <input type=\"date\" value=\"\" name=\"date\"><br></br>\n");
-      out.write("\tTime: <input type=\"time\" value=\"time\" name=\"time\" step=\"1\"><br></br>\n");
-      out.write("\tDescription: <input type=\"text\" value=\"\" name=\"description\"><br></br>\n");
+      out.write("<TABLE>\n");
+      out.write("<TR VALIGN=TOP ALIGN=LEFT>\n");
+      out.write("\t<TD>Sensor_ID: </TD>\n");
+      out.write("<TD><input type=\"text\" name=\"sensor_id\" required=\"required\"></TD>\n");
+      out.write("</TR>\n");
+      out.write("<TR VALIGN=TOP ALIGN=LEFT>\n");
+      out.write("\t<TD>Date Created: </TD>\n");
+      out.write("<TD><input type=\"date\" value=\"\" name=\"date\" required=\"required\"></TD>\n");
+      out.write("</TR>\n");
+      out.write("<TR VALIGN=TOP ALIGN=LEFT>\n");
+      out.write("\t<TD>Time: </TD>\n");
+      out.write("<TD><input type=\"time\" value=\"time\" name=\"time\" step=\"1\" required=\"required\"></TD>\n");
+      out.write("</TR>\n");
+      out.write("<TR VALIGN=TOP ALIGN=LEFT>\n");
+      out.write("\t<TD>Description: </TD>\n");
+      out.write("<TD><input type=\"text\" value=\"\" name=\"description\" required=\"required\"></TD>\n");
+      out.write("</TR>\n");
+      out.write("</TABLE>\n");
       out.write("\t<input name=\".submit\" value=\"Upload\" type=\"submit\">\n");
       out.write("\t</form>\n");
  } 
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("</center>\n");
+      out.write("<center><h3>\n");
+      out.write("<br><br>\n");
+      out.write("<a href='UserDocumentation.html' target='_blank'>Help</a>\n");
+      out.write("</h3></center>\n");
+      out.write("</div>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

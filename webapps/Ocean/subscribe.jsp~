@@ -89,7 +89,7 @@ if (!UserRole.equals("a")){
 <h4>Legend<h4>
 a=audio;
 i=image;
-s=scalar;
+s=scalar value;
 
 
 <h3>Subscribed Sensors:</h3>

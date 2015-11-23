@@ -30,3 +30,11 @@ INSERT INTO images(image_id) VALUES (SEQ_IMAGE_ID.nextval);
 
 CREATE SEQUENCE SCALAR_ID START WITH 1 INCREMENT BY 1;
 create sequence recording_id start with 1 increment by 1;
+
+INSERT INTO scalar_data VALUES ('1','1111',date'2002-02-02','1.1');
+INSERT INTO scalar_data VALUES ('2','1111',date'2003-02-02','2.2');
+INSERT INTO scalar_data VALUES ('3','1111',date'2004-02-02','3.3');
+INSERT INTO scalar_data VALUES ('4','1111',date'2002-03-02','2.2');
+INSERT INTO scalar_data VALUES ('5','1111',date'2002-04-02','3.3');
+INSERT INTO scalar_data VALUES ('6','1111',date'2002-02-03','4.4');
+INSERT INTO scalar_data VALUES ('7','1111',date'2003-03-02','0.0');

@@ -53,17 +53,30 @@ public final class uploadData_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("<html>\n");
+      out.write("<body>\n");
+      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;\">\n");
+      out.write("<center>\n");
+      out.write("<br>\n");
+      out.write("<H2>Ocean Observation System</H2>\n");
+      out.write("<br><br>\n");
 
 String checklogin = "false";
 checklogin = (String) session.getAttribute("logstatus");
-if (checklogin == "false"){
+if (checklogin.equals("false")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='login.html'");
+    out.print("</script>");
+}
+String UserRole = (String) session.getAttribute("userrole");
+if (!UserRole.equals("d")){
+    out.print("<script language=javascript type=text/javascript>");
+    out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 
       out.write('\n');
 
+try{
 	String action=request.getParameter("action");
 
 
@@ -146,11 +159,24 @@ if (checklogin == "false"){
       out.write("\t\t</form>\n");
       out.write("\t\t<P><a href=\"dataCurator.jsp\"> Return </a></P>\n");
      } 
+}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 	
       out.write("\n");
       out.write("<form  action= \"account.jsp\" method=\"post\">\n");
       out.write("<input type=\"submit\" name=\"account\" value=\"My Account\">\n");
       out.write("</form>\n");
+      out.write("</center>\n");
+      out.write("<center><h3>\n");
+      out.write("<br><br>\n");
+      out.write("<a href='UserDocumentation.html' target='_blank'>Help</a>\n");
+      out.write("</h3></center>\n");
+      out.write("</div>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

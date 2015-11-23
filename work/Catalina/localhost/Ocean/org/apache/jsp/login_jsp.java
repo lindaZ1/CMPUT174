@@ -57,11 +57,12 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\n");
       out.write("\n");
       out.write("<body>\n");
-      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;\">\n");
+      out.write("<div id=\"image\" style=\"background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;\">\n");
       out.write("<H2>Loading...</H2>\n");
       out.write("<br><br>\n");
       out.write("\n");
 
+try{
 String LogName = (request.getParameter("logname")).trim();
 String LogPW = (request.getParameter("logpw")).trim();
 
@@ -98,6 +99,7 @@ String UserRole = "b";
 String UserID = "c";
 String checklogin = "false";
 if (rs.next() == false) {
+// detect wrong username
 out.print("<H1>Invalid Username. Please try again.</H1>");
 m_con.close();
 out.print("<script language=javascript type=text/javascript>");
@@ -108,6 +110,8 @@ out.print("</script>");
   TruePW = rs.getString(2);
   UserRole = rs.getString(3);
   UserID = rs.getString(4);
+
+  // detect wrong password
   if (!LogPW.equals(TruePW)) {
     out.print("<H1>Invalid Password. Please try again.</H1>");
     m_con.close();
@@ -116,6 +120,7 @@ out.print("</script>");
     out.print("</script>");
 
   } else {
+    // log in successfully
     out.print("<H2>Welcome back! </H2>");
     checklogin = "true";
     session.setAttribute("logstatus", checklogin);
@@ -125,6 +130,7 @@ out.print("</script>");
     session.setAttribute("userrole", UserRole);
     m_con.close();
 
+    // detect user role
     if (UserRole.equals("a")){
       out.print("<H2>Now you can edit users and sensors.</H2>");
       out.print("<script language=javascript type=text/javascript>");
@@ -145,10 +151,19 @@ out.print("</script>");
       out.println("</script>");} 
   }
 }
-
+}catch(Exception e) {
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
+}
 
 
       out.write("\n");
+      out.write("<center><h3>\n");
+      out.write("<br><br>\n");
+      out.write("<a href='UserDocumentation.html' target='_blank'>Help</a>\n");
+      out.write("</h3></center>\n");
       out.write("</div>\n");
       out.write("</body>\n");
       out.write("</html>\n");

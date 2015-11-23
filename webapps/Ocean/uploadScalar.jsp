@@ -18,7 +18,7 @@ if (checklogin.equals("false")){
     out.print("</script>");
 }
 String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("a")){
+if (!UserRole.equals("d")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
@@ -55,52 +55,60 @@ if (!UserRole.equals("a")){
 
 			try{
 				String filename=item.getName();
-				InputStream stream=application.getResourceAsStream(filename);
-				fileData=item.get();
-				
-				if(fileData.length==0) {
+				if(filename.length()<5 || (filename.substring(filename.length()-4))!=".csv") {
 					response.sendRedirect("uploadFinish.jsp");
 				}
-				int id=0;
-				String line;
-				StringBuilder contents=new StringBuilder();
-				BufferedReader input=new BufferedReader(new InputStreamReader(stream));
 
-				while((line=input.readLine())!=null) {	
-					//line=input.readLine();
-					contents.append(line);
-					String info[]=line.split(",");
+				else{
+					InputStream stream=application.getResourceAsStream(filename);
+					fileData=item.get();
+				
+					if(fileData.length==0) {
+						response.sendRedirect("uploadFinish.jsp");
+					}
 					
-					if(info[0]!="") {
-						//generate id
-						ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
-						if(rset1!=null && rset1.next()) {
-						    id=rset1.getInt(1);
-						    rset1.close();
-				    		}
-					
-						//extract info
-						String sensor_id=info[0];
-						String date=info[1];
-						String value=info[2];
-						date="'"+date+"'";
+					int id=0;
+					String line;
+					StringBuilder contents=new StringBuilder();
+					BufferedReader input=new BufferedReader(new InputStreamReader(stream));
 
-						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
-						stmt.execute("commit");
+					while((line=input.readLine())!=null) {	
+						//line=input.readLine();
+						contents.append(line);
+						String info[]=line.split(",");
+					
+						if(info[0]!="") {
+							//generate id
+							ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
+							if(rset1!=null && rset1.next()) {
+							    id=rset1.getInt(1);
+							    rset1.close();
+					    		}
+					
+							//extract info
+							String sensor_id=info[0];
+							String date=info[1];
+							String value=info[2];
+							date="'"+date+"'";
+
+							stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
+							stmt.execute("commit");
 						
 		
-					}
+						}
 
 					
+					}
+					out.println("data inserted");
 				}
 				
-			}catch(Exception e) {}
+				}catch(Exception e) {}
 			
+			}
 		}
-	}
-	//response.sendRedirect("uploadFinish.jsp");
+	
 %>
-data inserted
+
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
