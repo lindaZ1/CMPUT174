@@ -8,7 +8,6 @@
 <center>
 <br>
 <H2>Ocean Observation System</H2>
-<br><br>
 
 <%
 String checklogin = "false";
@@ -26,7 +25,14 @@ if (!UserRole.equals("s")){
 }
 %>
 
-<H3>Please Choose Details</H3>
+<h3>All Sensors:</h3>
+<TABLE BORDER=2>
+<TR>
+<TH>SENSOR_ID</TH>
+<TH>LOCATION</TH>
+<TH>SENSOR TYPE</TH>
+<TH>DESCRIPTION</TH>
+</TR>
 
 <%@ page import = "java.sql.*"%>
 <%
@@ -35,12 +41,11 @@ String m_driverName = "oracle.jdbc.driver.OracleDriver";
 String m_userName = "tshen";
 String m_password = "ad50064051";
 
-String person_id="222";
 
 Connection m_con;
-String action = "select sensor_id from subscriptions where person_id="+person_id;
-ResultSet rs;
-Statement stmt;
+String action1 = "select * from sensors";
+ResultSet rs1;
+Statement stmt1;
 
 try
 {
@@ -53,27 +58,97 @@ System.err.println(e.getMessage());
 }
 
 m_con = DriverManager.getConnection(m_url, m_userName, m_password);
-stmt = m_con.createStatement();
-rs = stmt.executeQuery(action);
+stmt1 = m_con.createStatement();
+rs1 = stmt1.executeQuery(action1);
 
-Object o;
-ResultSetMetaData rsetMetaData=rs.getMetaData();
-int ccount=rsetMetaData.getColumnCount();
+Object o1;
+ResultSetMetaData rsetMetaData1=rs1.getMetaData();
+int ccount1=rsetMetaData1.getColumnCount();
+String ans1="";
+while(rs1.next()) {
+	    ans1+="<TR>";
+	    for(int i=1;i<=ccount1;i++) {
+		o1=rs1.getObject(i);
+		ans1+="<TD>";
+		if(o1!=null){
+		    ans1+=o1.toString();
+		}
+		else{
+		    ans1+="null";
+		}
+		ans1+="</TD>";
+	    }
+	    ans1+="</TR>";
+	}
+	out.println(ans1);
+stmt1.close();
+rs1.close();
+%>
+</TABLE>
+a=audio; i=image; s=scalar value;
+<br>
+
+<h3>Subscribed Sensors:</h3>
+<TABLE BORDER=2>
+<TR><TH>SENSOR_ID</TH></TR>
+<%
+String UserID = (String) session.getAttribute("userid");
+String action2 = "select sensor_id from subscriptions where person_id='"+UserID+"'";
+ResultSet rs2;
+Statement stmt2;
+stmt2 = m_con.createStatement();
+rs2 = stmt2.executeQuery(action2);
+
+String ans2="";
+Object o2;
+ResultSetMetaData rsetMetaData2=rs2.getMetaData();
+int ccount2=rsetMetaData2.getColumnCount();
+
+while(rs2.next()) {
+ans2+="<TR>";
+for(int i=1;i<=ccount2;i++) {
+o2=rs2.getObject(i);
+ans2+="<TD>";
+ans2+=o2.toString();
+ans2+="</TD>";
+}
+ans2+="</TR>";
+}
+out.println(ans2);
+stmt2.close();
+rs2.close();
+%>
+</TABLE>  
+<br>
+<form  action= "subscribe.jsp" method="post">
+<input type="submit" name="subscribe" value="Go To Subscribe">
+</form>
+<H3>Please Choose Your Analysis Details</H3>
+<%
+String action3 = "select sensor_id from subscriptions where person_id='"+UserID+"'";
+ResultSet rs3;
+Statement stmt3;
+stmt3 = m_con.createStatement();
+rs3 = stmt3.executeQuery(action3);
+
+Object o3;
+ResultSetMetaData rsetMetaData3=rs3.getMetaData();
+int ccount3=rsetMetaData3.getColumnCount();
 %>
 <form action= "analysisResult.jsp" method="post">
 <select name="sensorSelect">
 <%
-while(rs.next()) {
-for(int i=1;i<=ccount;i++) {
-o=rs.getObject(i);
-o.toString();
+while(rs3.next()) {
+for(int i=1;i<=ccount3;i++) {
+o3=rs3.getObject(i);
+o3.toString();
 %>
-<option value=<%=o.toString()%>><%=o.toString()%></option>
+<option value=<%=o3.toString()%>><%=o3.toString()%></option>
 <%
 }
 }
-stmt.close();
-rs.close();
+stmt3.close();
+rs3.close();
 m_con.close();
 %>
 </select> 
