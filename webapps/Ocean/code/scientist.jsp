@@ -1,8 +1,5 @@
-<HTML> 
-<head>
-<title>Administrator Page</title>
-</head>
-    <BODY> 
+<html>
+<body>
 <div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
 <center>
 <br>
@@ -17,30 +14,33 @@ if (checklogin.equals("false")){
     out.print("</script>");
 }
 String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("a")){
+if (!UserRole.equals("s")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 %>
-	<h1 style="font-size:160%">Administrator</h1>
-	<p style="font-size:130%">
-	Select tables you want to check:<br>
-	<form  action= "editSensor.jsp" method="post">
-   	 <input type="submit" name="Sensor Table" value="Sensor Table">
- 	 </form>
-	<form  action= "editUser.jsp" method="post">
-   	 <input type="submit" name="User Table" value="User Table">
- 	 </form>
-	<form  action= "account.jsp" method="post">
-   	 <input type="submit" name="account" value="My Account">
- 	 </form>
-	</p>
+<H1>Scientist</H1>
+<form action="subscribe.jsp" method="post">
+   <input type="submit" value="Subscriptions">
+</form>
+
+<form action="search.jsp" method="post">
+   <input type="submit" value="Search">
+</form>
+
+<form action="dataAnalysis.jsp" method="post">
+   <input type="submit" value="Data Analysis">
+</form>
+
+<form  action= "account.jsp" method="post">
+<input type="submit" name="account" value="My Account">
+</form>
 </center>
 <center><h3>
 <br><br>
-<a href='UserDocumentation.html' target='_blank'>Help</a>
+<a href='../document/UserDocumentation.html' target='_blank'>Help</a>
 </h3></center>
 </div>
-    </BODY> 
-</HTML> 
+</body>
+</html>

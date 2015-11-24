@@ -4,7 +4,7 @@
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
     <head>
-        <title>subscribe</title>
+        <title>Sensors</title>
     </head>
 </html>
 <body>
@@ -22,22 +22,23 @@ if (checklogin.equals("false")){
     out.print("</script>");
 }
 String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("s")){
+if (!UserRole.equals("a")){
     out.print("<script language=javascript type=text/javascript>");
     out.print("javascript:location.href='account.jsp'");
     out.print("</script>");
 }
 %>
-    <h1>Subscriptions</h1>
+    <h1>Edit Sensors</h1>
 
     <h3>All Sensors:</h3>
     <TABLE BORDER=2>
-        <TR>
+        <TR VALIGN=TOP ALIGN=LEFT>
             <TH>SENSOR_ID</TH>
 	    <TH>LOCATION</TH>
 	    <TH>SENSOR TYPE</TH>
 	    <TH>DESCRIPTION</TH>
         </TR>
+
 <%
     Connection conn=null;
     Statement stmt;
@@ -52,8 +53,7 @@ if (!UserRole.equals("s")){
         conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 
 	String query="select * from sensors";
-	//stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-	stmt=conn.createStatement();
+	stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 	ResultSet rset=stmt.executeQuery(query);
 
 	Object o;
@@ -78,67 +78,58 @@ if (!UserRole.equals("s")){
 	    ans+="</TR>";
 	}
 	out.println(ans);
-	//stmt.close();
-	//conn.close();
+	stmt.close();
+	conn.close();
     }catch(Exception e) {
-	out.println(e.toString());
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
     }
-%>
-</TABLE>
+%> 
+</Table>
 
-<h4>Legend<h4>
-a=audio;
-i=image;
-s=scalar value;
+    <h3>Remove a Sensor:</h3>
+    <form action= "removeSensor.jsp" method="post">
+    Sensor Id:
+    <input type="text" name= "removeSensorId"><br>
+    <input type="submit" name="submit" value= "remove">
+  </form>
 
+    <h3>Create a Sensor:</h3>
 
-<h3>Subscribed Sensors:</h3>
-<TABLE BORDER=2>
-<TR><TH>SENSOR_ID</TH></TR>
-<%
-    String person_id=(String)session.getAttribute("userid");
-    String query="select sensor_id from subscriptions where person_id="+person_id;
-    
-    stmt=conn.createStatement();
-    ResultSet rset=stmt.executeQuery(query);
-    String ans="";
-    Object o;
-    ResultSetMetaData rsetMetaData=rset.getMetaData();
-    int ccount=rsetMetaData.getColumnCount();
+    <form action= "createSensor.jsp" method="post">
+<table>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>Sensor Id:</TD>
+    <TD><input type="text" name= "createSensorId"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>Location:</TD>
+    <TD><input type="text" name="location"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>Sensor Type:</TD>
+    <TD><input type = "text" name="sensorType"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>Description:</TD>
+    <TD><input type = "text" name="description"></TD>
+</TR>
+</table>
+    <input type="submit" name="submit" value= "create">
+  </form>
 
-    while(rset.next()) {
-	ans+="<TR>";
-	for(int i=1;i<=ccount;i++) {
-	    o=rset.getObject(i);
-	    ans+="<TD>";
-	    ans+=o.toString();
-	    ans+="</TD>";
-	}
-	ans+="</TR>";
-    }
-    out.println(ans);
-    stmt.close();
-    conn.close();
-
-%>
-</TABLE>  
-<br></br>
-<form action="alter_subscribe.jsp" method="post">
-    <input type="text" value="sensor_id" name="sensor_id">
-    <br></br><input type="radio" value="add" name="action" checked="checked">Add Sensor
-    <input type="radio" value="remove" name="action">Remove Sensor
-<%  out.println("<input type='hidden' value="+person_id+" name='person'>");     %>
-    <br></br><input type="submit" value="submit">
-</form>
-
+    <form action= "administratorPage.jsp" method="post">
+    <input type="submit" name="submit" value= "Main Menu">
+  </form>
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
-</form>
-
+</form> 
 </center>
 <center><h3>
 <br><br>
-<a href='UserDocumentation.html' target='_blank'>Help</a>
+<a href='../document/UserDocumentation.html' target='_blank'>Help</a>
 </h3></center>
 </div>
 </body>

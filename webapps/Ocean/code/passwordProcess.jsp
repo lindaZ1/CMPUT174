@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
+<div id="image" style="background: url(bg.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
 <center>
 <br>
 <H2>Ocean Observation System</H2>
@@ -23,12 +23,8 @@ if (checklogin.equals("false")){
 %>
 
 <%
-try {
-String UserFN = (request.getParameter("userfn")).trim();
-String UserLN = (request.getParameter("userln")).trim();
-String UserAddr = (request.getParameter("useraddr")).trim();
-String UserEmail = (request.getParameter("useremail")).trim();
-String UserPhone = (request.getParameter("userphone")).trim();
+try{
+String newPW = (request.getParameter("newPW")).trim();
 %>
 
 <%
@@ -37,11 +33,10 @@ String m_driverName = "oracle.jdbc.driver.OracleDriver";
 String m_userName = "tshen";
 String m_password = "ad50064051";
 
-String UserID = (String) session.getAttribute("userid");
+String LogName = (String) session.getAttribute("username");
 
 Connection m_con;
-// update new personal information
-String action = "update persons set first_name = '" + UserFN + "', last_name = '" + UserLN + "', address = '" + UserAddr + "', email = '" + UserEmail + "', phone = '" + UserPhone + "' where persons.person_id = '" + UserID + "'";
+String action = "update users set password = '" + newPW + "' where users.user_name = '" + LogName + "'";
 ResultSet rs;
 Statement stmt;
 
@@ -70,14 +65,14 @@ out.print("</script>");
 }
 %>
 
-<H2>Change Saved</H2>
+<H2>New Password Saved</H2>
 <script language=javascript type=text/javascript>
 setTimeout("javascript:location.href='account.jsp'", 2000);
 </script>
 </center>
 <center><h3>
 <br><br>
-<a href='UserDocumentation.html' target='_blank'>Help</a>
+<a href='../document/UserDocumentation.html' target='_blank'>Help</a>
 </h3></center>
 </div>
 </body>

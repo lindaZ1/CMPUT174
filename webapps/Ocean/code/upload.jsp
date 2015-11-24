@@ -1,6 +1,11 @@
 <%@ page import="java.sql.*" %>
+
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
+    <head>
+        <title>upload</title>
+    </head>
+</html>
 <body>
 <div id="image" style="background: url(bg.jpg) no-repeat fixed; width: 100%; min-height: 100%; background-size: cover;">
 <center>
@@ -22,15 +27,22 @@ if (!UserRole.equals("d")){
     out.print("</script>");
 }
 %>
+    <h1>Data Upload</h1>
 
-no file read or invalid file type
+<h3>Choose data type to upload: </h3>
+<form action="uploadData.jsp" method="post">
+<input type="radio" value="addScalar" name="action" checked="checked">Add Scalar Data
+<input type="radio" value="addImage" name="action">Add Image
+<input type="radio" value="addAudio" name="action">Add Audio
+<br></br> <input type="submit" value="Add">
+</form>
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
 </center>
 <center><h3>
 <br><br>
-<a href='UserDocumentation.html' target='_blank'>Help</a>
+<a href='../document/UserDocumentation.html' target='_blank'>Help</a>
 </h3></center>
 </div>
 </body>
