@@ -191,9 +191,7 @@ if (!UserRole.equals("d")){
 <% } %>
 
 
-<form  action= "account.jsp" method="post">
-<input type="submit" name="account" value="My Account">
-</form>
+
 </center>
 <center><h3>
 <br><br>

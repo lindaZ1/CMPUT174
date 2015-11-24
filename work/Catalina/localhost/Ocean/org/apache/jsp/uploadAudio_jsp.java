@@ -227,7 +227,7 @@ if (!UserRole.equals("d")){
       out.write("<TABLE>\n");
       out.write("<TR VALIGN=TOP ALIGN=LEFT>\n");
       out.write("\t<TD>Sensor_ID: </TD>\n");
-      out.write("<TD><input type=\"text\" value=\"sensor_id\" name=\"sensor_id\" required=\"required\"></TD>\n");
+      out.write("<TD><input type=\"text\" name=\"sensor_id\" required=\"required\"></TD>\n");
       out.write("</TR>\n");
       out.write("<TR VALIGN=TOP ALIGN=LEFT>\n");
       out.write("\t<TD>Date Created: </TD>\n");
