@@ -114,54 +114,49 @@ if (!UserRole.equals("d")){
 
 			try{
 				String filename=item.getName();
-				if(filename.length()<5 || (filename.substring(filename.length()-4))!=".csv") {
+
+				
+				InputStream stream=application.getResourceAsStream(filename);
+				fileData=item.get();
+			
+				if(fileData.length==0) {
 					response.sendRedirect("uploadFinish.jsp");
 				}
-
-				else{
-					InputStream stream=application.getResourceAsStream(filename);
-					fileData=item.get();
 				
-					if(fileData.length==0) {
-						response.sendRedirect("uploadFinish.jsp");
-					}
-					if(fileData.length<5 || fileData.substring(fileData.length-4))!=".csv") {
-						response.sendRedirect("uploadFinish.jsp");
-					}
-					int id=0;
-					String line;
-					StringBuilder contents=new StringBuilder();
-					BufferedReader input=new BufferedReader(new InputStreamReader(stream));
+				int id=0;
+				String line;
+				StringBuilder contents=new StringBuilder();
+				BufferedReader input=new BufferedReader(new InputStreamReader(stream));
 
-					while((line=input.readLine())!=null) {	
-						//line=input.readLine();
-						contents.append(line);
-						String info[]=line.split(",");
-					
-						if(info[0]!="") {
-							//generate id
-							ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
-							if(rset1!=null && rset1.next()) {
-							    id=rset1.getInt(1);
-							    rset1.close();
-					    		}
-					
-							//extract info
-							String sensor_id=info[0];
-							String date=info[1];
-							String value=info[2];
-							date="'"+date+"'";
+				while((line=input.readLine())!=null) {	
+					//line=input.readLine();
+					contents.append(line);
+					String info[]=line.split(",");
+				
+					if(info[0]!="") {
+						//generate id
+						ResultSet rset1 = stmt.executeQuery("SELECT SEQ_IMAGE_ID.nextval from dual");
+						if(rset1!=null && rset1.next()) {
+						    id=rset1.getInt(1);
+						    rset1.close();
+				    		}
+				
+						//extract info
+						String sensor_id=info[0];
+						String date=info[1];
+						String value=info[2];
+						date="'"+date+"'";
 
-							stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
-							stmt.execute("commit");
-						
-		
-						}
-
+						stmt.execute("insert into scalar_data values ("+id+","+sensor_id+",to_date("+date+",'dd/mm/yyyy hh24:mi:ss'),"+value+")");
+						stmt.execute("commit");
 					
+	
 					}
-					out.println("data inserted");
+
+				
 				}
+				out.println("data inserted");
+				
 				
 				}catch(Exception e) {}
 			

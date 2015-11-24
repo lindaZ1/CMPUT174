@@ -55,9 +55,6 @@ if (!UserRole.equals("d")){
 
 			try{
 				String filename=item.getName();
-				if(filename.length()<5 || (filename.substring(filename.length()-4))!=".csv") {
-					response.sendRedirect("uploadFinish.jsp");
-				}
 
 				else{
 					InputStream stream=application.getResourceAsStream(filename);
@@ -66,9 +63,7 @@ if (!UserRole.equals("d")){
 					if(fileData.length==0) {
 						response.sendRedirect("uploadFinish.jsp");
 					}
-					if(fileData.length<5 || fileData.substring(fileData.length-4))!=".csv") {
-						response.sendRedirect("uploadFinish.jsp");
-					}
+					
 					int id=0;
 					String line;
 					StringBuilder contents=new StringBuilder();
