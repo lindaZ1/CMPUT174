@@ -166,7 +166,7 @@ if (!UserRole.equals("d")){
 <TABLE>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Sensor_ID: </TD>
-<TD><input type="text" value="sensor_id" name="sensor_id" required="required"></TD>
+<TD><input type="text" name="sensor_id" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Date Created: </TD>

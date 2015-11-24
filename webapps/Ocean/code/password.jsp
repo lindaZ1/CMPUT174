@@ -74,7 +74,7 @@ if (checklogin.equals("false")){
 </H2>
 <center><h3>
 <br><br>
-<a href='UserDocumentation.html' target='_blank'>Help</a>
+<a href='../document/UserDocumentation.html' target='_blank'>Help</a>
 </h3></center>
 </div>
 </body>

@@ -51,7 +51,7 @@ if (!UserRole.equals("a")){
         DriverManager.registerDriver((Driver)drvClass.newInstance());
 
         //establish connection here
-        conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+        conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 
 	//avoid empty value---------------------------
 	boolean valid = true;
@@ -60,7 +60,7 @@ if (!UserRole.equals("a")){
 		valid = false;
 	}
 	//avoid invalid sensor type
-	if(cType.equals("a") || cType.equals("t") || cType.equals("o") || cType.equals("i")){
+	if(cType.equals("a") || cType.equals("i") || cType.equals("s")){
 		//do nothing
 	}else{
 		out.print("invalid sensor type"+"<br>");
@@ -110,7 +110,10 @@ if (!UserRole.equals("a")){
 
 
     }catch(Exception e) {
-	out.println(e.toString());
+out.println(e.toString());
+out.print("<script language=javascript type=text/javascript>");
+out.print("javascript:location.href='account.jsp'");
+out.print("</script>");
     }
 %> 
     <br>
@@ -120,6 +123,11 @@ if (!UserRole.equals("a")){
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
-
+</center>
+<center><h3>
+<br><br>
+<a href='UserDocumentation.html' target='_blank'>Help</a>
+</h3></center>
+</div>
 </body>
 </html>

@@ -22,21 +22,23 @@ if (!UserRole.equals("d")){
 }
 %>
 <%
+
+	
 	if (request.getParameter(".submit") != null) {
 		String sensor_id=request.getParameter("sensor_id");
 
 		String date=request.getParameter("date");
-
-		if(date!="") {
-			String year=date.substring(0,4);
-			String month=date.substring(5,7);
-			String day=date.substring(8,10);
-			date=day+"/"+month+"/"+year;
-		}
+		String year=date.substring(0,4);
+		String month=date.substring(5,7);
+		String day=date.substring(8,10);
+		date=day+"/"+month+"/"+year;
 
 		String description=request.getParameter("description");
+
 		String time=request.getParameter("time");
 		String datetime=date+" "+time;
+
+		String length=request.getParameter("length");
 
 		Boolean sensorExist=false;
 		Boolean desc=true;
@@ -45,7 +47,7 @@ if (!UserRole.equals("d")){
 			out.println("please enter a description");
 			desc=false;
 			%>
-			<P><a href="uploadImage.jsp"> Return to form </a></P>
+			<P><a href="uploadAudio.jsp"> Return to form </a></P>
 			<%
 		}
 
@@ -59,7 +61,7 @@ if (!UserRole.equals("d")){
 		    //establish connection here
 		    Connection conn=null;	
 		    conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
-		    String query="select sensor_id from sensors where sensor_type='i'";
+		    String query="select sensor_id from sensors where sensor_type='a'";
 		    
 		    Statement stmt;
 		    stmt=conn.createStatement();
@@ -79,25 +81,24 @@ if (!UserRole.equals("d")){
 			}
 		    }
 
-		    if(sensorExist==false && desc==true) {
+		    if(sensorExist==false) {
 			out.println("sensor_id: "+sensor_id +" does not exist");
 			%>
-			<P><a href="uploadImage.jsp"> Return to form </a></P>
+			<P><a href="uploadAudio.jsp"> Return to form </a></P>
 			<%
 		    }
 
 		    if(sensorExist && desc) {
-			    int image_id=(Integer)session.getAttribute("currentid");
+			    int recording_id=(Integer)session.getAttribute("currentid");
 
-
-			    stmt.execute("update images set date_created=TO_DATE('"+datetime+"','dd/mm/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"' where image_id="+image_id);
+			    stmt.execute("update audio_recordings set date_created=TO_DATE('"+datetime+"','dd/mm/yyyy hh24:mi:ss'),sensor_id="+sensor_id+",description='"+description+"',length="+length+" where recording_id="+recording_id);
 			    stmt.execute("commit");
-		%>
-			<h3>File Uploaded</h3>
+			    session.removeAttribute("currentid");
+%>
+			<h3>file uploaded</h3>
 			<P><a href="dataCurator.jsp"> Return </a></P>
-		<%
 
-			
+<%
 		    }
 		}catch(Exception e) {out.println(e.toString());}
 
@@ -130,7 +131,7 @@ if (!UserRole.equals("d")){
 	        conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 	    
 
-		String query="select * from sensors where sensor_type='i'";
+		String query="select * from sensors where sensor_type='a'";
 		Statement stmt;
 		stmt=conn.createStatement();
 		ResultSet rset=stmt.executeQuery(query);
@@ -161,8 +162,7 @@ if (!UserRole.equals("d")){
 		conn.close();
 %>
 </table>
-	Upload Image
-	<form action="uploadImage.jsp" method="post" >
+	<form action="uploadAudio.jsp" method="post" >
 <TABLE>
 <TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Sensor_ID: </TD>
@@ -177,19 +177,25 @@ if (!UserRole.equals("d")){
 <TD><input type="time" value="time" name="time" step="1" required="required"></TD>
 </TR>
 <TR VALIGN=TOP ALIGN=LEFT>
+	<TD>Length(seconds): </TD>
+<TD><input type="number" value="" name="length" required="required"></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
 	<TD>Description: </TD>
-<TD><input type="text" value="" name="description" required="required"></TD>
+<TD><input type="text" name="description" required="required"></TD>
 </TR>
 </TABLE>
+<br></br>
 	<input name=".submit" value="Upload" type="submit">
 	</form>
 <% } %>
 
 
+
 </center>
 <center><h3>
 <br><br>
-<a href='UserDocumentation.html' target='_blank'>Help</a>
+<a href='../document/UserDocumentation.html' target='_blank'>Help</a>
 </h3></center>
 </div>
 </body>
