@@ -13,26 +13,16 @@ if (checklogin == "false"){
     out.print("javascript:location.href='login.html'");
     out.print("</script>");
 }
-String UserRole = (String) session.getAttribute("userrole");
-if (!UserRole.equals("a")){
-    out.print("<script language=javascript type=text/javascript>");
-    out.print("javascript:location.href='account.jsp'");
-    out.print("</script>");
-}
 %>
 
 <%
-    String name = request.getParameter("updateName");
-    String password = request.getParameter("password1");
-    String role = request.getParameter("role1");
-    String id = request.getParameter("id1");
-    String date = request.getParameter("date1");
+    String name = request.getParameter("createName");
+    String password = request.getParameter("password");
+    String role = request.getParameter("role");
+    String id = request.getParameter("id");
+    String date = request.getParameter("date");
     boolean valid = true;
     Date d1;
-
-    Connection conn=null;
-    String driverName="oracle.jdbc.driver.OracleDriver";
-    String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
 
     //avoid invalid dates--------
     try{
@@ -54,6 +44,9 @@ if (!UserRole.equals("a")){
        	valid = false;
     }
 
+    Connection conn=null;
+    String driverName="oracle.jdbc.driver.OracleDriver";
+    String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
     try{
       
         //load and register driver
@@ -78,52 +71,49 @@ if (!UserRole.equals("a")){
 		valid = false;
 	}	    
 
-	//check if user name exists before insertion--------------------
-
+	//check duplicates before insertion--------------------
 	Statement statement = conn.createStatement() ;
     	ResultSet resultset = statement.executeQuery("SELECT * FROM users") ;
+	
+	boolean unique = true;
+	if(valid){
+		while(resultset.next()){
+		     if(resultset.getString("user_name").equals(name)){
+			  unique = false;
+			  out.print("User already exists,chose another user name"+ "<br>");
+		     }
+		}
+	}
+	
+	statement = conn.createStatement() ;
+    	resultset = statement.executeQuery("SELECT * FROM persons") ;
 	
 	Boolean exist = false;
 
 	if(valid){
+		Integer Id1 = Integer.valueOf(id);
 		while(resultset.next()){
-		     if(resultset.getString("user_name").equals(name)){
+		     if(resultset.getInt("person_id")== Id1){
 			exist = true;
 		     }
 		}
 	}
 
 	if(! exist){
-		out.print("User name does not exist");
+		out.print("Person id does not exist");
 	}
 	
-	//check person id exists--------------------
-	statement = conn.createStatement() ;
-    	resultset = statement.executeQuery("SELECT * FROM persons") ;
-	
-	boolean exist1 = false;
-	if(valid){
-		Integer Id1 = Integer.valueOf(id);
-		while(resultset.next()){
-		     if(resultset.getInt("person_id") == Id1){
-			  exist1 = true;
-		     }
-		}
-	}
-
-	if(! exist1){
-		out.print("Person id does not exist"+"<br>");
-	}
+	statement.close();
     
-    	// If value to be added is unique,create sensor----------
-  	if(valid && exist && exist1){
+    	// If value to be added is unique,create user----------
+  	if(valid && unique && exist){
 	    Integer Id1 = Integer.valueOf(id);
 	    DateFormat df = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
             df.setLenient(false);
 	    d1 = df.parse(date);
 
-	    out.print("User has been updated");
-	    String query="UPDATE users SET user_name = ?,password=?,role = ?,person_id=?,date_registered = ? WHERE user_name ='"+ name+"'";
+	    out.print("User has been created");
+	    String query="INSERT INTO users VALUES (?,?,?,?,?)";
 	    PreparedStatement stmt =conn.prepareStatement(query);
 	    stmt.setString(1,name);
 	    stmt.setString(2,password);
@@ -132,7 +122,8 @@ if (!UserRole.equals("a")){
 	    stmt.setDate(5, new java.sql.Date(d1.getTime()));
 
 	    stmt.executeUpdate();
-	    
+	    //stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	    //stmt.executeQuery(query);
 	    stmt.close();
 	    conn.close();
 	} 
@@ -148,3 +139,4 @@ if (!UserRole.equals("a")){
 <form  action= "account.jsp" method="post">
 <input type="submit" name="account" value="My Account">
 </form>
+

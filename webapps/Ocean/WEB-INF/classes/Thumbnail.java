@@ -40,7 +40,7 @@ public class Thumbnail extends HttpServlet {
 			DriverManager.registerDriver((Driver)drvClass.newInstance());
 
 			//establish connection here
-			conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+			conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 			
 			String query = "select * from images where image_id = "+ imageId;
 			stmt = conn.createStatement() ;

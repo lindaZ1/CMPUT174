@@ -40,7 +40,7 @@ public class DownloadImage extends HttpServlet {
 			DriverManager.registerDriver((Driver)drvClass.newInstance());
 
 			//establish connection here
-			conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
+			conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
 			
 			String query = "select * from images where image_id = "+ imageId;
 			stmt = conn.createStatement() ;
@@ -51,7 +51,7 @@ public class DownloadImage extends HttpServlet {
 			int ccount=rsetMetaData.getColumnCount();
 	
 			while(rset.next()){
-				Blob b = rset.getBlob("recorded_data");
+				Blob b = rset.getBlob("recoreded_data");
 				long size = b.length();
 				byte[] bs = b.getBytes(1, (int)size);
 				response.setContentType("image/jpeg");

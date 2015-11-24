@@ -66,7 +66,7 @@ public class DownloadScalar extends HttpServlet {
 				
 				Date create = rset.getDate("date_created");
 				DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-				String createDate = df.format(create);
+				String createDate = df.format(create)+",";
 				byte[]b2 = createDate.getBytes();	
 				
 				float value = rset.getFloat("value");

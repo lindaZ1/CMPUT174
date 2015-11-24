@@ -61,26 +61,7 @@ public class Thumbnail extends HttpServlet {
 				OutputStream outs = response.getOutputStream();
 				outs.write(bs);
 				outs.flush();
-			}
-			System.out.println(imageId);
-			if(imageId.startwith("download")){
-				rset = stmt.executeQuery(query);
-				rsetMetaData=rset.getMetaData();
-				ccount=rsetMetaData.getColumnCount();
-	
-				while(rset.next()){
-					Blob b = rset.getBlob("thumbnail");
-					long size = b.length();
-					byte[] bs = b.getBytes(1, (int)size);
-					response.setContentType("image/jpeg");
-					response.setHeader("Content-Disposition","attachment; filename=image" + ".jpg");
-					
-					OutputStream outs = response.getOutputStream();
-					outs.write(bs);
-					outs.flush();
-				}
-			}			
-			
+			}		
 				
 		}catch(Exception e){
 			//out.println(e.getMessage());

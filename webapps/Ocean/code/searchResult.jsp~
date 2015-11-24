@@ -33,7 +33,7 @@ if (!UserRole.equals("s")){
 %>
 
 <%
-    String person_id=(String)session.getAttribute("userid");
+    String person_id="222";//---------------------NEED SESSION
   
     String keywords = request.getParameter("keywords");
     String type = request.getParameter("type");

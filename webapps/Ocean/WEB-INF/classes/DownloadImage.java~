@@ -22,11 +22,11 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-public class DownloadAudio extends HttpServlet {
+public class DownloadImage extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		
-		String audioId = request.getQueryString();
+		String imageId = request.getQueryString();
 		
 		
 		Connection conn=null;
@@ -40,9 +40,9 @@ public class DownloadAudio extends HttpServlet {
 			DriverManager.registerDriver((Driver)drvClass.newInstance());
 
 			//establish connection here
-			conn=DriverManager.getConnection(dbstring,"tshen","ad50064051");
+			conn=DriverManager.getConnection(dbstring,"dzhang4","Horsey26");
 			
-			String query = "select * from audio_recordings where recording_id = "+ audioId;
+			String query = "select * from images where image_id = "+ imageId;
 			stmt = conn.createStatement() ;
 			stmt.executeQuery(query);
 			ResultSet rset = stmt.executeQuery(query);
@@ -54,8 +54,8 @@ public class DownloadAudio extends HttpServlet {
 				Blob b = rset.getBlob("recorded_data");
 				long size = b.length();
 				byte[] bs = b.getBytes(1, (int)size);
-				response.setContentType("audio/wav");
-				response.setHeader("Content-Disposition","attachment; filename=audio" + ".wav");
+				response.setContentType("image/jpeg");
+				response.setHeader("Content-Disposition","attachment; filename=image" + ".jpg");
 				OutputStream outs = response.getOutputStream();
 				outs.write(bs);
 				outs.flush();
